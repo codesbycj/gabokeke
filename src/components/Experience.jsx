@@ -1,0 +1,89 @@
+import React from "react";
+import project2 from "../assets/project2.png";
+import { live, technologies } from "../data/Experience";
+import { ArrowUp, CircleCheck } from "lucide-react";
+
+export const Experience = () => {
+  return (
+    <div className="lg:w-2/3 lg:mx-auto py-10 px-5 text-white space-y-20">
+      <div>
+        <div className="lg:w-1/2 w-full">
+          <h2 className="text-4xl font-bold">Essential Tools I Use</h2>
+          <p className="mt-2 text-gray-400">
+            My expertise spans a diverse range of technologies, enabling me to
+            deliver comprehensive and cutting-edge solutions across various
+            platforms.{" "}
+          </p>
+        </div>
+        <div className="grid lg:grid-cols-4 grid-cols md:grid-cols-2 gap-x-10 gap-y-5 mt-5">
+          {technologies.map((tech) => {
+            return (
+              <div className="flex items-center justify-start gap-4 border border-gray-600 px-3 py-4 rounded-xl">
+                <img
+                  src={tech.img}
+                  alt=""
+                  className="w-10 h-10 p-1 bg-gray-600 rounded-xl"
+                />
+                <div>
+                  <p className="font-semibold">{tech.app}</p>
+                  <p className="text-gray-400 text-sm font-semibold">
+                    {tech.type}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div>
+        <div className="text-center font-semibold space-y-3">
+          <h1>REAL-WORLD RESULTS</h1>
+          <p className="text-5xl">Featured Projects</p>
+          <p className="text-gray-500">
+            See how I transformed concepts into digital engaging experiences
+          </p>
+        </div>
+        <div className="mt-20 space-y-10">
+          {live.map((exp) => {
+            return (
+              <div className="flex flex-wrap border border-gray-700 py-10 px-20 rounded-2xl overflow-hidden bg-gray-800
+              backdrop-blur-2xl shadow-xs shadow-white">
+                <div className="flex-1 flex-col gap-4 flex">
+                  <p className="font-semibold">{exp.Name}</p>
+                  <p className="text-4xl font-bold border-b border-gray-500 pb-4">
+                    {exp.Position}
+                  </p>
+
+                  <ul className="space-y-4 text-gray-400">
+                    {exp.exp.map((work) => {
+                        return <li className="flex items-center gap-4">
+                      <CircleCheck className="" /> {work}
+                    </li>
+                    })}
+                  </ul>
+
+                  <button
+                    className="bg-white flex items-center gap-3 text-black w-max px-5 
+                text-center py-2 rounded-xl font-semibold mt-5"
+                  >
+                    Visit Live Site <ArrowUp className="rotate-45 w-4" />{" "}
+                  </button>
+                </div>
+
+                <div className="flex-1 relative w-full ">
+                  <img
+                    src={project2}
+                    alt=""
+                    className="absolute -right-20 h-full object-cover object-left w-full -bottom-11 
+                    shadow-lg shadow-gray-100 rounded-lg border border-gray-800"
+                  />
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};

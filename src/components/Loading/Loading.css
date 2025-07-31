@@ -1,0 +1,48 @@
+.number-wrap span {
+    height: 80px;
+    line-height: 80px;
+    font-size: 72px;
+    font-weight: bold;
+}
+
+.numbers, 
+.number {
+    height: 80px;
+}
+
+.percentage {
+    font-size: 30px;
+    margin-left: 4px;
+    align-self: flex-start;
+}
+
+.number2 .number-wrap,
+.number3 .number-wrap {
+    height: 800px;
+    /* transform: translateY(-160px); */
+}
+
+.number1 .number-wrap {
+    height: 80px;
+}
+
+.pre-welcome .line {
+    height: 24px;
+    font-size: 20px;
+    margin-block: 8px   ;
+    overflow: hidden;
+}
+
+.pre-welcome .line p {
+    transform: translateY(-100%);
+}
+
+.pre-welcome {
+    position: absolute;
+    top: 45%;
+    left: 20%;
+}
+
+.welcome {
+    transform: translateY(100%);
+}

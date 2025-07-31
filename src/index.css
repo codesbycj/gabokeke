@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+.body {
+  overflow-x: hidden;
+}
+
+@theme {
+  --animate-move: move 10s linear infinite;
+
+  @keyframes move {
+    0% {
+      transform: rotate(0deg) translate(-10%, -30px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translate(-10%, -30px) rotate(-360deg);
+    }
+  }
+
+  --animate-straight: straight 20s linear infinite;
+
+  @keyframes straight {
+    0% {
+      left: 0;
+      bottom: -4rem;
+    }
+
+    50% {
+      left: 50%;
+    }
+    100% {
+      left: 100%;
+      transform: translateY(0);
+    }
+  }
+}
