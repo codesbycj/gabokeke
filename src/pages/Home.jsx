@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Hero, Loading, Header } from "../components";
+import { Hero, Loading, Header, Transition } from "../components";
 import { Experience } from "../components/Experience";
 
 export const Home = () => {
@@ -14,13 +14,14 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="bg-black">
+    <div className="bg-black overflow-x-hidden">
       {isLoading ? (
         <Loading />
       ) : (
         <main>
           <Header />
           <Hero />
+          <Transition />
           <Experience />
         </main>
       )}

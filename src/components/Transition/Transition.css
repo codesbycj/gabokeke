@@ -1,0 +1,101 @@
+.transition section{
+    width: 100vw;
+    height: 100vh;
+    color: white;
+}
+
+.transition h1 {
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.transition h1 span {
+    color: #6e6e6e;
+}
+
+.transition p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555555;
+    text-align: justify;
+    line-height: 130%;
+}
+
+.transition img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+}
+
+.transition .about {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.transition .about p {
+    color: #000
+}
+
+.transition .stickyE {
+    background-color: black; 
+}
+
+.transition .handContainer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    height: 650px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    will-change: transform;
+    z-index: 200;
+}
+
+.transition .hand {
+    position: absolute;
+    width: 5.5%;
+    height: 52.75%;
+    background-color: rgb(238, 238, 238);
+    border-radius: 1000px;
+    will-change: transform;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.transition .intro {
+    position: absolute;
+    top: calc(50% - 20px);
+    left: 29%;
+    width: 22.5% ;
+}
+
+.transition .intro p {
+    position: relative;
+    margin-top: 0.75em;
+    transform: translateX(20px);
+    opacity: 0;
+}
+
+.transition .websiteContent {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0;
+}
+
+.websiteContent h1 {
+    font-size: 10vw;
+    letter-spacing: -0.03em;
+}
+
