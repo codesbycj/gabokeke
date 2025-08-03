@@ -67,12 +67,20 @@ export const Experience = () => {
                     })}
                   </ul>
 
-                  <button
-                    className="bg-white flex items-center gap-3 text-black w-max px-5 
+                  {exp.link && (
+                    <button
+                      className="bg-white  w-max px-5 
                 text-center py-2 rounded-xl font-semibold mt-5"
-                  >
-                    Visit Live Site <ArrowUp className="rotate-45 w-4" />{" "}
-                  </button>
+                    >
+                      <a
+                        href={exp.link}
+                        target="_blank"
+                        className="flex items-center gap-3 text-black"
+                      >
+                        Visit Live Site <ArrowUp className="rotate-45 w-4" />
+                      </a>{" "}
+                    </button>
+                  )}
                 </div>
 
                 <div className="flex-1 relative w-full ">
@@ -94,7 +102,7 @@ export const Experience = () => {
           <h1>PERSONAL PROJECTS</h1>
           <p className="text-5xl">Featured Projects</p>
           <p className="text-gray-500">
-            Ideas, Assignments, Clones ... All of it 
+            Ideas, Assignments, Clones ... All of it
           </p>
         </div>
         <div className="mt-20 space-y-10 grid grid-cols-2 gap-9">
@@ -120,10 +128,16 @@ export const Experience = () => {
                   </ul>
 
                   <button
-                    className="bg-white flex items-center gap-3 text-black w-max px-5 
+                    className="bg-white  w-max px-5 
                 text-center py-2 rounded-xl font-semibold mt-5"
                   >
-                    Visit Live Site <ArrowUp className="rotate-45 w-4" />{" "}
+                    <a
+                      href={exp.link}
+                      target="_blank"
+                      className="flex items-center gap-3 text-black"
+                    >
+                      Visit Live Site <ArrowUp className="rotate-45 w-4" />
+                    </a>{" "}
                   </button>
                 </div>
               </div>

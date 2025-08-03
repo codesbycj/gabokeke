@@ -6,10 +6,10 @@ import tailwind from "../assets/Tailwind.svg";
 import mysql from "../assets/MySQL.svg";
 import php from "../assets/PHP.svg";
 import git from "../assets/Git.svg";
-import gemcode from "../assets/Gemcode.png"
-import bole from "../assets/Bole.png"
-import project1 from "../assets/project1.png"
-import project2 from "../assets/project2.png"
+import gemcode from "../assets/Gemcode.png";
+import bole from "../assets/Bole.png";
+import project1 from "../assets/project1.png";
+import project2 from "../assets/project2.png";
 
 export const experience = [
   {
@@ -150,7 +150,7 @@ export const live = [
       "Enhanced User Experience by 40%",
       "Enhanced User Experience by 40%",
     ],
-    img: gemcode
+    img: gemcode,
   },
 
   {
@@ -161,7 +161,8 @@ export const live = [
       "Enhanced User Experience by 40%",
       "Enhanced User Experience by 40%",
     ],
-    img: project2
+    img: project2,
+    link: "https://gemcodesystemlimited.com/",
   },
 
   {
@@ -172,7 +173,8 @@ export const live = [
       "Enhanced User Experience by 90%",
       "Enhanced User Experience by 40%",
     ],
-    img: gemcode
+    img: gemcode,
+    link: "https://gemcodesystemlimited.com/",
   },
 
   {
@@ -183,7 +185,7 @@ export const live = [
       "Enhanced User Experience by 40%",
       "Enhanced User Experience by 90%",
     ],
-    img: project1
+    img: project1,
   },
 
   {
@@ -194,7 +196,8 @@ export const live = [
       "Enhanced User Experience by 40%",
       "Enhanced User Experience by 40%",
     ],
-    img: bole
+    img: bole,
+    link: "https://bolefestival.com/",
   },
 ];
 
@@ -208,6 +211,7 @@ export const projects = [
       "Developed products such as Payroll, Virtual Terminals, Cash Collections, Fixed Savings, and more, all designed to help customers grow their businesses.",
     ],
     skills: ["ReactJs", "Context API", "API Integration", "CSS"],
+    link: "https://okeke-ai.vercel.app/",
   },
 
   {
@@ -232,6 +236,7 @@ export const projects = [
       "Ajax",
       "JQuery",
     ],
+    link: "https://cj-interior.vercel.app/",
   },
 
   {
@@ -257,6 +262,7 @@ export const projects = [
       "Ajax",
       "JQuery",
     ],
+    link: "https://cjdash.vercel.app/",
   },
 
   {
@@ -282,6 +288,8 @@ export const projects = [
       "Ajax",
       "JQuery",
     ],
+
+    link: "https://cj-cart.vercel.app/",
   },
 
   {
@@ -307,6 +315,8 @@ export const projects = [
       "Ajax",
       "JQuery",
     ],
+
+    link: "https://cj-interior.vercel.app/",
   },
 ];
 
