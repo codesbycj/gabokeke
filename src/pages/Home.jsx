@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Hero, Loading, Header, Transition } from "../components";
+import { Hero, Loading, Header, Transition, Footer } from "../components";
 import { Experience } from "../components/Experience";
 
 export const Home = () => {
@@ -23,6 +23,7 @@ export const Home = () => {
           <Hero />
           <Transition />
           <Experience />
+          <Footer />
         </main>
       )}
     </div>

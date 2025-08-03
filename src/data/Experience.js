@@ -6,8 +6,10 @@ import tailwind from "../assets/Tailwind.svg";
 import mysql from "../assets/MySQL.svg";
 import php from "../assets/PHP.svg";
 import git from "../assets/Git.svg";
-
-// ... rest of your code
+import gemcode from "../assets/Gemcode.png"
+import bole from "../assets/Bole.png"
+import project1 from "../assets/project1.png"
+import project2 from "../assets/project2.png"
 
 export const experience = [
   {
@@ -148,6 +150,7 @@ export const live = [
       "Enhanced User Experience by 40%",
       "Enhanced User Experience by 40%",
     ],
+    img: gemcode
   },
 
   {
@@ -158,6 +161,7 @@ export const live = [
       "Enhanced User Experience by 40%",
       "Enhanced User Experience by 40%",
     ],
+    img: project2
   },
 
   {
@@ -168,6 +172,7 @@ export const live = [
       "Enhanced User Experience by 90%",
       "Enhanced User Experience by 40%",
     ],
+    img: gemcode
   },
 
   {
@@ -178,6 +183,7 @@ export const live = [
       "Enhanced User Experience by 40%",
       "Enhanced User Experience by 90%",
     ],
+    img: project1
   },
 
   {
@@ -188,6 +194,7 @@ export const live = [
       "Enhanced User Experience by 40%",
       "Enhanced User Experience by 40%",
     ],
+    img: bole
   },
 ];
 

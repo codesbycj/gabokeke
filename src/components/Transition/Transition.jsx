@@ -191,7 +191,8 @@ export const Transition = () => {
         </div>
 
         <div className="websiteContent" ref={websiteContent}>
-          <h1>CodeGrid</h1>
+          <h1>Gabokeke Emmanuel</h1>
+          <p className="">From full stack </p>
         </div>
       </section>
     </div>

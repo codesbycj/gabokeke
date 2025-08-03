@@ -2,6 +2,7 @@ import React from "react";
 import me from "../assets/Okeke_Memoji.png";
 import cursor1 from "../assets/10001.svg";
 import cursor2 from "../assets/10002.svg";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
@@ -51,12 +52,13 @@ export const Hero = () => {
         </p>
       </div>
 
-      <button
+      <Link
+        to="/summary"
         className="absolute bottom-10 right-20 py-3 px-7 bg-gray-300 
       text-black font-bold shadow-sm shadow-white rounded-sm"
       >
-        <a href="">Quick Summary</a>
-      </button>
+        Quick Summary
+      </Link>
 
       {/* <div>
         <h1>Essential Tools I Use</h1>

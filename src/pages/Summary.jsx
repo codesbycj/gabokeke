@@ -13,7 +13,7 @@ export const Summary = () => {
   ];
 
   return (
-    <div className="flex lg:flex-row bg-[#121212] text-white lg:px-40 py-16 gap-20 flex-col px-5  overflow-x-hidden">
+    <div className="flex lg:flex-row bg-[#121212] text-white lg:px-40 py-16 gap-20 flex-col px-5               overflow-x-hidden">
       <div className="w-100 relative flex items-start justify-center">
         <div className="lg:fixed flex flex-col gap-4 flex-wrap">
           <img
