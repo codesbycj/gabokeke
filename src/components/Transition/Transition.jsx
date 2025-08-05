@@ -144,8 +144,7 @@ export const Transition = () => {
             const newOpacity = gsap.utils.interpolate(0, 1, revealProgress);
 
             gsap.set(websiteContent.current, { opacity: newOpacity });
-          } 
-          else {
+          } else {
             gsap.set(websiteContent.current, { opacity: 0 });
           }
         },
@@ -177,27 +176,47 @@ export const Transition = () => {
 
           <div ref={introCopyRef}>
             <p>
-              Websites that doesn’t just look good but works
-              hard for your business. I build fast, scalable web apps with
-              React, Tailwind, Bootstrap, PHP, and MySQL that handle real
-              traffic and deliver real results.
+              Websites that doesn’t just look good but works hard for your
+              business. I build fast, scalable web apps with React, Tailwind,
+              Bootstrap, PHP, and MySQL that handle real traffic and deliver
+              real results.
             </p>
             <p>
-              From Pixel Perfect UI to seamless React Frontend. I design systems that not only work 
-              but works for you
+              From Pixel Perfect UI to seamless React Frontend. I design systems
+              that not only work but works for you
             </p>
           </div>
         </div>
 
-        <div className="websiteContent" ref={websiteContent}>
-          <h1>About Me</h1>
-          <p className="">From full stack </p>
+        <div className="websiteContent flex flex-col gap-9" ref={websiteContent}>
+          <h1 >About Me</h1>
+          <div className="text-white flex flex-wrap flex-col gap-2">
+            <p>
+              I began my Front End Journey in 2021, assisting in building
+              impactful digital products from concept to completion. I further
+              developed these skills handling solo projects in 2022 with local
+              businesses in my area. My dual expertise in frontend and backend
+              development allows me to architect complete, scalable solutions
+              that address real-world needs.
+            </p>
+            <p>
+              I've thrived in fast-paced environments that demand innovation and
+              adaptability. The experience culminated in my most recent
+              internship, giving me invaluable firsthand knowledge of both
+              technical implementation and business strategy.
+            </p>
+            <p>
+              Throughout my career, I have consistently demonstrated my ability
+              to master new technologies and lead teams in building scalable,
+              user-friendly, and high-performing frontend applications that
+              positively impact users and support business goals.
+            </p>
+          </div>
         </div>
       </section>
     </div>
   );
 };
-
 
 // import React from "react";
 // import { Experience } from "../Experience";
@@ -383,7 +402,7 @@ export const Transition = () => {
 //               traffic and deliver real results.
 //             </p>
 //             <p>
-//               From Pixel Perfect UI to seamless React Frontend. I design systems that not only work 
+//               From Pixel Perfect UI to seamless React Frontend. I design systems that not only work
 //               but works for you
 //             </p>
 //           </div>

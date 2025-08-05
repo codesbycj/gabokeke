@@ -118,20 +118,20 @@ export const Loading = () => {
   });
 
   return (
-    <div className="loading-container h-screen w-screen fixed top-0 left-0">
+    <div className="loading-container h-screen w-screen fixed top-0 left-0 bg-stone-900 text-white">
       <div className="loading-screen">
-        <div className="progress-bar  absolute top-0 left-0 h-1.5 w-0 bg-black"></div>
+        <div className="progress-bar  absolute top-0 left-0 h-1.5 w-0 bg-white"></div>
         <div className="pre-welcome">
-          <div className="line">
-            <p>A front-end Developer who has</p>
+          <div className="line font-semibold">
+            <p>Building the view layer</p>
           </div>
-          <div className="line">
-            <p>A front-end Developer who has</p>
+          <div className="line font-semibold">
+            <p>one pixel at a time 🎨</p>
           </div>
         </div>
 
         <div className="welcome">
-            <Header />
+          <Header />
           <Hero />
         </div>
         <div className="numbers flex items-center absolute bottom-7 left-7 overflow-hidden">
@@ -141,17 +141,17 @@ export const Loading = () => {
             </div>
           </div>
           <div className="number2 number overflow-hidden">
-            <div className="number-wrap flex flex-col">
-              <span>1</span>
-              <span>2</span>
-              <span>3</span>
-              <span>4</span>
-              <span>5</span>
-              <span>6</span>
-              <span>7</span>
-              <span>8</span>
-              <span>9</span>
-              <span>0</span>
+            <div className="number-wrap flex flex-col font-bold">
+              <span className="font-bold">1</span>
+              <span className="font-bold">2</span>
+              <span className="font-bold">3</span>
+              <span className="font-bold">4</span>
+              <span className="font-bold">5</span>
+              <span className="font-bold">6</span>
+              <span className="font-bold">7</span>
+              <span className="font-bold">8</span>
+              <span className="font-bold">9</span>
+              <span className="font-bold">0</span>
             </div>
           </div>
           <div className="number3 number overflow-hidden">

@@ -2,14 +2,14 @@ import { ArrowUp, Github, Linkedin, Mail, Twitter } from "lucide-react";
 import React from "react";
 import Profile from "../assets/Profile.JPG";
 import { experience, projects } from "../data/Experience";
-import project from '../assets/project1.png'
+import project from "../assets/project1.png";
 
 export const Summary = () => {
   const socials = [
-    { social: Linkedin },
-    { social: Twitter },
-    { social: Github },
-    { social: Mail },
+    { social: Linkedin, link: "https://www.linkedin.com/in/emmanuel-gabokeke" },
+    { social: Twitter, link: "https://x.com/codesbycj" },
+    { social: Github, link: "https://github.com/codesbycj" },
+    { social: Mail, link: "gabokekeemmanuel@gmail.com" },
   ];
 
   return (
@@ -34,7 +34,7 @@ export const Summary = () => {
             {socials.map((each) => {
               return (
                 <div className="bg-gray-600 p-3 rounded-full w-12 h-12">
-                  {<each.social />}
+                  <a href={each.link} target="_blank">{<each.social />}</a>
                 </div>
               );
             })}
@@ -45,31 +45,24 @@ export const Summary = () => {
       <div className="lg:flex-1 lg:px-10 lg:w-170 overflow-x-hidden">
         <div className="text-lg text-gray-300 flex flex-wrap flex-col gap-2">
           <p>
-            I'm a 23-year-old experienced Full Stack Developer with a knack for
-            building products that make a difference. My expertise spans both
-            frontend and backend technologies, enabling me to craft
-            comprehensive solutions from the ground up.{" "}
+            I began my Front End Journey in 2021, assisting in building
+            impactful digital products from concept to completion. I further
+            developed these skills handling solo projects in 2022 with local
+            businesses in my area. My dual expertise in frontend and backend
+            development allows me to architect complete, scalable solutions that
+            address real-world needs.
           </p>
           <p>
-            Throughout my career, I've been deeply involved in the startup
-            ecosystem. I've worked with various startups, embracing the
-            fast-paced, innovative nature of these environments.{" "}
+            I've thrived in fast-paced environments that demand innovation and
+            adaptability. The experience culminated in my most recent
+            internship, giving me invaluable firsthand knowledge of both
+            technical implementation and business strategy.
           </p>
-
           <p>
-            This journey led me to found my own startup, where I gained
-            firsthand experience in every aspect of product development and
-            business operations. During my high school years, I excelled in
-            software development, earning the prestigious title of DUX (top
-            student) in this field.{" "}
-          </p>
-
-          <p>
-            This early achievement laid the foundation for my passion and
-            expertise in programming. When I'm not immersed in code, you'll find
-            me experimenting in the kitchen or bringing ideas to life with my 3D
-            printer. I'm always creating, whether it's digital products or
-            tangible objects.
+            Throughout my career, I have consistently demonstrated my ability to
+            master new technologies and lead teams in building scalable,
+            user-friendly, and high-performing frontend applications that
+            positively impact users and support business goals.
           </p>
         </div>
 
@@ -140,7 +133,7 @@ export const Summary = () => {
                   <div>
                     <ul className="list-disc ms-5 mt-5">
                       {expn.exp.map((ex) => {
-                        return <li className="mt-4">{ex}</li>;
+                        return <li className="mt-4 text-gray-400">{ex}</li>;
                       })}
                     </ul>
                   </div>
@@ -175,7 +168,7 @@ export const Summary = () => {
                   <p className="text-gray-400 font-semibold">{expn.Date}</p>
 
                   <div>
-                    <ul className="list-disc ms-5 mt-5">
+                    <ul className="list-disc ms-5 mt-5 text-gray-400">
                       {expn.exp.map((ex) => {
                         return <li className="mt-4">{ex}</li>;
                       })}
@@ -185,7 +178,7 @@ export const Summary = () => {
                   <div className="mt-5 flex flex-wrap gap-4">
                     {expn.skills.map((skill) => {
                       return (
-                        <p className="px-4 py-1 rounded-3xl bg-[#164728] text-[#22C55E] font-semibold">
+                        <p className="px-4 py-1 rounded-3xl bg-[#164728] text-[#22C55E] font-semibold ">
                           {skill}
                         </p>
                       );

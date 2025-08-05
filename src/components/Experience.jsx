@@ -5,7 +5,7 @@ import { ArrowUp, CircleCheck } from "lucide-react";
 
 export const Experience = () => {
   return (
-    <div className="py-10 px-5 text-white space-y-20">
+    <div id="experience" className="py-10 px-5 text-white space-y-20">
       <div className="lg:w-2/3 lg:mx-auto ">
         <div className="lg:w-1/2 w-full">
           <h2 className="text-4xl font-bold">Essential Tools I Use</h2>
@@ -48,20 +48,21 @@ export const Experience = () => {
           {live.map((exp) => {
             return (
               <div
-                className="flex flex-wrap border border-gray-700 py-10 px-20 rounded-2xl overflow-hidden bg-gray-800
+                className="flex flex-col md:flex-row flex-wrap border border-gray-700 py-10 md:px-20 px-5 rounded-2xl overflow-hidden bg-gray-800
               backdrop-blur-2xl shadow-xs shadow-white"
               >
                 <div className="flex-1 flex-col gap-4 flex">
-                  <p className="font-semibold">{exp.Name}</p>
-                  <p className="text-4xl font-bold border-b border-gray-500 pb-4">
+                  <p className="font-semibold text-xs lg:text-sm">{exp.Name}</p>
+                  <p className="lg:text-4xl text-3xl font-bold border-b border-gray-500 pb-4">
                     {exp.Position}
                   </p>
 
                   <ul className="space-y-4 text-gray-400">
                     {exp.exp.map((work) => {
                       return (
-                        <li className="flex items-center gap-4">
-                          <CircleCheck className="" /> {work}
+                        <li className="flex items-start gap-4">
+                          <p>✪</p>
+                          {work}
                         </li>
                       );
                     })}
@@ -87,7 +88,7 @@ export const Experience = () => {
                   <img
                     src={exp.img}
                     alt=""
-                    className="absolute -right-22 h-full object-cover object-left w-full -bottom-15 
+                    className="md:absolute ms-16 -mb-15 mt-5 -right-22 h-full object-cover object-left w-full -bottom-15 
                     shadow-lg shadow-gray-100 rounded-2xl border border-gray-800"
                   />
                 </div>
@@ -97,7 +98,7 @@ export const Experience = () => {
         </div>
       </div>
 
-      <div className="lg:w-4/5 lg:mx-auto ">
+      <div id="projects" className="lg:w-4/5 lg:mx-auto ">
         <div className="text-center font-semibold space-y-3">
           <h1>PERSONAL PROJECTS</h1>
           <p className="text-5xl">Featured Projects</p>
@@ -105,11 +106,11 @@ export const Experience = () => {
             Ideas, Assignments, Clones ... All of it
           </p>
         </div>
-        <div className="mt-20 space-y-10 grid grid-cols-2 gap-9">
+        <div className="mt-20 space-y-10 grid lg:grid-cols-2 gap-9 grid-cols-1">
           {projects.map((exp) => {
             return (
               <div
-                className="border border-gray-700 py-10 px-15 rounded-2xl overflow-hidden bg-gray-800
+                className="border border-gray-700 py-10 lg:px-15 px-7 rounded-2xl overflow-hidden bg-gray-800
               backdrop-blur-2xl shadow-xs shadow-white"
               >
                 <div className="flex-1 flex-col gap-4 flex">
@@ -120,8 +121,8 @@ export const Experience = () => {
                   <ul className="space-y-4 text-gray-400">
                     {exp.exp.map((exp) => {
                       return (
-                        <li className="flex items-center gap-4">
-                          <CircleCheck className="" /> {exp}
+                        <li className="flex items-start gap-4">
+                          <p>✪</p> {exp}
                         </li>
                       );
                     })}

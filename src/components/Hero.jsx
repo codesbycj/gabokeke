@@ -6,20 +6,20 @@ import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
-    <div className="h-screen bg-black text-white flex items-center justify-center flex-col gap-8 relative">
+    <div id="home" className="h-screen bg-black text-white flex items-center justify-center flex-col gap-8 relative">
       <div className="flex items-center gap-7">
         <div
-          className="rounded-full flex items-center justify-center w-20 h-20
+          className="rounded-full flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20
         bg-white"
         >
           <img src={me} alt="" className="object-contain mt-3" />
         </div>
-        <p className="text-lg font-bold border border-gray-400 p-3 rounded-xl">
+        <p className="lg:text-lg font-bold border border-gray-400 p-3 rounded-xl">
           I'm Gabokeke Emmanuel
         </p>
       </div>
 
-      <div className="text-center relative lg:text-8xl text-5xl font-semibold">
+      <div className="text-center relative lg:text-8xl text-5xl font-bold ">
         {/* <p className="text-4xl">A</p> */}
         <h1 className="text-[#A374FF]">FRONT-END</h1>
         <div className="flex items-center gap-3 justify-center">
@@ -52,13 +52,13 @@ export const Hero = () => {
         </p>
       </div>
 
-      <Link
+      {/* <Link
         to="/summary"
         className="absolute bottom-10 right-20 py-3 px-7 bg-gray-300 
       text-black font-bold shadow-sm shadow-white rounded-sm"
       >
         Quick Summary
-      </Link>
+      </Link> */}
 
       {/* <div>
         <h1>Essential Tools I Use</h1>

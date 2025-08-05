@@ -1,6 +1,6 @@
 import { Box, Briefcase, Home, Menu, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
-import { href } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,12 +24,12 @@ export const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <button className="md:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
+        <button className="lg:hidden p-2" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
         </button>
 
         {/* Desktop Nav Items */}
-        <div className="hidden md:flex items-center gap-10 border py-3 px-6 rounded-xl border-gray-500 -ms-15">
+        <div className="hidden lg:flex items-center gap-10 border py-3 px-6 rounded-xl border-gray-500 -ms-15">
           {navLinks.map((link, index) => {
             return (
               <div
@@ -46,24 +46,29 @@ export const Header = () => {
         </div>
 
         {/* Get in Touch */}
-        <button
-          className="hidden md:block bg-gray-200 text-black
+        <Link
+          to="/summary"
+          className="hidden lg:block bg-gray-200 text-black
          px-6 py-2.5 rounded-lg hover:bg-white text-md font-medium transition-all
          hover:shadow-sm hover:shadow-white"
         >
-          <a href="">Get in Touch</a>
-        </button>
+          Quick Summary
+        </Link>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-black border-t border-gray-100 py-4">
+        <div className="lg:hidden bg-black border-t border-gray-100 py-4">
           <div className="container mx-auto flex flex-col px-4 space-y-4">
             {navLinks.map((link, index) => {
               return (
-                <a href={link.href}
-                className={`block text-md font-medium py-2`}
-                onClick={() => setIsOpen(false)}>{link.label}</a>
+                <a
+                  href={link.href}
+                  className={`block text-md font-medium py-2`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.label}
+                </a>
               );
             })}
           </div>
