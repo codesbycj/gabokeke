@@ -8,6 +8,10 @@ import php from "../assets/PHP.svg";
 import git from "../assets/Git.svg";
 import gemcode from "../assets/Gemcode.png";
 import bole from "../assets/Bole.png";
+import okekeAI from "../assets/Okeke_AI.png"
+import okekeCart from "../assets/Okeke_Cart.png"
+import okekeDash from "../assets/Okeke_Dash.png"
+import okekeInterior from "../assets/Okeke_Interior.png"
 import project1 from "../assets/project1.png";
 import project2 from "../assets/project2.png";
 
@@ -175,7 +179,7 @@ export const live = [
 export const projects = [
   {
     Name: "Fully Functional AI",
-    img: "",
+    img: okekeAI,
     exp: [
       "Engineered a custom API wrapper around Google's Gemini AI",
       "Implemented real-time streaming responses with React Context API, solving complex state management challenges",
@@ -187,7 +191,7 @@ export const projects = [
 
   {
     Name: "Streaming Service",
-    img: "",
+    img: okekeDash,
     exp: [
       "Engineered a Netflix-style UI with dynamic content discovery using TMDB's API",
       "Built a Firebase-powered auth flow supporting logins",
@@ -202,7 +206,7 @@ export const projects = [
 
   {
     Name: "Fully Interactive Dashboard",
-    img: "",
+    img: okekeDash,
     exp: [
       "Designed a fully responsive layout that adapts to phones, tablets, and desktops.",
       "Built interactive price charts with toggleable timeframes for user-driven analysis.",
@@ -218,7 +222,7 @@ export const projects = [
 
   {
     Name: "Shopping Cart",
-    img: "",
+    img: okekeCart,
     exp: [
       "Engineered a real-time cart system using React Context API/Redux, handling 50+ items with optimized re-renders.",
       "Achieved 100% mobile compatibility with touch-friendly controls and adaptive CSS Grid layouts.",
@@ -236,7 +240,7 @@ export const projects = [
 
   {
     Name: "Interior Decoration Landing Page",
-    img: "",
+    img: okekeInterior,
     exp: [
       "Fully Dynamic Interior Decoration Landing Page"
     ],

@@ -1,8 +1,18 @@
-import { ArrowUp, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import {
+  ArrowUp,
+  Github,
+  Linkedin,
+  LucideArrowLeft,
+  LucideCircleArrowLeft,
+  Mail,
+  MoveLeft,
+  Twitter,
+} from "lucide-react";
 import React from "react";
 import Profile from "../assets/Profile.JPG";
 import { experience, projects } from "../data/Experience";
 import project from "../assets/project1.png";
+import { Link } from "react-router-dom";
 
 export const Summary = () => {
   const socials = [
@@ -12,8 +22,15 @@ export const Summary = () => {
     { social: Mail, link: "gabokekeemmanuel@gmail.com" },
   ];
 
+
   return (
     <div className="flex lg:flex-row bg-[#121212] text-white lg:px-40 py-16 gap-20 flex-col px-5               overflow-x-hidden">
+      <div className="flex">
+        <Link to="/">
+          <LucideArrowLeft />
+        </Link>
+      </div>
+
       <div className="w-100 relative flex items-start justify-center">
         <div className="lg:fixed flex flex-col gap-4 flex-wrap">
           <img
@@ -34,7 +51,9 @@ export const Summary = () => {
             {socials.map((each) => {
               return (
                 <div className="bg-gray-600 p-3 rounded-full w-12 h-12">
-                  <a href={each.link} target="_blank">{<each.social />}</a>
+                  <a href={each.link} target="_blank">
+                    {<each.social />}
+                  </a>
                 </div>
               );
             })}
@@ -159,7 +178,7 @@ export const Summary = () => {
           {projects.map((expn) => {
             return (
               <div className="border border-gray-800 rounded-xl px-9 py-5 mt-7">
-                <img src={project} alt="" srcset="" />
+                <img src={expn.img} alt="" srcset="" />
                 <div className="mt-10">
                   <p className="text-2xl font-semibold flex gap-3 items-center">
                     {expn.Name} <ArrowUp className=" rotate-30" />
