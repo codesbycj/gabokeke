@@ -72,6 +72,14 @@ export const Header = () => {
               );
             })}
           </div>
+          <div className="w-full flex font-bold items-center justify-center mt-5">
+            <Link
+              to="/summary"
+              className="text-black text-center w-full bg-white py-2 rounded-xl"
+            >
+              Quick Summary
+            </Link>
+          </div>
         </div>
       )}
     </nav>

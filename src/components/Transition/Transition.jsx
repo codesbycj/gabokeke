@@ -22,8 +22,6 @@ export const Transition = () => {
   const websiteContent = useRef(null);
 
   const introHeaders = [
-    "Front End Expertise",
-    "<span>Where Ideas </span> Becomes Reality",
     "<span>Welcome to </span> My World",
   ];
 
@@ -58,7 +56,7 @@ export const Transition = () => {
         }
       };
 
-      const pinnedHeight = window.innerHeight * 8;
+      const pinnedHeight = window.innerHeight * 4;
 
       gsap.set(handContainer.current, { rotationZ: -90 });
 
@@ -70,8 +68,8 @@ export const Transition = () => {
         pinSpacing: true,
         onUpdate: (self) => {
           const progress = self.progress;
-          const rotation = Math.min((progress * 5) / 3, 1);
-          const totalRotation = rotation * 1080 - 90;
+          const rotation = Math.min((progress * 3) / 1, 1);
+          const totalRotation = rotation * 180 - 90;
           const rotationCycle = ((totalRotation + 90) % 360) - 90;
 
           gsap.set(handContainer.current, { rotationZ: rotationCycle });
@@ -85,27 +83,27 @@ export const Transition = () => {
             currentCycle = newCycle;
             updateHeader();
 
-            if (newCycle === 1 && !imgReveal) {
-              gsap.to(handImgRef.current, { opacity: 1, duration: 0.3 });
-              gsap.to(introCopyRef.current.querySelectorAll("p"), {
-                x: 0,
-                opacity: 1,
-                duration: 0.5,
-                stagger: 0.1,
-              });
+            // if (newCycle === 1 && !imgReveal) {
+            //   gsap.to(handImgRef.current, { opacity: 1, duration: 0.3 });
+            //   gsap.to(introCopyRef.current.querySelectorAll("p"), {
+            //     x: 0,
+            //     opacity: 1,
+            //     duration: 0.5,
+            //     stagger: 0.1,
+            //   });
 
-              imgReveal = true;
-            } else if (newCycle !== 1 && imgReveal) {
-              gsap.to(handImgRef.current, { opacity: 0, duration: 0.3 });
-              gsap.to(introCopyRef.current.querySelectorAll("p"), {
-                x: 20,
-                opacity: 0,
-                duration: 0.5,
-                stagger: 0.1,
-              });
+            //   imgReveal = true;
+            // } else if (newCycle !== 1 && imgReveal) {
+            //   gsap.to(handImgRef.current, { opacity: 0, duration: 0.3 });
+            //   gsap.to(introCopyRef.current.querySelectorAll("p"), {
+            //     x: 20,
+            //     opacity: 0,
+            //     duration: 0.5,
+            //     stagger: 0.1,
+            //   });
 
-              imgReveal = false;
-            }
+            //   imgReveal = false;
+            // }
           }
 
           if (progress <= 6 / 8) {
