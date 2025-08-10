@@ -7,13 +7,14 @@ import mysql from "../assets/MySQL.svg";
 import php from "../assets/PHP.svg";
 import git from "../assets/Git.svg";
 import gemcode from "../assets/Gemcode.png";
+import yelo from "../assets/Yelo.png"
 import bole from "../assets/Bole.png";
 import okekeAI from "../assets/Okeke_AI.png"
 import okekeCart from "../assets/Okeke_Cart.png"
 import okekeDash from "../assets/Okeke_Dash.png"
 import okekeInterior from "../assets/Okeke_Interior.png"
 import project1 from "../assets/project1.png";
-import project2 from "../assets/project2.png";
+import project2 from "../assets/depotters.png";
 
 export const experience = [
   {
@@ -127,7 +128,7 @@ export const live = [
       "Built admin dashboards that mirrored complex MYSQL queries into digestible frontend visualizations as well as testing pages to ensure consistent performance.",
       "Integrated RESTful APIs to fetch and display dynamic data, enhancing user engagement.",
     ],
-    img: gemcode,
+    img: yelo,
   },
 
   {
