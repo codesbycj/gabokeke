@@ -134,7 +134,7 @@ export const Loading = () => {
           <Header />
           <Hero />
         </div>
-        <div className="numbers flex items-center absolute bottom-7 left-7 overflow-hidden">
+        <div className="numbers flex items-center absolute bottom-20 left-7 overflow-hidden">
           <div className="number1 number overflow-hidden">
             <div className="number-wrap transform translate-y-full flex flex-col">
               <span>1</span>
