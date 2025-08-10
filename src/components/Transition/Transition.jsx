@@ -56,7 +56,7 @@ export const Transition = () => {
         }
       };
 
-      const pinnedHeight = window.innerHeight * 4;
+      const pinnedHeight = window.innerHeight * 3.5;
 
       gsap.set(handContainer.current, { rotationZ: -90 });
 
