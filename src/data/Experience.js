@@ -101,7 +101,7 @@ export const experience = [
   {
     Name: "Bole Festival",
     Position: "Front End Developer - Freelance",
-    Date: "Jan 2023",
+    Date: "Sep 2022 - Oct 2022",
     exp: [
       "Assisted in building responsive festival web pages using HTML, CSS, and JavaScript under senior developer guidance.",
       "Collaborated with the team using Git/GitHub to manage code updates and version control.",

@@ -44,7 +44,7 @@ export const Hero = () => {
       </div>
 
       <div className="text-center font-semibold">
-        <p className="lg:text-3x">
+        <p className="md:text-3xl">
           I create scalable applications that borders on <br />
           <span className="text-[#A374FF]">efficiency</span>,{" "}
           <span className="text-[#FFD074]">aesthetics</span> &{" "}
