@@ -32,7 +32,7 @@ export const Hero = () => {
         </div>
         <h1 className="text-[#17F1D1]">
           {" "}
-          <span className="text-white">&</span> DEVELOPER
+          <span className="text-white">&</span> DEVELOPER.
         </h1>
 
         <div className="absolute animate-move top-0 right-0">
