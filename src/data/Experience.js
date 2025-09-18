@@ -3,7 +3,7 @@ import fiverr from "../assets/fIVERR.png";
 import bootstrap from "../assets/bootstrap.svg";
 import nextjs from "../assets/nextjs.svg";
 import firebase from "../assets/firebase.svg";
-import jquery from "../assets/jQuery.svg";
+import jquery from "../assets/jquery.svg";
 import javascript from "../assets/Javascript.svg";
 import css from "../assets/CSS.svg";
 import html from "../assets/HTML.svg";
