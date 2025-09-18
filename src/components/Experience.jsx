@@ -7,12 +7,19 @@ export const Experience = () => {
   return (
     <div id="experience" className="py-10 px-5 text-white space-y-20">
       <div className="lg:w-2/3 lg:mx-auto ">
-        <div className="lg:w-1/2 w-full">
-          <h2 className="text-4xl font-bold">Essential Tools I Use</h2>
+        <div className="lg:w-2/3 w-full">
+          <h2 className="text-4xl font-bold">ABOUT ME</h2>
+
           <p className="mt-2 text-gray-400">
-            My expertise spans a diverse range of technologies, enabling me to
-            deliver comprehensive and cutting-edge solutions across various
-            platforms.{" "}
+            A Frontend developer that develops high-performing, scalable web
+            applications paired with clean, user interface to drive the best
+            results .
+          </p>
+          <p className="mt-2 text-gray-400">
+            I have throughout my career, consistently demonstrated my ability to
+            master new technologies and lead teams in building scalable,
+            user-friendly, and high-performing frontend applications that
+            positively impact users and support business goals using the following tools.{" "}
           </p>
         </div>
         <div className="grid lg:grid-cols-4 grid-cols md:grid-cols-2 gap-x-10 gap-y-5 mt-5">
@@ -122,7 +129,7 @@ export const Experience = () => {
                     {exp.exp.map((exp) => {
                       return (
                         <li className="flex items-start gap-4">
-                          <p>✪</p> {exp}
+                           {exp}
                         </li>
                       );
                     })}

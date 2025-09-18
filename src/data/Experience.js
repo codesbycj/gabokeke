@@ -1,5 +1,9 @@
 import react from "../assets/React.svg";
 import fiverr from "../assets/fIVERR.png";
+import bootstrap from "../assets/bootstrap.svg";
+import nextjs from "../assets/nextjs.svg";
+import firebase from "../assets/firebase.svg";
+import jquery from "../assets/jQuery.svg";
 import javascript from "../assets/Javascript.svg";
 import css from "../assets/CSS.svg";
 import html from "../assets/HTML.svg";
@@ -102,6 +106,7 @@ export const live = [
     Position: "Frontend Developer",
     exp: [
       "Delivery of multiple high-priority web products on schedule by leading a team consisting of a fullstack engineer and two frontend engineers, helping the company meet monthly targets.",
+      "Developed an in-house AI, now known as Okeke AI, which serves as a reliable fallback solution during ChatGPT downtimes, ensuring uninterrupted productivity for the team",
       "Cut team workload by over 70% by migrating a web application from manual data entry to automated API-driven updates, freeing the team to focus on higher-value tasks.",
       "Led sprint planning meetings and worked on improving processes to boost efficiency and productivity.",
       "Managed several projects, such as the Listkeeping Dashboard, Tailwind CSS migration and more. This involved coordinating teams, meeting project objectives, and developing effective strategies for successful implementation.",
@@ -162,9 +167,7 @@ export const projects = [
     Name: "Fully Functional AI",
     img: okekeAI,
     exp: [
-      "Engineered a custom API wrapper around Google's Gemini AI",
-      "Implemented real-time streaming responses with React Context API, solving complex state management challenges",
-      "Optimized API call efficiency through intelligent caching, reducing costs by 25%",
+      "Okeke AI, a personal artificial intelligence assistant designed to interact with users in real-time, answer queries, and streamline simple tasks — all with a lightweight, responsive interface.",
     ],
     skills: ["ReactJs", "Context API", "API Integration", "CSS"],
     link: "https://okeke-ai.vercel.app/",
@@ -174,9 +177,7 @@ export const projects = [
     Name: "Streaming Service",
     img: okekeDash,
     exp: [
-      "Engineered a Netflix-style UI with dynamic content discovery using TMDB's API",
-      "Built a Firebase-powered auth flow supporting logins",
-      "Optimized video streaming with lazy-loaded thumbnails and adaptive bitrate handling",
+      "Built a custom streaming service platform that allowed users to browse, watch, and interact with content in real time. Designed with a focus on smooth playback, responsive layouts, and a clean user experience.",
     ],
     skills: ["ReactJs", "Firebase"],
     link: "https://cj-interior.vercel.app/",
@@ -186,9 +187,7 @@ export const projects = [
     Name: "Fully Interactive Dashboard",
     img: okekeDash,
     exp: [
-      "Designed a fully responsive layout that adapts to phones, tablets, and desktops.",
-      "Built interactive price charts with toggleable timeframes for user-driven analysis.",
-      "Lazy-loaded charts/tables to handle large datasets efficiently, ensuring fast renders.",
+      "Developed a fully interactive analytics dashboard that transformed complex data into clear, actionable visualizations. The dashboard included real-time updates, customizable views, and responsive charts, giving teams instant insights and reducing reporting time by over 50%.",
     ],
 
     skills: ["ReactJs", "Tailwind"],
@@ -199,10 +198,7 @@ export const projects = [
     Name: "Shopping Cart",
     img: okekeCart,
     exp: [
-      "Engineered a real-time cart system using React Context API/Redux, handling 50+ items with optimized re-renders.",
-      "Achieved 100% mobile compatibility with touch-friendly controls and adaptive CSS Grid layouts.",
-      "Implemented localStorage sync to retain cart items across sessions, improving bounce rates by 25%.",
-      "Built dynamic product cards with quantity adjusters and instant price calculation",
+      "Created a scalable shopping cart system that supported product sorting, filtering, and seamless checkout flows. Designed with React and state management tools, it ensured a smooth user experience and minimized cart abandonment rates.",
     ],
 
     skills: ["ReactJs", "TailwindCSS"],
@@ -223,29 +219,34 @@ export const projects = [
 
 export const technologies = [
   {
-    app: "React",
+    app: "React - Vite",
     type: "Framework",
     img: react,
   },
   {
-    app: "Javascript",
-    type: "Interaction",
-    img: javascript,
-  },
-  {
-    app: "CSS",
-    type: "Styling",
-    img: css,
-  },
-  {
-    app: "HTML",
-    type: "Structure",
-    img: html,
+    app: "Next",
+    type: "Framework",
+    img: nextjs,
   },
   {
     app: "Tailwind CSS",
     type: "CSS Framework",
     img: tailwind,
+  },
+  {
+    app: "BootStrap CSS",
+    type: "CSS Framework",
+    img: bootstrap,
+  },
+  {
+    app: "Firebase",
+    type: "BaaS",
+    img: firebase,
+  },
+  {
+    app: "JQuery",
+    type: "Javascript Library",
+    img: jquery,
   },
   {
     app: "MySQL",
@@ -261,5 +262,20 @@ export const technologies = [
     app: "Git",
     type: "Version Control",
     img: git,
+  },
+  {
+    app: "Javascript",
+    type: "Interaction",
+    img: javascript,
+  },
+  {
+    app: "CSS",
+    type: "Styling",
+    img: css,
+  },
+  {
+    app: "HTML",
+    type: "Structure",
+    img: html,
   },
 ];
