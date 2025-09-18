@@ -1,4 +1,4 @@
-import { Box, Briefcase, Home, Menu, X } from "lucide-react";
+import { Box, Briefcase, Github, Home, Linkedin, Menu, Twitter, X } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -46,14 +46,28 @@ export const Header = () => {
         </div>
 
         {/* Get in Touch */}
-        <Link
+        {/* <Link
           to="/summary"
-          className="hidden lg:block bg-gray-200 text-black
+          className=" bg-gray-200 text-black
          px-6 py-2.5 rounded-lg hover:bg-white text-md font-medium transition-all
          hover:shadow-sm hover:shadow-white"
         >
           Quick Summary
-        </Link>
+        </Link> */}
+        <div className="gap-5 hidden lg:flex">
+          <a
+            href="https://www.linkedin.com/in/emmanuel-gabokeke"
+            target="_blank"
+          >
+            <Linkedin className=" p-2 bg-gray-800 w-10 h-10 rounded-xl text-gray-400 hover:text-white transition-colors" />
+          </a>
+          <a href="https://x.com/codesbycj" target="_blank">
+            <Twitter className=" p-2 bg-gray-800 w-10 h-10 rounded-xl text-gray-400 hover:text-white transition-colors" />
+          </a>
+          <a href="https://github.com/codesbycj" target="_blank">
+            <Github className=" p-2 bg-gray-800 w-10 h-10 rounded-xl text-gray-400 hover:text-white transition-colors" />
+          </a>
+        </div>
       </div>
 
       {/* Mobile Menu */}

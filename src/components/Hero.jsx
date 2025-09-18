@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 
 export const Hero = () => {
   return (
-    <div id="home" className="h-screen bg-black text-white flex items-center justify-center flex-col gap-8 relative">
+    <div
+      id="home"
+      className="h-screen bg-black text-white flex items-center justify-center flex-col gap-8 relative"
+    >
       <div className="flex items-center gap-7">
         <div
           className="rounded-full flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20
@@ -24,16 +27,24 @@ export const Hero = () => {
         <h1 className="text-[#A374FF]">FRONT-END</h1>
         <div className="flex items-center gap-3 justify-center">
           {" "}
-          <h1 className="text-[#FFD074]">DESIGNER </h1>
+          <h1 className="text-[#FFD074]">DEVELOPER </h1>
           <span className="text-white text-lg text-center font-semibold">
             {" "}
             // 3+ Years <br /> of Experience
           </span>
         </div>
-        <h1 className="text-[#17F1D1]">
+
+        <div className="flex items-center gap-3 justify-center">
+          <span className="text-white text-lg text-center font-semibold">
+          </span>
+          <h1 className="text-[#17F1D1]">
+            <span className="text-white">&</span> ENGINEER
+          </h1>
+        </div>
+        {/* <h1 className="">
           {" "}
-          <span className="text-white">&</span> DEVELOPER.
-        </h1>
+          <span className="text-white">&</span> DESIGNER
+        </h1> */}
 
         <div className="absolute animate-move top-0 right-0">
           <img src={cursor2} alt="" />
@@ -59,22 +70,6 @@ export const Hero = () => {
       >
         Quick Summary
       </Link> */}
-
-      {/* <div>
-        <h1>Essential Tools I Use</h1>
-        <p>Discover the powerful tools and technologies I use to create exceptional,
-           high-performing websites & applications</p>
-
-        <div>
-          <div>
-            <img src="" alt="" />
-            <div>
-              <p>CSS3</p>
-              <p>User Interface</p>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

@@ -15,17 +15,13 @@ export const Home = () => {
 
   return (
     <div className="bg-black overflow-x-hidden">
-      {isLoading ? (
-        <Loading />
-      ) : (
-        <main>
-          <Header />
-          <Hero />
-          <Transition />
-          <Experience />
-          <Footer />
-        </main>
-      )}
+      <main>
+        <Header />
+        <Hero />
+        {/* <Transition /> */}
+        <Experience />
+        <Footer />
+      </main>
     </div>
   );
 };

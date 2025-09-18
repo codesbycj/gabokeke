@@ -1,4 +1,5 @@
 import react from "../assets/React.svg";
+import fiverr from "../assets/fIVERR.png";
 import javascript from "../assets/Javascript.svg";
 import css from "../assets/CSS.svg";
 import html from "../assets/HTML.svg";
@@ -7,19 +8,19 @@ import mysql from "../assets/MySQL.svg";
 import php from "../assets/PHP.svg";
 import git from "../assets/Git.svg";
 import gemcode from "../assets/Gemcode.png";
-import yelo from "../assets/Yelo.png"
+import yelo from "../assets/Yelo.png";
 import bole from "../assets/Bole.png";
-import okekeAI from "../assets/Okeke_AI.png"
-import okekeCart from "../assets/Okeke_Cart.png"
-import okekeDash from "../assets/Okeke_Dash.png"
-import okekeInterior from "../assets/Okeke_Interior.png"
+import okekeAI from "../assets/Okeke_AI.png";
+import okekeCart from "../assets/Okeke_Cart.png";
+import okekeDash from "../assets/Okeke_Dash.png";
+import okekeInterior from "../assets/Okeke_Interior.png";
 import project1 from "../assets/project1.png";
 import project2 from "../assets/depotters.png";
 
 export const experience = [
   {
     Name: "Yelocode Systems",
-    Position: "Full Stack Developer - Intern",
+    Position: "Full Stack Developer",
     Date: "Jan 2025 - July 2025",
     exp: [
       "I lead the frontend engineering team consisting of three frontend engineers and two mobile engineers, with a focus on building, maintaining and improving multiple products and applications.",
@@ -54,12 +55,7 @@ export const experience = [
       "Researched and applied UI best practices (contrast ratios, intuitive navigation) to compensate for lack of designer input.",
       "Pixel - Perfect Responsiveness: Created a fully responsive website that's optimized perfectly for all devices ",
     ],
-    skills: [
-      "HTML",
-      "CSS",
-      "BootStrapCSS",
-      "PHP",
-    ],
+    skills: ["HTML", "CSS", "BootStrapCSS", "PHP"],
   },
 
   {
@@ -70,13 +66,7 @@ export const experience = [
       "Designed and coded the homepage from scratch, ensuring fast loading and mobile-friendly responsiveness",
     ],
 
-    skills: [
-      "ReactJs",
-      "TailwindCSS",
-      "BootStrapCSS",
-      "NextJS",
-      "JQuery",
-    ],
+    skills: ["ReactJs", "TailwindCSS", "BootStrapCSS", "NextJS", "JQuery"],
   },
 
   {
@@ -89,13 +79,7 @@ export const experience = [
       "Made a property search site with interactive maps, filters, and virtual tour embeds for realtors.",
     ],
 
-    skills: [
-      "ReactJs",
-      "HTML",
-      "CSS",
-      "TailwindCSS",
-      "BootStrapCSS",
-    ],
+    skills: ["ReactJs", "HTML", "CSS", "TailwindCSS", "BootStrapCSS"],
   },
 
   {
@@ -108,64 +92,60 @@ export const experience = [
       "Tested pages across browsers/devices to ensure consistent performance before launch.",
     ],
 
-    skills: [
-      "HTML",
-      "CSS",
-      "Javascript"
-    ],
+    skills: ["HTML", "CSS", "Javascript"],
   },
 ];
 
 export const live = [
   {
     Name: "Yelocode Systems - 2025",
-    Position: "Full Stack Developer Intern",
+    Position: "Frontend Developer",
     exp: [
-      "I lead the frontend engineering team consisting of three frontend engineers and two mobile engineers, with a focus on building, maintaining and improving multiple products and applications.",
-      "Developed and maintained responsive Websites using ReactJS and PHP reducing load time by 30% through code optimization.",
-      "Built reusable UI components (buttons, modals, forms) with TailwindCSS on multiple projects, improving development speed by 25%.",
-      "Collaborated with other Frontend designers to implement Figma/Adobe Designs into pixel-perfect, accessible interfaces.",
-      "Built admin dashboards that mirrored complex MYSQL queries into digestible frontend visualizations as well as testing pages to ensure consistent performance.",
-      "Integrated RESTful APIs to fetch and display dynamic data, enhancing user engagement.",
+      "Delivery of multiple high-priority web products on schedule by leading a team consisting of a fullstack engineer and two frontend engineers, helping the company meet monthly targets.",
+      "Cut team workload by over 70% by migrating a web application from manual data entry to automated API-driven updates, freeing the team to focus on higher-value tasks.",
+      "Led sprint planning meetings and worked on improving processes to boost efficiency and productivity.",
+      "Managed several projects, such as the Listkeeping Dashboard, Tailwind CSS migration and more. This involved coordinating teams, meeting project objectives, and developing effective strategies for successful implementation.",
     ],
     img: yelo,
-  },
-
-  {
-    Name: "DePotters - 2025",
-    Position: "Front End Developer",
-    exp: [
-      "Built the entire frontend for De Potters with no pre-existing UI/UX mockups, and responsive layouts using PHP and BootStrapCSS.",
-      "Researched and applied UI best practices (contrast ratios, intuitive navigation) to compensate for lack of designer input.",
-      "Pixel - Perfect Responsiveness: Created a fully responsive website that's optimized perfectly for all devices ",
-    ],
-    img: project2,
-    link: "https://gemcodesystemlimited.com/",
   },
 
   {
     Name: "Gemcode Systems Limited- 2025",
     Position: "Front End Developer",
     exp: [
-      "Designed and coded the homepage from scratch, ensuring fast loading and mobile-friendly responsiveness",
+      "Improved customer engagement and retention by collaborating with an external team to design and develop the company's website using ReactJS.",
+      "Optimized the website with SEO strategies that doubled ad conversion rates, turning existing traffic into significantly more revenue.",
+      "Reduced hosting and infrastructure cost on a project by maximizing site efficiency and reducing load times through Redux toolkits, Context API and components.",
     ],
     img: gemcode,
     link: "https://gemcodesystemlimited.com/",
   },
 
   {
-    Name: "Upwork & Fiverr - 2024",
+    Name: "DePotters - 2025",
     Position: "Front End Developer",
     exp: [
-      "Designed a food delivery site with online ordering and real-time menu updates for local SEO",
-      "Created a visually striking portfolio with smooth animations, gallery grids, and contact forms for artists",
-      "Made a property search site with interactive maps, filters, and virtual tour embeds for realtors.",
+      "Developed and managed the current version of the company's website to improve customer engagement and retention.",
+      "Optimized the website with SEO strategies that tripled, even quadripled ad conversion rates",
+      "Worked hands in hands with the CEO to design and implement various web solutions, always focused on meeting requirements and delivering high-quality results.",
     ],
-    img: project1,
+    img: project2,
+    link: "http://depotterglobal.com",
   },
 
   {
-    Name: "Bole Festival - 2023",
+    Name: "Upwork & Fiverr - 2024",
+    Position: "Front End Developer",
+    exp: [
+      "Worked with a diverse range of clients, including Jollof Republik and Babelos, creating custom web solutions tailored to their needs.",
+      "Created a visually striking portfolio with smooth animations, gallery grids, and contact forms for artists",
+      "Adapted quickly to diverse tools and workflows, from Ajax and REST APIs to state management systems, while staying collaborative, documenting processes, and continuously improving based on industry trends ",
+    ],
+    img: fiverr,
+  },
+
+  {
+    Name: "Bole Festival - 2022",
     Position: "Front End Developer",
     exp: [
       "Assisted in building responsive festival web pages using HTML, CSS, and JavaScript under senior developer guidance.",
@@ -198,10 +178,7 @@ export const projects = [
       "Built a Firebase-powered auth flow supporting logins",
       "Optimized video streaming with lazy-loaded thumbnails and adaptive bitrate handling",
     ],
-    skills: [
-      "ReactJs",
-      "Firebase",
-    ],
+    skills: ["ReactJs", "Firebase"],
     link: "https://cj-interior.vercel.app/",
   },
 
@@ -214,10 +191,7 @@ export const projects = [
       "Lazy-loaded charts/tables to handle large datasets efficiently, ensuring fast renders.",
     ],
 
-    skills: [
-      "ReactJs",
-      "Tailwind"
-    ],
+    skills: ["ReactJs", "Tailwind"],
     link: "https://cjdash.vercel.app/",
   },
 
@@ -231,10 +205,7 @@ export const projects = [
       "Built dynamic product cards with quantity adjusters and instant price calculation",
     ],
 
-    skills: [
-      "ReactJs",
-      "TailwindCSS",
-    ],
+    skills: ["ReactJs", "TailwindCSS"],
 
     link: "https://cj-cart.vercel.app/",
   },
@@ -242,14 +213,9 @@ export const projects = [
   {
     Name: "Interior Decoration Landing Page",
     img: okekeInterior,
-    exp: [
-      "Fully Dynamic Interior Decoration Landing Page"
-    ],
+    exp: ["Fully Dynamic Interior Decoration Landing Page"],
 
-    skills: [
-      "ReactJs",
-      "TailwindCSS",
-    ],
+    skills: ["ReactJs", "TailwindCSS"],
 
     link: "https://cj-interior.vercel.app/",
   },
