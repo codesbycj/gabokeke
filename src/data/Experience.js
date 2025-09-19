@@ -18,7 +18,6 @@ import okekeAI from "../assets/Okeke_AI.png";
 import okekeCart from "../assets/Okeke_Cart.png";
 import okekeDash from "../assets/Okeke_Dash.png";
 import okekeInterior from "../assets/Okeke_Interior.png";
-import project1 from "../assets/project1.png";
 import project2 from "../assets/depotters.png";
 
 export const experience = [
@@ -150,7 +149,7 @@ export const live = [
   },
 
   {
-    Name: "Bole Festival - 2022",
+    Name: "Bole Festival - 2021",
     Position: "Front End Developer",
     exp: [
       "Assisted in building responsive festival web pages using HTML, CSS, and JavaScript under senior developer guidance.",
