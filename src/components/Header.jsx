@@ -1,4 +1,13 @@
-import { Box, Briefcase, Github, Home, Linkedin, Menu, Twitter, X } from "lucide-react";
+import {
+  Box,
+  Briefcase,
+  Github,
+  Home,
+  Linkedin,
+  Menu,
+  Twitter,
+  X,
+} from "lucide-react";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -87,12 +96,20 @@ export const Header = () => {
             })}
           </div>
           <div className="w-full flex font-bold items-center justify-center mt-5">
-            <Link
-              to="/summary"
-              className="text-black text-center w-full bg-white py-2 rounded-xl"
-            >
-              Quick Summary
-            </Link>
+            <div className="gap flex justify-between w-1/2">
+              <a
+                href="https://www.linkedin.com/in/emmanuel-gabokeke"
+                target="_blank"
+              >
+                <Linkedin className=" p-2 bg-gray-800 w-10 h-10 rounded-xl text-gray-400 hover:text-white transition-colors" />
+              </a>
+              <a href="https://x.com/codesbycj" target="_blank">
+                <Twitter className=" p-2 bg-gray-800 w-10 h-10 rounded-xl text-gray-400 hover:text-white transition-colors" />
+              </a>
+              <a href="https://github.com/codesbycj" target="_blank">
+                <Github className=" p-2 bg-gray-800 w-10 h-10 rounded-xl text-gray-400 hover:text-white transition-colors" />
+              </a>
+            </div>
           </div>
         </div>
       )}
