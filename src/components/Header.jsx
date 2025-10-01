@@ -21,7 +21,7 @@ export const Header = () => {
     { href: "#projects", label: "Projects", icon: Box },
   ];
   return (
-    <nav
+    <header
       className="fixed top-0 left-0 right-0 bg-black backdrop-blur-sm z-50 border-b border-gray-400
     shadow-sm text-white"
     >
@@ -113,6 +113,6 @@ export const Header = () => {
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 };
