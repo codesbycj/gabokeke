@@ -50,7 +50,7 @@ export const experience = [
   },
 
   {
-    Name: "DePotters",
+    Name: "Hospyta",
     Position: "Front End Developer - Contract",
     Date: "May 2025",
     exp: [
@@ -126,7 +126,7 @@ export const live = [
   },
 
   {
-    Name: "DePotters - 2025",
+    Name: "Hospyta - 2025",
     Position: "Front End Developer",
     exp: [
       "Developed and managed the current version of the company's website to improve customer engagement and retention.",
@@ -134,7 +134,7 @@ export const live = [
       "Worked hands in hands with the CEO to design and implement various web solutions, always focused on meeting requirements and delivering high-quality results.",
     ],
     img: project2,
-    link: "http://depotterglobal.com",
+    link: "https://hospyta.com",
   },
 
   {
@@ -202,7 +202,7 @@ export const projects = [
 
     skills: ["ReactJs", "TailwindCSS"],
 
-    link: "https://cj-cart.vercel.app/",
+    link: "https://lotech.vercel.app/",
   },
 
   {
