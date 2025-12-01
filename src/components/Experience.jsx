@@ -11,14 +11,14 @@ export const Experience = () => {
           <h2 className="text-4xl font-bold">ABOUT ME</h2>
 
           <p className="mt-2 text-gray-400">
-            A Frontend developer that develops high-performing, scalable web
+            A Fullstack developer that develops high-performing, scalable web
             applications paired with clean, user interface to drive the best
             results .
           </p>
           <p className="mt-2 text-gray-400">
             I have throughout my career, consistently demonstrated my ability to
             master new technologies and lead teams in building scalable,
-            user-friendly, and high-performing frontend applications that
+            user-friendly, and high-performing applications that
             positively impact users and support business goals using the following tools.{" "}
           </p>
         </div>

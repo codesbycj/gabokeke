@@ -102,7 +102,7 @@ export const experience = [
 export const live = [
   {
     Name: "Yelocode Systems - 2025",
-    Position: "Frontend Developer",
+    Position: "Fullstack Developer",
     exp: [
       "Delivery of multiple high-priority web products on schedule by leading a team consisting of a fullstack engineer and two frontend engineers, helping the company meet monthly targets.",
       "Developed an in-house AI, now known as Okeke AI, which serves as a reliable fallback solution during ChatGPT downtimes, ensuring uninterrupted productivity for the team",
