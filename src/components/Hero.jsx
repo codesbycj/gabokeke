@@ -24,7 +24,7 @@ export const Hero = () => {
 
       <div className="text-center relative lg:text-8xl text-5xl font-bold ">
         {/* <p className="text-4xl">A</p> */}
-        <h1 className="text-[#A374FF]">FULLSTACK</h1>
+        <h1 className="text-[#A374FF]">FRONTEND</h1>
         <div className="flex items-center gap-3 justify-center">
           {" "}
           <h1 className="text-[#FFD074]">DEVELOPER </h1>

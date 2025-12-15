@@ -11,7 +11,7 @@ export const Experience = () => {
           <h2 className="text-4xl font-bold">ABOUT ME</h2>
 
           <p className="mt-2 text-gray-400">
-            A Fullstack developer that develops high-performing, scalable web
+            A Frontend developer that develops high-performing, scalable web
             applications paired with clean, user interface to drive the best
             results .
           </p>
