@@ -19,8 +19,12 @@ import okekeCart from "../assets/Okeke_Cart.png";
 import okekeDash from "../assets/Okeke_Dash.png";
 import okekeInterior from "../assets/Okeke_Interior.png";
 import project2 from "../assets/depotters.png";
+import hospyta from "../assets/Hospyta.png"
+import zeus from "../assets/Zeus.png"
 
 export const experience = [
+  
+
   {
     Name: "Yelocode Systems",
     Position: "Full Stack Developer",
@@ -100,6 +104,18 @@ export const experience = [
 ];
 
 export const live = [
+  {
+    Name: "ZEUS - 2025",
+    Position: "Frontend Developer",
+    exp: [
+      "Delivered a fully remodeled CRM platform that improved internal workflows, data accuracy, and day-to-day efficiency for business operations.",
+      "Enabled faster decision-making by integrating the database and APIs to provide real-time, reliable access to customer and operational data.",
+      "Increased team productivity by optimizing frontend performance and state management, reducing delays and friction in daily CRM usage.",
+      "Shipped a production-ready CRM solution that supported business growth and scaled with increasing data and user demands.",
+    ],
+    img: yelo,
+  },
+
   {
     Name: "Yelocode Systems - 2025",
     Position: "Fullstack Developer",
