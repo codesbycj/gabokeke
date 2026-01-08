@@ -113,7 +113,7 @@ export const live = [
       "Increased team productivity by optimizing frontend performance and state management, reducing delays and friction in daily CRM usage.",
       "Shipped a production-ready CRM solution that supported business growth and scaled with increasing data and user demands.",
     ],
-    img: yelo,
+    img: zeus,
   },
 
   {
@@ -149,7 +149,7 @@ export const live = [
       "Optimized the website with SEO strategies that tripled, even quadripled ad conversion rates",
       "Worked hands in hands with the CEO to design and implement various web solutions, always focused on meeting requirements and delivering high-quality results.",
     ],
-    img: project2,
+    img: hospyta,
     link: "https://hospyta.com",
   },
 
