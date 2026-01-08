@@ -30,7 +30,7 @@ export const Hero = () => {
           <h1 className="text-[#FFD074]">DEVELOPER </h1>
           <span className="text-white text-lg text-center font-semibold">
             {" "}
-            // 3+ Years <br /> Experience
+            // 3+ Years <br />  Experience
           </span>
         </div>
 
