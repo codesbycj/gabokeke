@@ -114,6 +114,7 @@ export const live = [
       "Shipped a production-ready CRM solution that supported business growth and scaled with increasing data and user demands.",
     ],
     img: zeus,
+    link: "zeuscrm-frontend.onrender.com",
   },
 
   {
