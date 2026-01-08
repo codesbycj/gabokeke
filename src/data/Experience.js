@@ -19,12 +19,10 @@ import okekeCart from "../assets/Okeke_Cart.png";
 import okekeDash from "../assets/Okeke_Dash.png";
 import okekeInterior from "../assets/Okeke_Interior.png";
 import project2 from "../assets/depotters.png";
-import hospyta from "../assets/Hospyta.png"
-import zeus from "../assets/Zeus.png"
+import hospyta from "../assets/Hospyta.png";
+import zeus from "../assets/Zeus.png";
 
 export const experience = [
-  
-
   {
     Name: "Yelocode Systems",
     Position: "Full Stack Developer",
@@ -131,18 +129,6 @@ export const live = [
   },
 
   {
-    Name: "Gemcode Systems Limited- 2025",
-    Position: "Front End Developer",
-    exp: [
-      "Improved customer engagement and retention by collaborating with an external team to design and develop the company's website using ReactJS.",
-      "Optimized the website with SEO strategies that doubled ad conversion rates, turning existing traffic into significantly more revenue.",
-      "Reduced hosting and infrastructure cost on a project by maximizing site efficiency and reducing load times through Redux toolkits, Context API and components.",
-    ],
-    img: gemcode,
-    link: "https://gemcodesystemlimited.com/",
-  },
-
-  {
     Name: "Hospyta - 2025",
     Position: "Front End Developer",
     exp: [
@@ -152,6 +138,18 @@ export const live = [
     ],
     img: hospyta,
     link: "https://hospyta.com",
+  },
+
+  {
+    Name: "Gemcode Systems Limited- 2025",
+    Position: "Front End Developer",
+    exp: [
+      "Improved customer engagement and retention by collaborating with an external team to design and develop the company's website using ReactJS.",
+      "Optimized the website with SEO strategies that doubled ad conversion rates, turning existing traffic into significantly more revenue.",
+      "Reduced hosting and infrastructure cost on a project by maximizing site efficiency and reducing load times through Redux toolkits, Context API and components.",
+    ],
+    img: gemcode,
+    link: "https://gemcodesystemlimited.com/",
   },
 
   {
