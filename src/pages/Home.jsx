@@ -13,6 +13,10 @@ export const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    document.title = "Gabokeke Emmanuel | Software Developer & Engineer | Portfolio";
+  }, []);
+
   return (
     <div className="bg-black overflow-x-hidden">
       <main>
@@ -21,7 +25,7 @@ export const Home = () => {
         {/* <Transition /> */}
         <Experience />
         <Contact />
-        {/* <Footer /> */}
+        <Footer />
       </main>
     </div>
   );
