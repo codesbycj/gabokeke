@@ -37,10 +37,10 @@ export const Hero = () => {
           </h1>
         </div>
 
-        <div className="absolute animate-move top-0 right-0 hidden sm:block">
+        <div className="absolute animate-move top-0 right-0">
           <img src={cursor2} alt="" />
         </div>
-        <div className="absolute animate-straight bottom-0 left-0 hidden sm:block">
+        <div className="absolute animate-straight bottom-0 left-0">
           <img src={cursor1} alt="" />
         </div>
       </div>
