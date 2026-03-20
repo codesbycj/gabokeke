@@ -102,6 +102,19 @@ export const experience = [
 ];
 
 export const live = [
+    {
+    Name: "Fixr Technologies - 2026",
+    Position: "Software Developer",
+    exp: [
+      "Built a mobile app for customers and a web dashboard for admins that work together to automatically send new orders to technicians, eliminating manual data entry.",
+      "Engineered the entire end-to-end subscription engine, moving the business from manual billing to an automated recurring revenue model that secured consistent monthly cash flow.",
+      "Used WebSockets to show customers exactly where their technician is in real-time.",
+      "Built a Finance screen that shows the company exactly how much they are earning and how technicians are performing.",
+    ],
+    // img: zeus,
+    link: "https://usefixr.com/",
+
+  },
   {
     Name: "ZEUS - 2025",
     Position: "Frontend Developer",
@@ -117,7 +130,7 @@ export const live = [
 
   {
     Name: "Yelocode Systems - 2025",
-    Position: "Fullstack Developer",
+    Position: "Software Developer",
     exp: [
       "Delivery of multiple high-priority web products on schedule by leading a team consisting of a fullstack engineer and two frontend engineers, helping the company meet monthly targets.",
       "Developed an in-house AI, now known as Okeke AI, which serves as a reliable fallback solution during ChatGPT downtimes, ensuring uninterrupted productivity for the team",
@@ -187,48 +200,48 @@ export const projects = [
     link: "https://okeke-ai.vercel.app/",
   },
 
-  {
-    Name: "Streaming Service",
-    img: okekeDash,
-    exp: [
-      "Built a custom streaming service platform that allowed users to browse, watch, and interact with content in real time. Designed with a focus on smooth playback, responsive layouts, and a clean user experience.",
-    ],
-    skills: ["ReactJs", "Firebase"],
-    link: "https://cj-interior.vercel.app/",
-  },
+  // {
+  //   Name: "Streaming Service",
+  //   img: okekeDash,
+  //   exp: [
+  //     "Built a custom streaming service platform that allowed users to browse, watch, and interact with content in real time. Designed with a focus on smooth playback, responsive layouts, and a clean user experience.",
+  //   ],
+  //   skills: ["ReactJs", "Firebase"],
+  //   link: "https://cj-interior.vercel.app/",
+  // },
 
-  {
-    Name: "Fully Interactive Dashboard",
-    img: okekeDash,
-    exp: [
-      "Developed a fully interactive analytics dashboard that transformed complex data into clear, actionable visualizations. The dashboard included real-time updates, customizable views, and responsive charts, giving teams instant insights and reducing reporting time by over 50%.",
-    ],
+  // {
+  //   Name: "Fully Interactive Dashboard",
+  //   img: okekeDash,
+  //   exp: [
+  //     "Developed a fully interactive analytics dashboard that transformed complex data into clear, actionable visualizations. The dashboard included real-time updates, customizable views, and responsive charts, giving teams instant insights and reducing reporting time by over 50%.",
+  //   ],
 
-    skills: ["ReactJs", "Tailwind"],
-    link: "https://cjdash.vercel.app/",
-  },
+  //   skills: ["ReactJs", "Tailwind"],
+  //   link: "https://cjdash.vercel.app/",
+  // },
 
-  {
-    Name: "Shopping Cart",
-    img: okekeCart,
-    exp: [
-      "Created a scalable shopping cart system that supported product sorting, filtering, and seamless checkout flows. Designed with React and state management tools, it ensured a smooth user experience and minimized cart abandonment rates.",
-    ],
+  // {
+  //   Name: "Shopping Cart",
+  //   img: okekeCart,
+  //   exp: [
+  //     "Created a scalable shopping cart system that supported product sorting, filtering, and seamless checkout flows. Designed with React and state management tools, it ensured a smooth user experience and minimized cart abandonment rates.",
+  //   ],
 
-    skills: ["ReactJs", "TailwindCSS"],
+  //   skills: ["ReactJs", "TailwindCSS"],
 
-    link: "https://lotech.vercel.app/",
-  },
+  //   link: "https://lotech.vercel.app/",
+  // },
 
-  {
-    Name: "Interior Decoration Landing Page",
-    img: okekeInterior,
-    exp: ["Fully Dynamic Interior Decoration Landing Page"],
+  // {
+  //   Name: "Interior Decoration Landing Page",
+  //   img: okekeInterior,
+  //   exp: ["Fully Dynamic Interior Decoration Landing Page"],
 
-    skills: ["ReactJs", "TailwindCSS"],
+  //   skills: ["ReactJs", "TailwindCSS"],
 
-    link: "https://cj-interior.vercel.app/",
-  },
+  //   link: "https://cj-interior.vercel.app/",
+  // },
 ];
 
 export const technologies = [

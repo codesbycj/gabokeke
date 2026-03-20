@@ -3,15 +3,12 @@ import {
   Github,
   Linkedin,
   LucideArrowLeft,
-  LucideCircleArrowLeft,
   Mail,
-  MoveLeft,
   Twitter,
 } from "lucide-react";
 import React from "react";
 import Profile from "../assets/Profile.JPG";
 import { experience, projects } from "../data/Experience";
-import project from "../assets/project1.png";
 import { Link } from "react-router-dom";
 
 export const Summary = () => {
@@ -22,37 +19,36 @@ export const Summary = () => {
     { social: Mail, link: "gabokekeemmanuel@gmail.com" },
   ];
 
-
   return (
-    <div className="flex lg:flex-row bg-[#121212] text-white lg:px-40 py-16 gap-20 flex-col px-5               overflow-x-hidden">
+    <div className="flex flex-col lg:flex-row bg-[#121212] text-white px-4 sm:px-6 md:px-10 lg:px-20 xl:px-40 py-8 sm:py-12 lg:py-16 gap-10 lg:gap-20 overflow-x-hidden">
       <div className="flex">
         <Link to="/">
-          <LucideArrowLeft />
+          <LucideArrowLeft className="w-6 h-6 sm:w-7 sm:h-7" />
         </Link>
       </div>
 
-      <div className="w-100 relative flex items-start justify-center">
-        <div className="lg:fixed flex flex-col gap-4 flex-wrap">
+      <div className="w-full lg:w-80 xl:w-100 relative flex items-start justify-center">
+        <div className="lg:fixed flex flex-col gap-3 sm:gap-4 items-center lg:items-start">
           <img
             src={Profile}
             alt=""
-            className="w-50 h-50 object-cover object-center rounded-full"
+            className="w-32 h-32 sm:w-40 sm:h-40 lg:w-50 lg:h-50 object-cover object-center rounded-full"
           />
-          <h1 className="text-5xl font-bold">Gabokeke Emmanuel</h1>
-          <p className="text-gray-500 text-xl font-semibold">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center lg:text-left">Gabokeke Emmanuel</h1>
+          <p className="text-gray-500 text-base sm:text-lg lg:text-xl font-semibold text-center lg:text-left">
             Front - End Web Developer
           </p>
-          <p className="text-gray-500 text-xl font-semibold">
-            Building Real Products For Real Clients, <br /> Not Just More
+          <p className="text-gray-500 text-base sm:text-lg lg:text-xl font-semibold text-center lg:text-left">
+            Building Real Products For Real Clients, <br className="hidden sm:block" /> Not Just More
             Projects
           </p>
 
-          <div className="flex gap-9 mt-5">
-            {socials.map((each) => {
+          <div className="flex gap-4 sm:gap-6 lg:gap-9 mt-3 sm:mt-5">
+            {socials.map((each, index) => {
               return (
-                <div className="bg-gray-600 p-3 rounded-full w-12 h-12">
+                <div key={index} className="bg-gray-600 p-2 sm:p-3 rounded-full w-10 h-10 sm:w-12 sm:h-12">
                   <a href={each.link} target="_blank">
-                    {<each.social />}
+                    {<each.social className="w-full h-full" />}
                   </a>
                 </div>
               );
@@ -61,8 +57,8 @@ export const Summary = () => {
         </div>
       </div>
 
-      <div className="lg:flex-1 lg:px-10 lg:w-170 overflow-x-hidden">
-        <div className="text-lg text-gray-300 flex flex-wrap flex-col gap-2">
+      <div className="lg:flex-1 lg:px-6 xl:px-10 overflow-x-hidden">
+        <div className="text-base sm:text-lg text-gray-300 flex flex-wrap flex-col gap-2">
           <p>
             I began my Front End Journey in 2021, assisting in building
             impactful digital products from concept to completion. I further
@@ -85,82 +81,82 @@ export const Summary = () => {
           </p>
         </div>
 
-        <div className="mt-10">
-          <h1 className="text-4xl font-bold text-white">Skills</h1>
-          <div className="mt-5">
-            <p className="text-2xl font-semibold mb-5">Frontend</p>
+        <div className="mt-8 sm:mt-10">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">Skills</h1>
+          <div className="mt-4 sm:mt-5">
+            <p className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-5">Frontend</p>
 
-            <div className="flex gap-5 font-semibold flex-wrap">
-              <p className="bg-[#1E3356] text-[#266EF6] px-4 py-2 rounded-2xl">
+            <div className="flex gap-3 sm:gap-5 font-semibold flex-wrap">
+              <p className="bg-[#1E3356] text-[#266EF6] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 Javascript
               </p>
-              <p className="bg-[#1E3356] text-[#266EF6] px-4 py-2 rounded-2xl">
+              <p className="bg-[#1E3356] text-[#266EF6] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 ReactJs
               </p>
-              <p className="bg-[#1E3356] text-[#266EF6] px-4 py-2 rounded-2xl">
+              <p className="bg-[#1E3356] text-[#266EF6] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 NextJs
               </p>
-              <p className="bg-[#1E3356] text-[#266EF6] px-4 py-2 rounded-2xl">
+              <p className="bg-[#1E3356] text-[#266EF6] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 TailwindCSS
               </p>
-              <p className="bg-[#1E3356] text-[#266EF6] px-4 py-2 rounded-2xl">
+              <p className="bg-[#1E3356] text-[#266EF6] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 BootStrapCSS
               </p>
-              <p className="bg-[#1E3356] text-[#266EF6] px-4 py-2 rounded-2xl">
+              <p className="bg-[#1E3356] text-[#266EF6] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 GSAP
               </p>
             </div>
           </div>
-          <div className="mt-5">
-            <p className="text-2xl font-semibold mb-5">Backend</p>
+          <div className="mt-4 sm:mt-5">
+            <p className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-5">Backend</p>
 
-            <div className="flex gap-5 font-semibold flex-wrap">
-              <p className="bg-[#164728] text-[#22C55E] px-4 py-2 rounded-2xl">
+            <div className="flex gap-3 sm:gap-5 font-semibold flex-wrap">
+              <p className="bg-[#164728] text-[#22C55E] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 PHP
               </p>
-              <p className="bg-[#164728] text-[#22C55E] px-4 py-2 rounded-2xl">
+              <p className="bg-[#164728] text-[#22C55E] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 Laravel
               </p>
-              <p className="bg-[#164728] text-[#22C55E] px-4 py-2 rounded-2xl">
+              <p className="bg-[#164728] text-[#22C55E] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 Rest API
               </p>
-              <p className="bg-[#164728] text-[#22C55E] px-4 py-2 rounded-2xl">
+              <p className="bg-[#164728] text-[#22C55E] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 MySQL
               </p>
-              <p className="bg-[#164728] text-[#22C55E] px-4 py-2 rounded-2xl">
+              <p className="bg-[#164728] text-[#22C55E] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 Firebase
               </p>
-              <p className="bg-[#164728] text-[#22C55E] px-4 py-2 rounded-2xl">
+              <p className="bg-[#164728] text-[#22C55E] px-3 sm:px-4 py-1.5 sm:py-2 rounded-2xl text-sm sm:text-base">
                 Git
               </p>
             </div>
           </div>
         </div>
 
-        <div className="mt-20">
-          <h1 className="text-4xl font-bold ">WORK EXPERIENCE</h1>
-          {experience.map((expn) => {
+        <div className="mt-12 sm:mt-16 lg:mt-20">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">WORK EXPERIENCE</h1>
+          {experience.map((expn, index) => {
             return (
-              <div className="border border-gray-800 rounded-xl px-9 py-5 mt-7 hover:bg-[#262626] transition-colors">
-                <div className="">
-                  <p className="text-2xl font-semibold flex gap-3 items-center">
-                    {expn.Name} <ArrowUp className=" rotate-30" />
+              <div key={index} className="border border-gray-800 rounded-xl px-4 sm:px-6 lg:px-9 py-4 sm:py-5 mt-5 sm:mt-7 hover:bg-[#262626] transition-colors">
+                <div>
+                  <p className="text-lg sm:text-xl lg:text-2xl font-semibold flex gap-3 items-center">
+                    {expn.Name} <ArrowUp className="rotate-30 w-4 sm:w-5" />
                   </p>
-                  <p className="text-gray-400 font-semibold">{expn.Position}</p>
-                  <p className="text-gray-400 font-semibold">{expn.Date}</p>
+                  <p className="text-gray-400 font-semibold text-sm sm:text-base">{expn.Position}</p>
+                  <p className="text-gray-400 font-semibold text-sm sm:text-base">{expn.Date}</p>
 
                   <div>
-                    <ul className="list-disc ms-5 mt-5">
-                      {expn.exp.map((ex) => {
-                        return <li className="mt-4 text-gray-400">{ex}</li>;
+                    <ul className="list-disc ms-5 mt-4 sm:mt-5">
+                      {expn.exp.map((ex, i) => {
+                        return <li key={i} className="mt-3 sm:mt-4 text-gray-400 text-sm sm:text-base">{ex}</li>;
                       })}
                     </ul>
                   </div>
 
-                  <div className="mt-5 flex flex-wrap gap-4">
-                    {expn.skills.map((skill) => {
+                  <div className="mt-4 sm:mt-5 flex flex-wrap gap-2 sm:gap-4">
+                    {expn.skills.map((skill, i) => {
                       return (
-                        <p className="px-4 py-1 rounded-3xl bg-[#243039] text-[#1782CF] font-semibold">
+                        <p key={i} className="px-3 sm:px-4 py-1 rounded-3xl bg-[#243039] text-[#1782CF] font-semibold text-xs sm:text-sm">
                           {skill}
                         </p>
                       );
@@ -172,32 +168,32 @@ export const Summary = () => {
           })}
         </div>
 
-        <div className="mt-25">
-          <h1 className="text-4xl font-bold ">MY PROJECTS</h1>
+        <div className="mt-16 sm:mt-20 lg:mt-25">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold">MY PROJECTS</h1>
 
-          {projects.map((expn) => {
+          {projects.map((expn, index) => {
             return (
-              <div className="border border-gray-800 rounded-xl px-9 py-5 mt-7">
-                <img src={expn.img} alt="" srcset="" />
-                <div className="mt-10">
-                  <p className="text-2xl font-semibold flex gap-3 items-center">
-                    {expn.Name} <ArrowUp className=" rotate-30" />
+              <div key={index} className="border border-gray-800 rounded-xl px-4 sm:px-6 lg:px-9 py-4 sm:py-5 mt-5 sm:mt-7">
+                <img src={expn.img} alt="" className="w-full rounded-xl" />
+                <div className="mt-6 sm:mt-10">
+                  <p className="text-lg sm:text-xl lg:text-2xl font-semibold flex gap-3 items-center">
+                    {expn.Name} <ArrowUp className="rotate-30 w-4 sm:w-5" />
                   </p>
-                  <p className="text-gray-400 font-semibold">{expn.Position}</p>
-                  <p className="text-gray-400 font-semibold">{expn.Date}</p>
+                  <p className="text-gray-400 font-semibold text-sm sm:text-base">{expn.Position}</p>
+                  <p className="text-gray-400 font-semibold text-sm sm:text-base">{expn.Date}</p>
 
                   <div>
-                    <ul className="list-disc ms-5 mt-5 text-gray-400">
-                      {expn.exp.map((ex) => {
-                        return <li className="mt-4">{ex}</li>;
+                    <ul className="list-disc ms-5 mt-4 sm:mt-5 text-gray-400">
+                      {expn.exp.map((ex, i) => {
+                        return <li key={i} className="mt-3 sm:mt-4 text-sm sm:text-base">{ex}</li>;
                       })}
                     </ul>
                   </div>
 
-                  <div className="mt-5 flex flex-wrap gap-4">
-                    {expn.skills.map((skill) => {
+                  <div className="mt-4 sm:mt-5 flex flex-wrap gap-2 sm:gap-4">
+                    {expn.skills.map((skill, i) => {
                       return (
-                        <p className="px-4 py-1 rounded-3xl bg-[#164728] text-[#22C55E] font-semibold ">
+                        <p key={i} className="px-3 sm:px-4 py-1 rounded-3xl bg-[#164728] text-[#22C55E] font-semibold text-xs sm:text-sm">
                           {skill}
                         </p>
                       );

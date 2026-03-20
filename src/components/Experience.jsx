@@ -5,35 +5,35 @@ import { ArrowUp, CircleCheck } from "lucide-react";
 
 export const Experience = () => {
   return (
-    <div id="experience" className="py-10 px-5 text-white space-y-20">
-      <div className="lg:w-2/3 lg:mx-auto ">
+    <div id="experience" className="py-10 px-4 sm:px-6 md:px-8 text-white space-y-14 sm:space-y-20">
+      <div className="lg:w-2/3 lg:mx-auto">
         <div className="lg:w-2/3 w-full">
-          <h2 className="text-4xl font-bold">ABOUT ME</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">ABOUT ME</h2>
 
-          <p className="mt-2 text-gray-400">
-            A Frontend developer that develops high-performing, scalable web
-            applications paired with clean, user interface to drive the best
+          <p className="mt-2 text-sm sm:text-base text-gray-400">
+            A Software developer that develops tested and trusted scalable web
+            and mobile applications paired with clean, user interface to drive the best
             results .
           </p>
-          <p className="mt-2 text-gray-400">
+          <p className="mt-2 text-sm sm:text-base text-gray-400">
             I have throughout my career, consistently demonstrated my ability to
             master new technologies and lead teams in building scalable,
-            user-friendly, and high-performing applications that
+            user-friendly, and high-performing softwares and applications that
             positively impact users and support business goals using the following tools.{" "}
           </p>
         </div>
-        <div className="grid lg:grid-cols-4 grid-cols md:grid-cols-2 gap-x-10 gap-y-5 mt-5">
-          {technologies.map((tech) => {
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-x-6 sm:gap-y-5 mt-5">
+          {technologies.map((tech, index) => {
             return (
-              <div className="flex items-center justify-start gap-4 border border-gray-600 px-3 py-4 rounded-xl">
+              <div key={index} className="flex items-center justify-start gap-3 sm:gap-4 border border-gray-600 px-2 sm:px-3 py-3 sm:py-4 rounded-xl">
                 <img
                   src={tech.img}
                   alt=""
-                  className="w-10 h-10 p-1 bg-gray-600 rounded-xl"
+                  className="w-8 h-8 sm:w-10 sm:h-10 p-1 bg-gray-600 rounded-xl shrink-0"
                 />
-                <div>
-                  <p className="font-semibold">{tech.app}</p>
-                  <p className="text-gray-400 text-sm font-semibold">
+                <div className="min-w-0">
+                  <p className="font-semibold text-sm sm:text-base truncate">{tech.app}</p>
+                  <p className="text-gray-400 text-xs sm:text-sm font-semibold truncate">
                     {tech.type}
                   </p>
                 </div>
@@ -43,32 +43,33 @@ export const Experience = () => {
         </div>
       </div>
 
-      <div className="lg:w-2/3 lg:mx-auto ">
-        <div className="text-center font-semibold space-y-3">
-          <h1>REAL-WORLD RESULTS</h1>
-          <p className="text-5xl">Featured Projects</p>
-          <p className="text-gray-500">
+      <div className="lg:w-2/3 lg:mx-auto">
+        <div className="text-center font-semibold space-y-2 sm:space-y-3">
+          <h1 className="text-sm sm:text-base">REAL-WORLD RESULTS</h1>
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Featured Projects</p>
+          <p className="text-gray-500 text-sm sm:text-base">
             See how I transformed concepts into digital engaging experiences
           </p>
         </div>
-        <div className="mt-20 space-y-10">
-          {live.map((exp) => {
+        <div className="mt-10 sm:mt-20 space-y-8 sm:space-y-10">
+          {live.map((exp, index) => {
             return (
               <div
-                className="flex flex-col md:flex-row flex-wrap border border-gray-700 py-10 md:px-20 px-5 rounded-2xl overflow-hidden bg-gray-800
-              backdrop-blur-2xl shadow-xs shadow-white"
+                key={index}
+                className="flex flex-col md:flex-row border border-gray-700 pt-6 pb-2 sm:py-10 px-4 sm:px-6 md:px-10 lg:px-20 rounded-2xl overflow-hidden bg-gray-800
+              backdrop-blur-2xl shadow-xs shadow-white gap-4 md:gap-8"
               >
-                <div className="flex-1 flex-col gap-4 flex">
-                  <p className="font-semibold text-xs lg:text-sm">{exp.Name}</p>
-                  <p className="lg:text-4xl text-3xl font-bold border-b border-gray-500 pb-4">
+                <div className="flex-1 flex-col gap-3 sm:gap-4 flex">
+                  <p className="font-semibold text-xs sm:text-sm">{exp.Name}</p>
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold border-b border-gray-500 pb-3 sm:pb-4">
                     {exp.Position}
                   </p>
 
-                  <ul className="space-y-4 text-gray-400">
-                    {exp.exp.map((work) => {
+                  <ul className="space-y-3 sm:space-y-4 text-gray-400 text-sm sm:text-base">
+                    {exp.exp.map((work, i) => {
                       return (
-                        <li className="flex items-start gap-4">
-                          <p>✪</p>
+                        <li key={i} className="flex items-start gap-3 sm:gap-4">
+                          <p className="shrink-0">✪</p>
                           {work}
                         </li>
                       );
@@ -77,75 +78,78 @@ export const Experience = () => {
 
                   {exp.link && (
                     <button
-                      className="bg-white  w-max px-5 
-                text-center py-2 rounded-xl font-semibold mt-5"
+                      className="bg-white w-max px-4 sm:px-5
+                text-center py-2 rounded-xl font-semibold mt-3 sm:mt-5"
                     >
                       <a
                         href={exp.link}
                         target="_blank"
-                        className="flex items-center gap-3 text-black"
+                        className="flex items-center gap-2 sm:gap-3 text-black text-sm sm:text-base"
                       >
                         Visit Live Site <ArrowUp className="rotate-45 w-4" />
-                      </a>{" "}
+                      </a>
                     </button>
                   )}
                 </div>
 
-                <div className="flex-1 relative w-full ">
-                  <img
-                    src={exp.img}
-                    alt=""
-                    className="md:absolute ms-16 -mb-15 mt-5 -right-22 h-full object-cover object-left w-full -bottom-15 
-                    shadow-lg shadow-gray-100 rounded-2xl border border-gray-800"
-                  />
-                </div>
+                {exp.img && (
+                  <div className="flex-1 relative w-full mt-4 md:mt-0 min-h-[200px] sm:min-h-[250px] md:min-h-0">
+                    <img
+                      src={exp.img}
+                      alt=""
+                      className="md:absolute md:-right-22 md:top-5 w-full h-[calc(100%+2rem)] object-cover object-left rounded-2xl border border-gray-800
+                      shadow-lg shadow-gray-100"
+                    />
+                  </div>
+                )}
               </div>
             );
           })}
         </div>
       </div>
 
-      <div id="projects" className="lg:w-4/5 lg:mx-auto ">
-        <div className="text-center font-semibold space-y-3">
-          <h1>PERSONAL PROJECTS</h1>
-          <p className="text-5xl">Featured Projects</p>
-          <p className="text-gray-500">
+      <div id="projects" className="lg:w-4/5 lg:mx-auto">
+        <div className="text-center font-semibold space-y-2 sm:space-y-3">
+          <h1 className="text-sm sm:text-base">PERSONAL PROJECTS</h1>
+          <p className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl">Featured Projects</p>
+          <p className="text-gray-500 text-sm sm:text-base">
             Ideas, Assignments, Clones ... All of it
           </p>
         </div>
-        <div className="mt-20 space-y-10 grid lg:grid-cols-2 gap-9 grid-cols-1">
-          {projects.map((exp) => {
+        <div className="mt-10 sm:mt-20 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-9">
+          {projects.map((exp, index) => {
             return (
               <div
-                className="border border-gray-700 py-10 lg:px-15 px-7 rounded-2xl overflow-hidden bg-gray-800
+                key={index}
+                className="border border-gray-700 py-6 sm:py-10 px-5 sm:px-7 lg:px-15 rounded-2xl overflow-hidden bg-gray-800
               backdrop-blur-2xl shadow-xs shadow-white"
               >
-                <div className="flex-1 flex-col gap-4 flex">
-                  <p className="text-4xl font-bold border-b border-gray-500 pb-4">
+                <div className="flex-1 flex-col gap-3 sm:gap-4 flex">
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold border-b border-gray-500 pb-3 sm:pb-4">
                     {exp.Name}
                   </p>
 
-                  <ul className="space-y-4 text-gray-400">
-                    {exp.exp.map((exp) => {
+                  <ul className="space-y-3 sm:space-y-4 text-gray-400 text-sm sm:text-base">
+                    {exp.exp.map((item, i) => {
                       return (
-                        <li className="flex items-start gap-4">
-                           {exp}
+                        <li key={i} className="flex items-start gap-3 sm:gap-4">
+                           {item}
                         </li>
                       );
                     })}
                   </ul>
 
                   <button
-                    className="bg-white  w-max px-5 
-                text-center py-2 rounded-xl font-semibold mt-5"
+                    className="bg-white w-max px-4 sm:px-5
+                text-center py-2 rounded-xl font-semibold mt-3 sm:mt-5"
                   >
                     <a
                       href={exp.link}
                       target="_blank"
-                      className="flex items-center gap-3 text-black"
+                      className="flex items-center gap-2 sm:gap-3 text-black text-sm sm:text-base"
                     >
                       Visit Live Site <ArrowUp className="rotate-45 w-4" />
-                    </a>{" "}
+                    </a>
                   </button>
                 </div>
               </div>

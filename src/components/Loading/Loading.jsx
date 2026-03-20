@@ -118,9 +118,9 @@ export const Loading = () => {
   });
 
   return (
-    <div className="loading-container h-screen w-screen fixed top-0 left-0 bg-stone-900 text-white">
+    <div className="loading-container h-screen w-screen fixed top-0 left-0 bg-stone-900 text-white overflow-hidden">
       <div className="loading-screen">
-        <div className="progress-bar  absolute top-0 left-0 h-1.5 w-0 bg-white"></div>
+        <div className="progress-bar absolute top-0 left-0 h-1 sm:h-1.5 w-0 bg-white"></div>
         <div className="pre-welcome">
           <div className="line font-semibold">
             <p>Building the view layer</p>
@@ -134,7 +134,7 @@ export const Loading = () => {
           <Header />
           <Hero />
         </div>
-        <div className="numbers flex items-center absolute bottom-20 left-7 overflow-hidden">
+        <div className="numbers flex items-center absolute bottom-10 sm:bottom-16 lg:bottom-20 left-4 sm:left-7 overflow-hidden">
           <div className="number1 number overflow-hidden">
             <div className="number-wrap transform translate-y-full flex flex-col">
               <span>1</span>

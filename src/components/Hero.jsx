@@ -8,68 +8,51 @@ export const Hero = () => {
   return (
     <div
       id="home"
-      className="h-screen bg-black text-white flex items-center justify-center flex-col gap-8 relative"
+      className="min-h-screen bg-black text-white flex items-center justify-center flex-col gap-4 sm:gap-6 lg:gap-8 relative px-4 sm:px-6 pt-20 pb-10"
     >
-      <div className="flex items-center gap-7">
+      <div className="flex items-center gap-4 sm:gap-7">
         <div
-          className="rounded-full flex items-center justify-center w-15 h-15 lg:w-20 lg:h-20
-        bg-white"
+          className="rounded-full flex items-center justify-center w-12 h-12 sm:w-15 sm:h-15 lg:w-20 lg:h-20
+        bg-white shrink-0"
         >
-          <img src={me} alt="" className="object-contain mt-3" />
+          <img src={me} alt="" className="object-contain mt-2 sm:mt-3 w-10 sm:w-auto" />
         </div>
-        <p className="lg:text-lg font-bold border border-gray-400 p-3 rounded-xl">
+        <p className="text-sm sm:text-base lg:text-lg font-bold border border-gray-400 p-2 sm:p-3 rounded-xl">
           I'm Gabokeke Emmanuel
         </p>
       </div>
 
-      <div className="text-center relative lg:text-8xl text-5xl font-bold ">
-        {/* <p className="text-4xl">A</p> */}
-        <h1 className="text-[#A374FF]">FRONTEND</h1>
-        <div className="flex items-center gap-3 justify-center">
-          {" "}
+      <div className="text-center relative text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold max-w-full">
+        <h1 className="text-[#A374FF]">SOFTWARE</h1>
+        <div className="flex items-center gap-2 sm:gap-3 justify-center flex-wrap">
           <h1 className="text-[#FFD074]">DEVELOPER </h1>
-          <span className="text-white text-lg text-center font-semibold">
-            {" "}
-            // 3+ Years <br />  Experience
+          <span className="text-white text-xs sm:text-sm lg:text-lg text-center font-semibold">
+            // 4+ Years <br /> Experience
           </span>
         </div>
 
-        <div className="flex items-center gap-3 justify-center">
-          <span className="text-white text-lg text-center font-semibold">
-          </span>
+        <div className="flex items-center gap-2 sm:gap-3 justify-center">
           <h1 className="text-[#17F1D1]">
             <span className="text-white">&</span> ENGINEER
           </h1>
         </div>
-        {/* <h1 className="">
-          {" "}
-          <span className="text-white">&</span> DESIGNER
-        </h1> */}
 
-        <div className="absolute animate-move top-0 right-0">
+        <div className="absolute animate-move top-0 right-0 hidden sm:block">
           <img src={cursor2} alt="" />
         </div>
-        <div className="absolute animate-straight bottom-0 left-0">
+        <div className="absolute animate-straight bottom-0 left-0 hidden sm:block">
           <img src={cursor1} alt="" />
         </div>
       </div>
 
-      <div className="text-center font-semibold">
-        <p className="md:text-3xl">
-          I create scalable applications that borders on <br />
+      <div className="text-center font-semibold px-2">
+        <p className="text-sm sm:text-xl md:text-2xl lg:text-3xl leading-relaxed">
+          I create scalable softwares and applications that borders on <br className="hidden sm:block" />
           <span className="text-[#A374FF]">efficiency</span>,{" "}
           <span className="text-[#FFD074]">aesthetics</span> &{" "}
           <span className="text-[#17F1D1]">functionality</span>.
         </p>
       </div>
-
-      {/* <Link
-        to="/summary"
-        className="absolute bottom-10 right-20 py-3 px-7 bg-gray-300 
-      text-black font-bold shadow-sm shadow-white rounded-sm"
-      >
-        Quick Summary
-      </Link> */}
     </div>
   );
 };
