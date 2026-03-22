@@ -11,15 +11,15 @@ export const Experience = () => {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold">ABOUT ME</h2>
 
           <p className="mt-2 text-sm sm:text-base text-gray-400">
-            A Software developer that develops tested and trusted scalable web
-            and mobile applications paired with clean, user interface to drive the best
-            results .
+            Gabokeke Emmanuel is a software developer and engineer who builds tested, trusted, and scalable web
+            and mobile applications paired with clean user interfaces to drive the best
+            results.
           </p>
           <p className="mt-2 text-sm sm:text-base text-gray-400">
-            I have throughout my career, consistently demonstrated my ability to
+            Throughout my career as a software developer, I have consistently demonstrated my ability to
             master new technologies and lead teams in building scalable,
-            user-friendly, and high-performing softwares and applications that
-            positively impact users and support business goals using the following tools.{" "}
+            user-friendly, and high-performing software and applications that
+            positively impact users and support business goals using the following tools.
           </p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-x-6 sm:gap-y-5 mt-5" role="list" aria-label="Technologies and tools">
@@ -47,7 +47,7 @@ export const Experience = () => {
       <section className="lg:w-2/3 lg:mx-auto" aria-label="Work experience and featured projects">
         <div className="text-center font-semibold space-y-2 sm:space-y-3">
           <p className="text-sm sm:text-base">REAL-WORLD RESULTS</p>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">Featured Projects</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold">WORK EXPERIENCE</h2>
           <p className="text-gray-500 text-sm sm:text-base">
             See how I transformed concepts into digital engaging experiences
           </p>
