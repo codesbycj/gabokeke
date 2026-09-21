@@ -1,20 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { Hero, Loading, Header, Transition, Footer, Contact } from "../components";
+import React, { useEffect } from "react";
+import { Hero, Header, Footer, Contact } from "../components";
 import { Experience } from "../components/Experience";
 
 export const Home = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 8500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    document.title = "Gabokeke Emmanuel | Software Developer & Engineer | Portfolio";
+    document.title = "Emmanuel Gabokeke | Mobile Software Engineer | Portfolio";
   }, []);
 
   return (

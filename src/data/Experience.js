@@ -21,6 +21,8 @@ import okekeInterior from "../assets/Okeke_Interior.png";
 import project2 from "../assets/depotters.png";
 import hospyta from "../assets/Hospyta.png";
 import zeus from "../assets/Zeus.png";
+import usefixr from "../assets/usefixr.png";
+import shuttlers from "../assets/shuttlers.png";
 
 export const experience = [
   {
@@ -102,22 +104,28 @@ export const experience = [
 ];
 
 export const live = [
-    {
-    Name: "Fixr Technologies - 2026",
-    Position: "Software Developer",
+  {
+    Name: "Fixr Technologies",
+    Position: "Software Engineer",
+    Date: "Jan 2026 – Till Date",
     exp: [
       "Built a mobile app for customers and a web dashboard for admins that work together to automatically send new orders to technicians, eliminating manual data entry.",
       "Engineered the entire end-to-end subscription engine, moving the business from manual billing to an automated recurring revenue model that secured consistent monthly cash flow.",
-      "Used WebSockets to show customers exactly where their technician is in real-time.",
-      "Built a Finance screen that shows the company exactly how much they are earning and how technicians are performing.",
+      "Used WebSockets to show customers exactly where their technician is in real-time as well as a chat system between technicians and customers.",
+      "Built a finance screen that shows the company exactly how much they are earning and how technicians are performing.",
     ],
-    // img: zeus,
+    img: usefixr,
     link: "https://usefixr.com/",
-
+    mobile: true,
+    appLinks: {
+      android: "https://play.google.com/store/apps/details?id=com.fixrapp",
+      ios: "https://apps.apple.com/app/id6476404086",
+    },
   },
   {
-    Name: "ZEUS - 2025",
-    Position: "Frontend Developer",
+    Name: "ZEUS",
+    Position: "Frontend Developer (Freelance)",
+    Date: "Jan 2025 – Dec 2025",
     exp: [
       "Delivered a fully remodeled CRM platform that improved internal workflows, data accuracy, and day-to-day efficiency for business operations.",
       "Enabled faster decision-making by integrating the database and APIs to provide real-time, reliable access to customer and operational data.",
@@ -127,62 +135,70 @@ export const live = [
     img: zeus,
     link: "https://zeuscrm-frontend.onrender.com",
   },
-
   {
-    Name: "Yelocode Systems - 2025",
-    Position: "Software Developer",
+    Name: "Yelocode Systems",
+    Position: "Software Engineer",
+    Date: "Jan 2023 – Nov 2024",
     exp: [
-      "Delivery of multiple high-priority web products on schedule by leading a team consisting of a fullstack engineer and two frontend engineers, helping the company meet monthly targets.",
-      "Developed an in-house AI, now known as Okeke AI, which serves as a reliable fallback solution during ChatGPT downtimes, ensuring uninterrupted productivity for the team",
+      "Delivered multiple high-priority web and mobile products on schedule by leading a team consisting of a full stack engineer and two frontend engineers, helping the company meet monthly targets.",
       "Cut team workload by over 70% by migrating a web application from manual data entry to automated API-driven updates, freeing the team to focus on higher-value tasks.",
       "Led sprint planning meetings and worked on improving processes to boost efficiency and productivity.",
-      "Managed several projects, such as the Listkeeping Dashboard, Tailwind CSS migration and more. This involved coordinating teams, meeting project objectives, and developing effective strategies for successful implementation.",
+      "Built and maintained healthcare and transport products with strong user flows, dashboards, and booking features that improved customer experience and operational delivery.",
     ],
     img: yelo,
   },
-
   {
-    Name: "Hospyta - 2025",
-    Position: "Front End Developer",
+    Name: "Hospyta",
+    Position: "Software Engineer",
+    Date: "Healthcare platform",
     exp: [
-      "Developed and managed the current version of the company's website to improve customer engagement and retention.",
-      "Optimized the website with SEO strategies that tripled, even quadripled ad conversion rates",
-      "Worked hands in hands with the CEO to design and implement various web solutions, always focused on meeting requirements and delivering high-quality results.",
+      "Developed and maintained the Hospyta mobile and web application, enabling patients to book appointments, consult doctors, access prescriptions, buy healthcare products, and manage their healthcare journey from a single platform.",
+      "Implemented core mobile workflows including doctor discovery, appointment scheduling, telemedicine consultations, and patient-provider interactions.",
+      "Integrated the mobile product across a wider healthcare ecosystem involving patients, doctors, pharmacies, vendors, riders, and ambulance services.",
     ],
     img: hospyta,
     link: "https://hospyta.com",
+    mobile: true,
+    appLinks: {
+      android: "https://play.google.com/store/apps/details?id=com.hospyta.hospyta",
+      ios: "https://apps.apple.com/ng/app/hospyta/id6475042063",
+    },
   },
-
   {
-    Name: "Gemcode Systems Limited- 2025",
-    Position: "Front End Developer",
+    Name: "Shuttlers",
+    Position: "Software Engineer",
+    Date: "Transport booking platform",
     exp: [
-      "Improved customer engagement and retention by collaborating with an external team to design and develop the company's website using ReactJS.",
-      "Optimized the website with SEO strategies that doubled ad conversion rates, turning existing traffic into significantly more revenue.",
-      "Reduced hosting and infrastructure cost on a project by maximizing site efficiency and reducing load times through Redux toolkits, Context API and components.",
+      "Built and integrated core transportation workflows including pickup and destination selection, route discovery, seat booking, trip management, push notifications, check-in, and live shuttle tracking.",
+      "Implemented repeat-booking enhancements such as favorite and recent routes, booking again, pickup and drop-off modifications, driver ratings, and in-app trip feedback.",
+    ],
+    img: shuttlers,
+    link: "https://apps.apple.com/ng/app/shuttlers/id1532662341",
+    mobile: true,
+    appLinks: {
+      android: "https://play.google.com/store/apps/details?id=com.shuttlers.android",
+      ios: "https://apps.apple.com/ng/app/shuttlers/id1532662341",
+    },
+  },
+  {
+    Name: "Gemcode Systems Limited",
+    Position: "Front End Developer",
+    Date: "Website redesign",
+    exp: [
+      "Improved customer engagement and retention by collaborating with an external team to design and develop the company website using ReactJS.",
+      "Reduced hosting and infrastructure cost on a project by maximizing site efficiency and reducing load times through React optimizations and component-based structuring.",
     ],
     img: gemcode,
     link: "https://gemcodesystemlimited.com/",
   },
-
   {
-    Name: "Upwork & Fiverr - 2024",
-    Position: "Front End Developer",
-    exp: [
-      "Worked with a diverse range of clients, including Jollof Republik and Babelos, creating custom web solutions tailored to their needs.",
-      "Created a visually striking portfolio with smooth animations, gallery grids, and contact forms for artists",
-      "Adapted quickly to diverse tools and workflows, from Ajax and REST APIs to state management systems, while staying collaborative, documenting processes, and continuously improving based on industry trends ",
-    ],
-    img: fiverr,
-  },
-
-  {
-    Name: "Bole Festival - 2021",
-    Position: "Front End Developer",
+    Name: "Bole Festival",
+    Position: "Junior Front End Developer",
+    Date: "Sep 2021 – Oct 2022",
     exp: [
       "Assisted in building responsive festival web pages using HTML, CSS, and JavaScript under senior developer guidance.",
       "Collaborated with the team using Git/GitHub to manage code updates and version control.",
-      "Tested pages across browsers/devices to ensure consistent performance before launch.",
+      "Tested pages across browsers and devices to ensure consistent performance before launch.",
     ],
     img: bole,
     link: "https://bolefestival.com/",
@@ -191,10 +207,46 @@ export const live = [
 
 export const projects = [
   {
-    Name: "Fully Functional AI",
+    Name: "Fixr",
     img: okekeAI,
     exp: [
-      "Okeke AI, a personal artificial intelligence assistant designed to interact with users in real-time, answer queries, and streamline simple tasks — all with a lightweight, responsive interface.",
+      "A customer and technician platform that automates job dispatch, real-time technician tracking, customer messaging, and recurring billing for home services.",
+    ],
+    skills: ["React Native", "React", "WebSockets", "MySQL"],
+    link: "https://usefixr.com/",
+  },
+  {
+    Name: "Hospyta",
+    img: hospyta,
+    exp: [
+      "A healthcare ecosystem that connects patients, doctors, pharmacies, vendors, riders, and ambulance support into a single experience for booking and care management.",
+    ],
+    skills: ["React Native", "Mobile UX", "Healthcare flows", "API Integration"],
+    link: "https://hospyta.com",
+  },
+  {
+    Name: "Shuttlers",
+    img: project2,
+    exp: [
+      "A transport booking app with live shuttle tracking, seat selection, route management, push notifications, and trip feedback features for repeat users.",
+    ],
+    skills: ["React Native", "Booking flows", "Live Tracking", "Push Notifications"],
+    link: "https://apps.apple.com/ng/app/shuttlers/id1532662341",
+  },
+  {
+    Name: "ZEUS CRM",
+    img: zeus,
+    exp: [
+      "A CRM platform redesigned to improve workflows, customer data accuracy, and day-to-day operations with real-time API-driven updates.",
+    ],
+    skills: ["React", "API Integration", "State Management", "Dashboard UX"],
+    link: "https://zeuscrm-frontend.onrender.com",
+  },
+  {
+    Name: "Okeke AI",
+    img: okekeAI,
+    exp: [
+      "A lightweight personal AI assistant built to support the team with real-time query handling and reliable fallback capabilities when external AI providers are unavailable.",
     ],
     skills: ["ReactJs", "Context API", "API Integration", "CSS"],
     link: "https://okeke-ai.vercel.app/",

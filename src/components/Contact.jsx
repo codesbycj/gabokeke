@@ -53,9 +53,15 @@ export const Contact = () => {
     },
     {
       icon: Twitter,
-      label: "Twitter / X",
-      value: "@codesbycj",
-      href: "https://x.com/codesbycj",
+      label: "Portfolio",
+      value: "gabokeke.com",
+      href: "https://www.gabokeke.com",
+    },
+    {
+      icon: Send,
+      label: "Phone",
+      value: "+2348166056249",
+      href: "tel:+2348166056249",
     },
   ];
 

@@ -18,15 +18,15 @@ export const Hero = () => {
           <img src={me} alt="Gabokeke Emmanuel memoji avatar" className="object-contain mt-2 sm:mt-3 w-10 sm:w-auto" />
         </div>
         <p className="text-sm sm:text-base lg:text-lg font-bold border border-gray-400 p-2 sm:p-3 rounded-xl">
-          I'm Gabokeke Emmanuel
+          I'm Emmanuel Gabokeke
         </p>
       </div>
 
       <div className="text-center relative text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold max-w-full">
-        <h1 className="sr-only">Gabokeke Emmanuel - Software Developer & Engineer with 4+ Years Experience</h1>
-        <p className="text-[#A374FF] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold" aria-hidden="true">SOFTWARE</p>
+        <h1 className="sr-only">Emmanuel Gabokeke - Mobile Software Engineer with 4+ years of real-world product experience</h1>
+        <p className="text-[#A374FF] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold" aria-hidden="true">MOBILE</p>
         <div className="flex items-center gap-2 sm:gap-3 justify-center flex-wrap" aria-hidden="true">
-          <p className="text-[#FFD074] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">DEVELOPER </p>
+          <p className="text-[#FFD074] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">SOFTWARE </p>
           <span className="text-white text-xs sm:text-sm lg:text-lg text-center font-semibold">
             // 4+ Years <br /> Experience
           </span>
@@ -48,10 +48,10 @@ export const Hero = () => {
 
       <div className="text-center font-semibold px-2">
         <p className="text-sm sm:text-xl md:text-2xl lg:text-3xl leading-relaxed">
-          I create scalable softwares and applications that borders on <br className="hidden sm:block" />
-          <span className="text-[#A374FF]">efficiency</span>,{" "}
-          <span className="text-[#FFD074]">aesthetics</span> &{" "}
-          <span className="text-[#17F1D1]">functionality</span>.
+          I build clean, scalable mobile and web products for real users, with <br className="hidden sm:block" />
+          <span className="text-[#A374FF]">performance</span>,{" "}
+          <span className="text-[#FFD074]">clarity</span>, and{" "}
+          <span className="text-[#17F1D1]">business impact</span> at the center.
         </p>
       </div>
     </section>
