@@ -23,12 +23,12 @@ export const Hero = () => {
       </div>
 
       <div className="text-center relative text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold max-w-full">
-        <h1 className="sr-only">Emmanuel Gabokeke - Mobile Software Engineer with 4+ years of real-world product experience</h1>
-        <p className="text-[#A374FF] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold" aria-hidden="true">MOBILE</p>
+        <h1 className="sr-only">Emmanuel Gabokeke - Software Developer & Engineer with 5+ years of real-world product experience</h1>
+        <p className="text-[#A374FF] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold" aria-hidden="true">SOFTWARE</p>
         <div className="flex items-center gap-2 sm:gap-3 justify-center flex-wrap" aria-hidden="true">
-          <p className="text-[#FFD074] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">SOFTWARE </p>
+          <p className="text-[#FFD074] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">DEVELOPER </p>
           <span className="text-white text-xs sm:text-sm lg:text-lg text-center font-semibold">
-            // 4+ Years <br /> Experience
+            // 5+ Years <br /> Experience
           </span>
         </div>
 

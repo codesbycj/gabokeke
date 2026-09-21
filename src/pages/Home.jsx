@@ -4,7 +4,7 @@ import { Experience } from "../components/Experience";
 
 export const Home = () => {
   useEffect(() => {
-    document.title = "Emmanuel Gabokeke | Mobile Software Engineer | Portfolio";
+    document.title = "Emmanuel Gabokeke | Software Engineer | Portfolio";
   }, []);
 
   return (
