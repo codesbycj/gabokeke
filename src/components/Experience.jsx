@@ -1,6 +1,7 @@
 import React from "react";
 import { live, technologies } from "../data/Experience";
-import { ArrowUp, Download, Smartphone } from "lucide-react";
+import { ArrowUp } from "lucide-react";
+import { FaApple, FaGooglePlay } from "react-icons/fa";
 
 export const Experience = () => {
   return (
@@ -72,42 +73,42 @@ export const Experience = () => {
                   </ul>
 
                   {exp.link && (
-                    <div className="mt-3 sm:mt-5 flex flex-col gap-3 sm:max-w-[520px]">
+                    <div className="mt-3 sm:mt-5 flex flex-wrap items-center gap-2.5">
                       <a
                         href={exp.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="bg-white w-full sm:w-max px-4 sm:px-5 text-center py-3 rounded-xl font-semibold flex items-center justify-center gap-2 sm:gap-3 text-black text-base"
+                        className="h-10 px-4 rounded-lg border border-white/15 bg-white/5 inline-flex items-center gap-2 text-sm font-medium text-white whitespace-nowrap transition-colors hover:bg-white/10 hover:border-white/30"
                         aria-label={`Visit ${exp.Name} live site`}
                       >
-                        Visit Live Site <ArrowUp className="rotate-45 w-4" aria-hidden="true" />
+                        <ArrowUp className="w-4 h-4 shrink-0 rotate-45" aria-hidden="true" />
+                        Live Site
                       </a>
 
-                      {exp.appLinks && (
-                        <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-max">
-                          {exp.appLinks.android && (
-                            <a
-                              href={exp.appLinks.android}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-center gap-2 rounded-xl bg-white px-3 py-3 text-sm font-semibold text-black min-w-[160px]"
-                            >
-                              <Download className="w-4 h-4" />
-                              Google Play
-                            </a>
-                          )}
-                          {exp.appLinks.ios && (
-                            <a
-                              href={exp.appLinks.ios}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center justify-center gap-2 rounded-xl bg-white px-3 py-2.5 text-sm font-semibold text-black min-w-[160px]"
-                            >
-                              <Smartphone className="w-4 h-4" />
-                              App Store
-                            </a>
-                          )}
-                        </div>
+                      {exp.appLinks?.android && (
+                        <a
+                          href={exp.appLinks.android}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="h-10 px-4 rounded-lg border border-white/15 bg-white/5 inline-flex items-center gap-2 text-sm font-medium text-white whitespace-nowrap transition-colors hover:bg-white/10 hover:border-white/30"
+                          aria-label={`Download ${exp.Name} on Google Play`}
+                        >
+                          <FaGooglePlay className="w-4 h-4 shrink-0" aria-hidden="true" />
+                          Google Play
+                        </a>
+                      )}
+
+                      {exp.appLinks?.ios && (
+                        <a
+                          href={exp.appLinks.ios}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="h-10 px-4 rounded-lg border border-white/15 bg-white/5 inline-flex items-center gap-2 text-sm font-medium text-white whitespace-nowrap transition-colors hover:bg-white/10 hover:border-white/30"
+                          aria-label={`Download ${exp.Name} on the App Store`}
+                        >
+                          <FaApple className="w-4 h-4 shrink-0" aria-hidden="true" />
+                          App Store
+                        </a>
                       )}
                     </div>
                   )}
