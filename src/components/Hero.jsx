@@ -1,59 +1,138 @@
-import React from "react";
-import me from "../assets/Okeke_Memoji.png";
-import cursor1 from "../assets/10001.svg";
-import cursor2 from "../assets/10002.svg";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { Globe } from "./icons";
+import { StackReel } from "./StackReel";
+import { profile } from "../data/site";
+import { useLoadReveal } from "../hooks";
+
+/**
+ * Per-letter rotation that tracks the cursor:
+ *  - magnitude peaks at 90° when the cursor sits on a letter's centre and
+ *    falls off with distance
+ *  - direction follows cursor travel, so letters tip the way you move
+ *  - everything eases back to 0° once the cursor stops or leaves
+ */
+const FlipText = ({ text }) => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    const root = ref.current;
+    if (!root) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!window.matchMedia("(hover: hover)").matches) return;
+
+    const chars = Array.from(root.querySelectorAll(".flip-char"));
+    if (!chars.length) return;
+
+    const MAX_DEG = 90;
+    const FALLOFF = 42; // px - distance at which the effect dies out
+
+    // Cache each letter's centre plus a quickTo setter so tweens stay cheap.
+    let centres = [];
+    const setters = chars.map((c) =>
+      gsap.quickTo(c, "rotationY", { duration: 0.5, ease: "power3.out" })
+    );
+
+    const measure = () => {
+      centres = chars.map((c) => {
+        const r = c.getBoundingClientRect();
+        return { x: r.left + r.width / 2, y: r.top + r.height / 2 };
+      });
+    };
+
+    measure();
+
+    let lastX = null;
+    let direction = 1;
+    let idle = null;
+
+    const onMove = (e) => {
+      if (lastX !== null) {
+        const vx = e.clientX - lastX;
+        // Only update direction on meaningful movement, so a held cursor
+        // keeps its last direction instead of snapping back.
+        if (Math.abs(vx) > 0.6) direction = vx > 0 ? 1 : -1;
+      }
+      lastX = e.clientX;
+
+      centres.forEach((c, i) => {
+        const dx = e.clientX - c.x;
+        const dy = e.clientY - c.y;
+        const dist = Math.hypot(dx, dy);
+        const strength = Math.max(0, 1 - dist / FALLOFF);
+        setters[i](direction * MAX_DEG * strength * strength);
+      });
+
+      if (idle) clearTimeout(idle);
+      idle = setTimeout(() => setters.forEach((s) => s(0)), 420);
+    };
+
+    const onLeave = () => setters.forEach((s) => s(0));
+
+    window.addEventListener("mousemove", onMove);
+    window.addEventListener("scroll", measure, { passive: true });
+    window.addEventListener("resize", measure);
+    root.addEventListener("mouseleave", onLeave);
+
+    return () => {
+      if (idle) clearTimeout(idle);
+      window.removeEventListener("mousemove", onMove);
+      window.removeEventListener("scroll", measure);
+      window.removeEventListener("resize", measure);
+      root.removeEventListener("mouseleave", onLeave);
+    };
+  }, [text]);
+
+  return (
+    <span className="flip-text" ref={ref}>
+      {text.split("").map((ch, i) => (
+        <span className="flip-char" key={`${ch}-${i}`}>
+          {ch === " " ? " " : ch}
+        </span>
+      ))}
+    </span>
+  );
+};
 
 export const Hero = () => {
+  const globeRef = useRef(null);
+  const headline = useLoadReveal(100);
+  const bio = useLoadReveal(200);
+
+  // Spin once on load, then again on hover of the location line.
+  const spin = () => {
+    const el = globeRef.current;
+    if (!el) return;
+    el.classList.remove("globe-spinning");
+    // Force a reflow so the animation restarts rather than being ignored.
+    void el.offsetWidth;
+    el.classList.add("globe-spinning");
+  };
+
+  useEffect(() => {
+    const id = setTimeout(spin, 500);
+    return () => clearTimeout(id);
+  }, []);
+
   return (
-    <section
-      id="home"
-      aria-label="Hero section"
-      className="min-h-screen bg-black text-white flex items-center justify-center flex-col gap-4 sm:gap-6 lg:gap-8 relative px-4 sm:px-6 pt-20 pb-10"
-    >
-      <div className="flex items-center gap-4 sm:gap-7">
-        <div
-          className="rounded-full flex items-center justify-center w-12 h-12 sm:w-15 sm:h-15 lg:w-20 lg:h-20
-        bg-white shrink-0"
-        >
-          <img src={me} alt="Gabokeke Emmanuel memoji avatar" className="object-contain mt-2 sm:mt-3 w-10 sm:w-auto" />
-        </div>
-        <p className="text-sm sm:text-base lg:text-lg font-bold border border-gray-400 p-2 sm:p-3 rounded-xl">
-          I'm Emmanuel Gabokeke
-        </p>
-      </div>
+    <>
+      <h1 className={`hero-name shiny-hover ${headline}`}>{profile.headline}</h1>
 
-      <div className="text-center relative text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold max-w-full">
-        <h1 className="sr-only">Emmanuel Gabokeke - Software Developer & Engineer with 5+ years of real-world product experience</h1>
-        <p className="text-[#A374FF] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold" aria-hidden="true">SOFTWARE</p>
-        <div className="flex items-center gap-2 sm:gap-3 justify-center flex-wrap" aria-hidden="true">
-          <p className="text-[#FFD074] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">DEVELOPER </p>
-          <span className="text-white text-xs sm:text-sm lg:text-lg text-center font-semibold">
-            // 5+ Years <br /> Experience
-          </span>
-        </div>
-
-        <div className="flex items-center gap-2 sm:gap-3 justify-center" aria-hidden="true">
-          <p className="text-[#17F1D1] text-5xl sm:text-5xl md:text-6xl lg:text-8xl font-bold">
-            <span className="text-white">&</span> ENGINEER
+      <div className={`hero-lower ${bio}`}>
+        <div className="hero-bio">
+          {profile.bio.map((para) => (
+            <p key={para.slice(0, 32)}>{para}</p>
+          ))}
+          <p className="hero-bio--location" onMouseEnter={spin}>
+            <span className="globe-wrap" ref={globeRef}>
+              <Globe />
+            </span>
+            <FlipText text={profile.location} />
           </p>
         </div>
 
-        <div className="absolute animate-move top-0 right-0" aria-hidden="true">
-          <img src={cursor2} alt="" role="presentation" />
-        </div>
-        <div className="absolute animate-straight bottom-0 left-0" aria-hidden="true">
-          <img src={cursor1} alt="" role="presentation" />
-        </div>
+        <StackReel />
       </div>
-
-      <div className="text-center font-semibold px-2">
-        <p className="text-sm sm:text-xl md:text-2xl lg:text-3xl leading-relaxed">
-          I build clean, scalable mobile and web products for real users, with <br className="hidden sm:block" />
-          <span className="text-[#A374FF]">performance</span>,{" "}
-          <span className="text-[#FFD074]">clarity</span>, and{" "}
-          <span className="text-[#17F1D1]">business impact</span> at the center.
-        </p>
-      </div>
-    </section>
+    </>
   );
 };
