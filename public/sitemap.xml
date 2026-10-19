@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
-    <loc>https://gabokeke.vercel.app/</loc>
-    <lastmod>2026-03-22</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.gabokeke.com/</loc>
+    <lastmod>2026-10-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://www.gabokeke.com/og-image.jpg</image:loc>
+      <image:title>Emmanuel Gabokeke - Software Engineer</image:title>
+      <image:caption>Software engineer building web and mobile products end to end</image:caption>
+    </image:image>
   </url>
 </urlset>

@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { ArrowLeft, ArrowRight } from "./icons";
+import { ArrowLeft, ArrowRight, ChevronLeft, ChevronRight } from "./icons";
 import { testimonials } from "../data/testimonials";
 
 const PIXELS = 64; // 8x8 dissolve grid over the avatar
@@ -185,18 +185,42 @@ export const Testimonials = () => {
         ))}
       </blockquote>
 
-      <div className="sp-testimonial__dots">
-        {testimonials.map((t, i) => (
-          <button
-            key={t.name}
-            type="button"
-            className={`sp-testimonial__dot ${
-              i === idx ? "sp-testimonial__dot--active" : ""
-            }`}
-            aria-label={`Testimonial ${i + 1}`}
-            onClick={() => goTo(i, i > idx ? 1 : -1)}
-          />
-        ))}
+      {/* Mobile pager: carets either side of the dots, so the header stays
+          uncluttered on a narrow card. */}
+      <div className="sp-testimonial__pager">
+        <button
+          type="button"
+          className="sp-testimonial__caret"
+          aria-label="Previous testimonial"
+          disabled={idx === 0}
+          onClick={() => goTo(idx - 1, -1)}
+        >
+          <ChevronLeft />
+        </button>
+
+        <div className="sp-testimonial__dots">
+          {testimonials.map((t, i) => (
+            <button
+              key={t.name}
+              type="button"
+              className={`sp-testimonial__dot ${
+                i === idx ? "sp-testimonial__dot--active" : ""
+              }`}
+              aria-label={`Testimonial ${i + 1}`}
+              onClick={() => goTo(i, i > idx ? 1 : -1)}
+            />
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className="sp-testimonial__caret"
+          aria-label="Next testimonial"
+          disabled={idx === testimonials.length - 1}
+          onClick={() => goTo(idx + 1, 1)}
+        >
+          <ChevronRight />
+        </button>
       </div>
     </div>
   );

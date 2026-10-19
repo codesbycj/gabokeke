@@ -34,12 +34,30 @@ export const socials = {
   linkedin: "https://www.linkedin.com/in/emmanuel-gabokeke",
   github: "https://github.com/codesbycj",
   x: "https://x.com/codesbycj",
+  instagram: "https://instagram.com/codesbycjay",
+  threads: "https://www.threads.com/@codesbycjay",
+  tiktok: "https://www.tiktok.com/@codesbycj",
 };
 
-export const footerSocials = [
-  { label: "GitHub", href: socials.github, icon: "github" },
+// One ordered list, used by the sidebar, the mobile menu and the footer.
+// `icon` keys into the icon map in SiteFooter.
+export const socialLinks = [
   { label: "LinkedIn", href: socials.linkedin, icon: "linkedin" },
-  { label: "X", href: socials.x, icon: "x" },
+  { label: "GitHub", href: socials.github, icon: "github" },
+  { label: "X", href: socials.x, icon: "x", handle: "@codesbycj" },
+  {
+    label: "Instagram",
+    href: socials.instagram,
+    icon: "instagram",
+    handle: "@codesbycjay",
+  },
+  {
+    label: "Threads",
+    href: socials.threads,
+    icon: "threads",
+    handle: "@codesbycjay",
+  },
+  { label: "TikTok", href: socials.tiktok, icon: "tiktok", handle: "@codesbycj" },
 ];
 
 // Companies whose products he has shipped on - shown as the trust strip.
@@ -52,28 +70,13 @@ export const askAiLinks = [
   {
     label: "ChatGPT",
     short: "GPT",
+    icon: "openai",
     href: `https://chatgpt.com/?q=${encodeURIComponent(askPrompt)}`,
-  },
-  {
-    label: "Claude",
-    short: "CL",
-    href: `https://claude.ai/new?q=${encodeURIComponent(askPrompt)}`,
-  },
-  {
-    label: "Perplexity",
-    short: "PX",
-    href: `https://www.perplexity.ai/search?q=${encodeURIComponent(askPrompt)}`,
-  },
-  {
-    label: "Gemini",
-    short: "GM",
-    href: `https://www.google.com/search?udm=50&aep=11&q=${encodeURIComponent(
-      askPrompt
-    )}`,
   },
   {
     label: "Grok",
     short: "GK",
+    icon: "x",
     href: `https://x.com/i/grok?text=${encodeURIComponent(askPrompt)}`,
   },
 ];

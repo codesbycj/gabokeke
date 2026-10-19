@@ -51,7 +51,7 @@ export const caseStudies = [
     image: shuttlers,
     shots: [],
     frame: "rgba(255, 230, 232, 0.72)",
-    live: "https://shuttlers.com",
+    live: "https://shuttlers.co",
     ctaLabel: "Explore Live",
     appLinks: {
       ios: "https://apps.apple.com/ng/app/shuttlers/id1532662341",

@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { Wordmark } from "./Wordmark";
 import { useToast } from "../context/toast";
-import { navLinks, socials } from "../data/site";
+import { MailIcon } from "./icons";
+import { socialIconMap } from "./socialIcons";
+import { navLinks, profile, socialLinks } from "../data/site";
 import { useHideOnScrollDown } from "../hooks";
 
 export const MobileHeader = ({ activeSection }) => {
@@ -75,27 +77,39 @@ export const MobileHeader = ({ activeSection }) => {
         ))}
 
         <div className="mobile-menu-bottom">
-          <a
-            href={socials.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mobile-menu-link"
-            tabIndex={open ? 0 : -1}
-          >
-            LinkedIn
-          </a>
-          <button
-            type="button"
-            className="mobile-menu-link"
-            style={{ background: "none", border: "none", cursor: "pointer" }}
-            onClick={() => {
-              copyEmail();
-              setOpen(false);
-            }}
-            tabIndex={open ? 0 : -1}
-          >
-            Email
-          </button>
+          <div className="mobile-menu-socials">
+            {socialLinks.map((social) => {
+              const Icon = socialIconMap[social.icon];
+              if (!Icon) return null;
+              return (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mobile-menu-social"
+                  tabIndex={open ? 0 : -1}
+                >
+                  <Icon size={18} />
+                  <span>{social.label}</span>
+                </a>
+              );
+            })}
+            <button
+              type="button"
+              className="mobile-menu-social"
+              onClick={() => {
+                copyEmail();
+                setOpen(false);
+              }}
+              aria-label="Copy email address"
+              title={profile.email}
+              tabIndex={open ? 0 : -1}
+            >
+              <MailIcon size={18} />
+              <span>Email</span>
+            </button>
+          </div>
         </div>
       </div>
     </>

@@ -1,6 +1,8 @@
 import { Wordmark } from "./Wordmark";
 import { useToast } from "../context/toast";
-import { navLinks, socials } from "../data/site";
+import { MailIcon } from "./icons";
+import { socialIconMap } from "./socialIcons";
+import { navLinks, profile, socialLinks } from "../data/site";
 import { useLoadReveal } from "../hooks";
 
 export const Sidebar = ({ activeSection }) => {
@@ -40,23 +42,40 @@ export const Sidebar = ({ activeSection }) => {
       </div>
 
       <div className="sidebar-bottom">
-        <a
-          href={socials.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`sidebar-external ${reveal}`}
-          style={delay(360)}
-        >
-          LinkedIn
-        </a>
-        <button
-          type="button"
-          className={`sidebar-external ${reveal}`}
-          style={delay(400)}
-          onClick={copyEmail}
-        >
-          Email
-        </button>
+        <div className={`sidebar-socials ${reveal}`} style={delay(320)}>
+          {socialLinks.map((social) => {
+            const Icon = socialIconMap[social.icon];
+            if (!Icon) return null;
+            return (
+              <a
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sidebar-social"
+                aria-label={
+                  social.handle
+                    ? `${social.label} ${social.handle}`
+                    : social.label
+                }
+                title={social.handle ?? social.label}
+              >
+                <Icon size={18} />
+                <span className="sidebar-social__label">{social.label}</span>
+              </a>
+            );
+          })}
+          <button
+            type="button"
+            className="sidebar-social"
+            onClick={copyEmail}
+            aria-label="Copy email address"
+            title={profile.email}
+          >
+            <MailIcon size={18} />
+            <span className="sidebar-social__label">Email</span>
+          </button>
+        </div>
       </div>
     </aside>
   );

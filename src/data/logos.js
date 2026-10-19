@@ -10,8 +10,8 @@ import fixrWordmark from "../assets/logos/fixr-wordmark.svg";
 import fixrMark from "../assets/logos/fixr-mark.png";
 import hospytaWordmark from "../assets/logos/hospyta-wordmark.png";
 import hospytaMark from "../assets/logos/hospyta-mark.png";
-import shuttlersWordmark from "../assets/logos/shuttlers-wordmark.png";
-import shuttlersMark from "../assets/logos/shuttlers-mark.png";
+import shuttlersWordmark from "../assets/logos/shuttlers-wordmark.svg";
+import shuttlersMark from "../assets/logos/shuttlers-mark.svg";
 import gemcodeWordmark from "../assets/logos/gemcode-wordmark.png";
 import gemcodeMark from "../assets/logos/gemcode-mark.svg";
 import yelocodeMark from "../assets/logos/yelocode-mark.png";
@@ -35,7 +35,7 @@ export const brands = {
     name: "Shuttlers",
     wordmark: shuttlersWordmark,
     mark: shuttlersMark,
-    height: 14,
+    height: 20,
   },
   yelocode: {
     name: "Yelocode",

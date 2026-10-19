@@ -1,0 +1,12 @@
+{
+  "name": "Emmanuel Gabokeke - Software Engineer",
+  "short_name": "Gabokeke",
+  "description": "Software engineer building web and mobile products end to end.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "icons": [
+    { "src": "/favicon.png", "sizes": "256x256", "type": "image/png", "purpose": "any" }
+  ]
+}

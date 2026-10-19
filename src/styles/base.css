@@ -619,7 +619,49 @@ strong {
   .sidebar-bottom {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
+  }
+
+  /* Vertical list: icon + name per row, so the block breathes instead of
+     packing seven tiles into a grid. */
+  .sidebar-socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .sidebar-social {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 7px 9px;
+    margin-left: -9px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--text-muted);
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.25s var(--ease-out-quart),
+      background 0.25s var(--ease-out-quart),
+      transform 0.4s var(--ease-out-back-soft);
+  }
+
+  .sidebar-social__label {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.2px;
+  }
+
+  .sidebar-social:hover {
+    color: var(--text);
+    background: var(--neutral-25);
+    transform: translateX(2px);
+  }
+
+  .sidebar-social:active {
+    transform: translateX(0) scale(0.98);
   }
 
   .sidebar-external {
@@ -698,5 +740,116 @@ strong {
   *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------- Social icon glint ----------
+   A wave travels along the row every few seconds: each icon brightens, lifts
+   and throws a short glow, then settles. The long tail of the keyframe is a
+   rest period, so the row catches the eye without ever nagging. */
+@keyframes icon-glint {
+  0%,
+  100% {
+    color: var(--text-muted);
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 0 rgba(224, 70, 92, 0));
+  }
+  4% {
+    color: var(--accent-500);
+    transform: translateY(-3px) scale(1.14);
+    filter: drop-shadow(0 2px 7px rgba(224, 70, 92, 0.45));
+  }
+  10% {
+    color: var(--text);
+    transform: translateY(-1px) scale(1.04);
+    filter: drop-shadow(0 1px 3px rgba(224, 70, 92, 0.12));
+  }
+  18% {
+    color: var(--text-muted);
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 0 0 rgba(224, 70, 92, 0));
+  }
+}
+
+.mobile-menu-social,
+.footer__social {
+  animation: icon-glint 5.5s ease-in-out infinite;
+}
+
+/* Sidebar rows get their own wave: the icon and its label warm together. */
+@keyframes row-glint {
+  0%,
+  100% {
+    color: var(--text-muted);
+    transform: translateX(0);
+  }
+  4% {
+    color: var(--accent-500);
+    transform: translateX(4px);
+  }
+  10% {
+    color: var(--text);
+    transform: translateX(1px);
+  }
+  18% {
+    color: var(--text-muted);
+    transform: translateX(0);
+  }
+}
+
+.sidebar-social {
+  animation: row-glint 5.5s ease-in-out infinite;
+}
+
+/* Stagger so the highlight reads as one wave crossing the row. */
+.sidebar-socials > *:nth-child(1),
+.mobile-menu-socials > *:nth-child(1),
+.footer__socials > *:nth-child(1) {
+  animation-delay: 0ms;
+}
+.sidebar-socials > *:nth-child(2),
+.mobile-menu-socials > *:nth-child(2),
+.footer__socials > *:nth-child(2) {
+  animation-delay: 160ms;
+}
+.sidebar-socials > *:nth-child(3),
+.mobile-menu-socials > *:nth-child(3),
+.footer__socials > *:nth-child(3) {
+  animation-delay: 320ms;
+}
+.sidebar-socials > *:nth-child(4),
+.mobile-menu-socials > *:nth-child(4),
+.footer__socials > *:nth-child(4) {
+  animation-delay: 480ms;
+}
+.sidebar-socials > *:nth-child(5),
+.mobile-menu-socials > *:nth-child(5),
+.footer__socials > *:nth-child(5) {
+  animation-delay: 640ms;
+}
+.sidebar-socials > *:nth-child(6),
+.mobile-menu-socials > *:nth-child(6),
+.footer__socials > *:nth-child(6) {
+  animation-delay: 800ms;
+}
+.sidebar-socials > *:nth-child(7),
+.mobile-menu-socials > *:nth-child(7),
+.footer__socials > *:nth-child(7) {
+  animation-delay: 960ms;
+}
+
+/* Hovering takes over from the wave. */
+.sidebar-social:hover,
+.mobile-menu-social:hover,
+.footer__social:hover {
+  animation: none;
+  color: var(--text);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar-social,
+  .mobile-menu-social,
+  .footer__social {
+    animation: none;
   }
 }

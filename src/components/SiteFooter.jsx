@@ -1,7 +1,6 @@
-import { GithubIcon, LinkedinIcon, XIcon } from "./icons";
-import { footerSocials, profile } from "../data/site";
+import { socialIconMap } from "./socialIcons";
+import { socialLinks, profile } from "../data/site";
 
-const icons = { github: GithubIcon, linkedin: LinkedinIcon, x: XIcon };
 
 export const SiteFooter = () => (
   <footer className="site-footer">
@@ -12,8 +11,9 @@ export const SiteFooter = () => (
           rights reserved.
         </span>
         <div className="footer__socials">
-          {footerSocials.map((social) => {
-            const Icon = icons[social.icon];
+          {socialLinks.map((social) => {
+            const Icon = socialIconMap[social.icon];
+            if (!Icon) return null;
             return (
               <a
                 key={social.label}
@@ -21,7 +21,12 @@ export const SiteFooter = () => (
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer__social"
-                aria-label={social.label}
+                aria-label={
+                  social.handle
+                    ? `${social.label} ${social.handle}`
+                    : social.label
+                }
+                title={social.handle ?? social.label}
               >
                 <Icon />
               </a>

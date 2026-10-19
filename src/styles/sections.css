@@ -567,6 +567,49 @@
   }
 }
 
+
+/* ---------- Testimonial pager (mobile) ---------- */
+.sp-testimonial__pager {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 6px 0 2px;
+}
+
+.sp-testimonial__caret {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 100px;
+  background: rgba(209, 227, 255, 0.55);
+  color: var(--action-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.2s var(--ease-out-quart),
+    opacity 0.2s var(--ease-out-quart),
+    transform 0.35s var(--ease-out-back-soft);
+}
+
+.sp-testimonial__caret:active:not(:disabled) {
+  transform: scale(0.9);
+  background: rgba(209, 227, 255, 0.85);
+}
+
+.sp-testimonial__caret:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* The dots keep their own padding; the pager owns the spacing now. */
+.sp-testimonial__pager .sp-testimonial__dots {
+  padding: 0;
+}
+
 /* ---------- Logos Strip ---------- */
 .logos-section {
   display: flex;
@@ -1593,10 +1636,9 @@
     0 2px 0 0 rgba(255, 255, 255, 0.4);
 }
 
+/* These carry brand marks now, not two-letter stand-ins. */
 .about__ai-pill .about__icon-btn {
-  font-size: 13px;
-  font-weight: 700;
-  letter-spacing: -0.2px;
+  color: var(--neutral-700);
 }
 
 /* ---------- Footer ---------- */
@@ -1723,8 +1765,12 @@
     overflow: hidden;
     padding-bottom: 16px;
   }
+  /* Header arrows crowd a narrow card; the pager carets take over below. */
   .sp-testimonial__nav {
     display: none;
+  }
+  .sp-testimonial__pager {
+    display: flex;
   }
   .sp-card--testimonial .sp-testimonial__quote {
     padding: 0 24px;
@@ -2118,11 +2164,11 @@
     flex-direction: column;
     gap: 34px;
   }
-  /* Row height stays 56px here - it's set in JS as SLOT and drives the
-     track's travel distance, so CSS must not disagree with it. */
+  /* Vertical row height stays 56px - it's set in JS as SLOT and drives the
+     track's travel, so CSS must not disagree with it. */
   .stack-reel {
     width: 100%;
-    padding-top: 0;
+    padding-top: 4px;
   }
 }
 
@@ -2144,5 +2190,115 @@
   }
   .sp-services__wheel {
     left: 12px;
+  }
+}
+
+/* ---------- Mobile menu socials ---------- */
+/* Two columns of labelled rows, matching the sidebar's treatment. */
+.mobile-menu-socials {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  justify-content: center;
+  gap: 4px 10px;
+}
+
+.mobile-menu-social {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border: none;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--neutral-450);
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.mobile-menu-social:hover,
+.mobile-menu-social:active {
+  color: var(--text);
+  background: var(--neutral-25);
+}
+
+/* ---------- Stack reel: horizontal below 900px ---------- */
+.stack-reel--horizontal .stack-reel__label {
+  text-align: center;
+}
+
+.stack-reel--horizontal .stack-reel__viewport {
+  height: 56px;
+  /* Feather the sides, but only at the very edges - the outer two need to
+     stay readable, just dimmer than the one in the middle. */
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 14%,
+    #000 86%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 14%,
+    #000 86%,
+    transparent 100%
+  );
+}
+
+.stack-reel--horizontal .stack-reel__track {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.stack-reel--horizontal .stack-reel__item {
+  flex-shrink: 0;
+  height: 100%;
+  justify-content: center;
+  gap: 12px;
+}
+
+.stack-reel--horizontal .stack-reel__item {
+  gap: 9px;
+  /* The neighbours are faded, not invisible. */
+  opacity: 0.5;
+  overflow: visible;
+}
+
+.stack-reel--horizontal .stack-reel__item--active {
+  opacity: 1;
+}
+
+.stack-reel--horizontal .stack-reel__logo {
+  width: 26px;
+  height: 26px;
+}
+
+/* Only the focused slot carries a name. Names vary wildly in width ("Git"
+   against "React Native"), so showing them on the neighbours made the gaps
+   between items look uneven even though the slots are identical. A bare
+   logo centred in each side slot reads as evenly spaced. */
+.stack-reel--horizontal .stack-reel__name {
+  display: none;
+}
+
+.stack-reel--horizontal .stack-reel__item--active .stack-reel__name {
+  display: inline;
+  font-size: 16px;
+  letter-spacing: -0.5px;
+  animation: reel-name-in 0.45s var(--ease-out-quart) both;
+}
+
+@keyframes reel-name-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

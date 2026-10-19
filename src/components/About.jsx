@@ -1,11 +1,22 @@
 import React from "react";
-import { ArrowUpRight, CheckIcon, CopyIcon } from "./icons";
+import {
+  ArrowUpRight,
+  CheckIcon,
+  CopyIcon,
+  OpenAIIcon,
+  XIcon,
+} from "./icons";
 import { useToast } from "../context/toast";
 import portrait from "../assets/Profile.JPG";
 import { askAiLinks, bookCallUrl, profile } from "../data/site";
 import { useCopyToClipboard, useRevealChildren, useTilt } from "../hooks";
 
 // TODO: add two more candid shots here and the mobile strip fills out to three.
+const aiIcons = {
+  openai: OpenAIIcon,
+  x: XIcon,
+};
+
 const photos = [{ src: portrait, alt: `${profile.fullName}` }];
 
 const paragraphs = [
@@ -90,18 +101,22 @@ export const About = () => {
               Ask AI about {profile.firstName}
             </div>
             <div className="about__ai-pill">
-              {askAiLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="about__icon-btn"
-                  aria-label={`Ask ${link.label} about ${profile.firstName}`}
-                >
-                  {link.short}
-                </a>
-              ))}
+              {askAiLinks.map((link) => {
+                const Icon = aiIcons[link.icon];
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="about__icon-btn"
+                    aria-label={`Ask ${link.label} about ${profile.firstName}`}
+                    title={link.label}
+                  >
+                    {Icon ? <Icon /> : link.short}
+                  </a>
+                );
+              })}
             </div>
           </div>
         </div>
