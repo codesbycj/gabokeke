@@ -88,10 +88,11 @@ export const MobileHeader = ({ activeSection }) => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mobile-menu-social"
+                  aria-label={social.label}
+                  title={social.handle ?? social.label}
                   tabIndex={open ? 0 : -1}
                 >
-                  <Icon size={18} />
-                  <span>{social.label}</span>
+                  <Icon size={20} />
                 </a>
               );
             })}
@@ -106,8 +107,7 @@ export const MobileHeader = ({ activeSection }) => {
               title={profile.email}
               tabIndex={open ? 0 : -1}
             >
-              <MailIcon size={18} />
-              <span>Email</span>
+              <MailIcon size={20} />
             </button>
           </div>
         </div>

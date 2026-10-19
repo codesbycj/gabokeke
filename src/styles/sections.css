@@ -2194,28 +2194,29 @@
 }
 
 /* ---------- Mobile menu socials ---------- */
-/* Two columns of labelled rows, matching the sidebar's treatment. */
+/* Icons only here - the labels live in the desktop sidebar. Seven fixed
+   columns rather than a wrap, so Email can't end up stranded on its own
+   second row. The cells divide the available width, so it holds together
+   from 320px upwards. */
 .mobile-menu-socials {
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  justify-content: center;
-  gap: 4px 10px;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+  gap: 2px;
+  width: min(336px, 88vw);
 }
 
 .mobile-menu-social {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 9px 12px;
+  justify-content: center;
+  aspect-ratio: 1;
   border: none;
-  border-radius: 10px;
+  border-radius: 11px;
   background: transparent;
   color: var(--neutral-450);
-  font-family: var(--font);
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: -0.2px;
   cursor: pointer;
+  padding: 0;
   transition: color 0.2s ease, background 0.2s ease;
 }
 
