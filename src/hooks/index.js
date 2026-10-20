@@ -289,22 +289,40 @@ export function useStackFade(selector = ".case-study") {
     const cards = Array.from(root.querySelectorAll(selector));
     if (cards.length < 2) return;
 
-    if (prefersReducedMotion()) return;
+    // Only the rays animation needs pausing when motion is reduced; the fade
+    // itself is static in that case.
+    const reduced = prefersReducedMotion();
+
+    // Keep the rotating light rays off while a card is nowhere near the
+    // viewport. Four blurred conic gradients spinning at once is a lot of
+    // compositing to pay for off-screen.
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) =>
+          e.target.classList.toggle("case-study--near", e.isIntersecting)
+        );
+      },
+      { rootMargin: "200px 0px" }
+    );
+    cards.forEach((c) => io.observe(c));
 
     let frame = null;
 
     const update = () => {
       frame = null;
+
+      // Read every measurement first, then write. Interleaving the two makes
+      // the browser flush layout once per card on every scroll frame.
+      const tops = cards.map((c) => c.getBoundingClientRect().top);
+      const heights = cards.map((c) => c.offsetHeight);
+
       for (let i = 0; i < cards.length - 1; i += 1) {
-        const card = cards[i];
-        const next = cards[i + 1];
-        const nextTop = next.getBoundingClientRect().top;
-        const cardTop = card.getBoundingClientRect().top;
-        // How far the next card has climbed over this one, 0 → 1.
-        const span = Math.max(card.offsetHeight * 0.55, 1);
-        const p = Math.min(Math.max((cardTop + span - nextTop) / span, 0), 1);
-        card.style.opacity = String(1 - p * 0.55);
-        card.style.filter = p > 0.02 ? `blur(${(p * 4).toFixed(2)}px)` : "none";
+        // How far the next card has climbed over this one, 0 -> 1.
+        const span = Math.max(heights[i] * 0.55, 1);
+        const p = Math.min(Math.max((tops[i] + span - tops[i + 1]) / span, 0), 1);
+        // Opacity only. A scroll-driven blur repaints the whole card every
+        // frame, which is what made this section stutter.
+        cards[i].style.opacity = String(1 - p * 0.62);
       }
     };
 
@@ -312,16 +330,21 @@ export function useStackFade(selector = ".case-study") {
       if (!frame) frame = requestAnimationFrame(update);
     };
 
-    update();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("resize", onScroll);
+    if (!reduced) {
+      update();
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", onScroll);
+    }
+
     return () => {
       if (frame) cancelAnimationFrame(frame);
+      io.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       cards.forEach((c) => {
         c.style.opacity = "";
         c.style.filter = "";
+        c.classList.remove("case-study--near");
       });
     };
   }, [selector]);

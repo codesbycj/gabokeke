@@ -13,6 +13,25 @@ const initials = (name) =>
     .map((part) => part.charAt(0).toUpperCase())
     .join("");
 
+/**
+ * Renders an anchor when there is somewhere to go, and a plain div otherwise,
+ * so a person without a LinkedIn URL does not get a dead link.
+ */
+const Maybe = ({ href, className, label, children }) =>
+  href ? (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={`${className} ${className}--link`}
+      aria-label={label}
+    >
+      {children}
+    </a>
+  ) : (
+    <div className={className}>{children}</div>
+  );
+
 const shuffled = () => {
   const a = Array.from({ length: PIXELS }, (_, i) => i);
   for (let i = a.length - 1; i > 0; i -= 1) {
@@ -105,7 +124,11 @@ export const Testimonials = () => {
     <div className="sp-card sp-card--testimonial">
       <div className="sp-testimonial__header">
         <div className="sp-testimonial__author">
-          <div className="sp-testimonial__avatar">
+          <Maybe
+            href={current.linkedin}
+            className="sp-testimonial__avatar"
+            label={`${current.name} on LinkedIn`}
+          >
             {current.avatar ? (
               <img
                 src={current.avatar}
@@ -132,9 +155,22 @@ export const Testimonials = () => {
                 />
               ))}
             </div>
-          </div>
+          </Maybe>
           <div className="sp-testimonial__details">
-            <div className="sp-testimonial__name">{current.name}</div>
+            <div className="sp-testimonial__name">
+              {current.linkedin ? (
+                <a
+                  href={current.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sp-testimonial__name-link"
+                >
+                  {current.name}
+                </a>
+              ) : (
+                current.name
+              )}
+            </div>
             <div className="sp-testimonial__role">{current.role}</div>
           </div>
         </div>

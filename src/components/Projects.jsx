@@ -29,6 +29,8 @@ const ProjectCard = ({ project }) => {
   );
 };
 
+const GROUP_ORDER = ["Frontend", "Backend", "Data", "Tooling"];
+
 export const Projects = () => {
   const ref = useRevealChildren();
 
@@ -47,42 +49,38 @@ export const Projects = () => {
           </div>
 
           <div className="publications__tools reveal-scroll">
-            {stack.map((tool) => (
-              <a
-                key={tool.name}
-                href={tool.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pub-tool"
-              >
-                <img
-                  src={tool.logo}
-                  alt={tool.name}
-                  className="pub-tool__logo"
-                  width="56"
-                  height="56"
-                  loading="lazy"
-                />
-                <div className="pub-tool__details">
-                  <div className="pub-tool__title">
-                    <span className="pub-tool__title-full">
-                      {tool.name}
-                      <span className="pub-tool__dot">&nbsp;・&nbsp;</span>
-                      {tool.category}
-                    </span>
-                    <span className="pub-tool__title-short">{tool.name}</span>
-                  </div>
-                  <div className="pub-tool__caption">
-                    <span className="pub-tool__caption-full">
-                      {tool.caption}
-                    </span>
-                    <span className="pub-tool__caption-short">
-                      {tool.captionShort}
-                    </span>
-                  </div>
+            {GROUP_ORDER.map((group) => {
+              const items = stack.filter((t) => t.group === group);
+              if (!items.length) return null;
+              return (
+                <div className="stack-group" key={group}>
+                  <h3 className="stack-group__label">{group}</h3>
+                  <ul className="stack-group__items">
+                    {items.map((tool) => (
+                      <li key={tool.name}>
+                        <a
+                          href={tool.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="stack-chip"
+                          title={`${tool.name} - ${tool.caption}`}
+                        >
+                          <img
+                            src={tool.logo}
+                            alt=""
+                            className="stack-chip__logo"
+                            width="22"
+                            height="22"
+                            loading="lazy"
+                          />
+                          <span>{tool.name}</span>
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </a>
-            ))}
+              );
+            })}
           </div>
         </div>
       </div>

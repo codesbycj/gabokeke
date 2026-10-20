@@ -12,6 +12,7 @@ const Phone = ({ src, alt, className = "" }) => (
   </div>
 );
 
+
 const CaseStudy = ({ study }) => {
   const tiltRef = useTilt({ max: 5, scale: 1.01, glareSelector: ".tilt-glare" });
   const shots = study.shots ?? [];

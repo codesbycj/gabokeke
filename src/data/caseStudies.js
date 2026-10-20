@@ -10,6 +10,8 @@ import zeus from "../assets/Zeus.png";
 // `shots`    - 2-3 portrait app screenshots; when present the card renders
 //              them in phone frames instead of the wide `image`
 // `appLinks` - adds App Store / Play Store buttons to the card header
+//
+// The technical detail for each role lives in ./experience.js.
 export const caseStudies = [
   {
     id: "fixr",

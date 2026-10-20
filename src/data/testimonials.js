@@ -19,6 +19,7 @@ import innocent from "../assets/innocent.jpeg";
 // warning in the dev console so it doesn't quietly ship.
 //
 // `role` uses only what you told me about each person. Fix the exact titles.
+// `linkedin` makes the name a link when set; null leaves it plain text.
 // Photos are wired from src/assets/*.jpeg. Any entry left with avatar: null
 // falls back to an initials tile.
 // ---------------------------------------------------------------------------
@@ -26,6 +27,7 @@ import innocent from "../assets/innocent.jpeg";
 export const testimonials = [
   {
     name: "Edwin",
+    linkedin: "https://www.linkedin.com/in/edwin-eke",
     role: "Yelocode Systems",
     avatar: edwin,
     approved: false,
@@ -36,6 +38,7 @@ export const testimonials = [
   },
   {
     name: "Kiron",
+    linkedin: "https://www.linkedin.com/in/kiron-nandhra-520284224/",
     role: "ZEUS CRM",
     avatar: kiron,
     approved: false,
@@ -46,6 +49,8 @@ export const testimonials = [
   },
   {
     name: "Karin",
+    linkedin: null, // intentionally not linked
+
     role: "In-house dashboard",
     avatar: karin,
     approved: false,
@@ -56,6 +61,7 @@ export const testimonials = [
   },
   {
     name: "Vincent",
+    linkedin: "https://www.linkedin.com/in/ugo-vin-amajor-87387323/",
     role: "CFS Logistics",
     avatar: vincent,
     approved: false,
@@ -66,6 +72,8 @@ export const testimonials = [
   },
   {
     name: "Harriette",
+    linkedin: null, // intentionally not linked
+
     role: "In-house dashboard",
     avatar: harriette,
     approved: false,
@@ -76,6 +84,7 @@ export const testimonials = [
   },
   {
     name: "David",
+    linkedin: "https://www.linkedin.com/in/david-jeremiah-77a0bb2b9/",
     role: "Laravel Developer · Colleague",
     avatar: david,
     approved: false,
@@ -86,6 +95,7 @@ export const testimonials = [
   },
   {
     name: "Innocent",
+    linkedin: "https://www.linkedin.com/in/innocent-akwolu-5096a5238/",
     role: "Colleague @ Fixr",
     avatar: innocent,
     approved: false,

@@ -706,7 +706,7 @@
   position: sticky;
   top: 56px;
   z-index: 1;
-  will-change: opacity, filter;
+  will-change: opacity;
 }
 
 .case-study + .case-study {
@@ -935,6 +935,12 @@
   opacity: 0.85;
   filter: blur(40px);
   animation: rays-rotate 40s linear infinite;
+  /* Started only once the card is near the viewport - see useStackFade. */
+  animation-play-state: paused;
+}
+
+.case-study--near .case-study__image-wrap::before {
+  animation-play-state: running;
 }
 
 @keyframes rays-rotate {
@@ -1200,16 +1206,22 @@
   color: var(--neutral-200);
 }
 
+.experience__body {
+  width: 680px;
+  max-width: 100%;
+  flex-shrink: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-top: 1px;
+}
+
 .experience__desc {
   font-size: 20px;
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -1px;
   color: var(--neutral-600);
-  width: 680px;
-  max-width: 100%;
-  flex-shrink: 1;
-  padding-top: 1px;
 }
 
 /* ---------- CTA Block ---------- */
@@ -1342,67 +1354,74 @@
   min-width: 0;
 }
 
-.pub-tool {
+/* ---------- Stack groups ---------- */
+.publications__tools {
+  gap: 30px;
+}
+
+.stack-group__label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--neutral-350);
+  margin-bottom: 12px;
+}
+
+.stack-group__items {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
+  gap: 9px;
+  list-style: none;
+}
+
+.stack-chip {
+  display: inline-flex;
   align-items: center;
-  padding: 12px;
-  margin: -12px;
-  border-radius: 26px;
-  transition: background 0.35s var(--ease-out-quart),
-    transform 0.5s var(--ease-out-back-soft);
-  color: inherit;
+  gap: 9px;
+  padding: 9px 16px 9px 11px;
+  border-radius: 100px;
+  background: var(--neutral-25);
+  color: var(--text-body);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  box-shadow: inset 0 1.5px 0 0 rgba(255, 255, 255, 0.7);
+  transition: background 0.25s var(--ease-out-quart),
+    transform 0.4s var(--ease-out-back-soft),
+    box-shadow 0.25s var(--ease-out-quart);
 }
 
 @media (hover: hover) {
-  .pub-tool:hover {
-    transform: translateY(-1px);
+  .stack-chip:hover {
+    background: var(--neutral-0);
+    transform: translateY(-2px);
+    box-shadow: inset 0 0 0 1px var(--neutral-50),
+      0 6px 16px -8px rgba(24, 18, 18, 0.14);
   }
 }
 
-.pub-tool:hover {
-  background: rgba(239, 246, 255, 0.8);
+.stack-chip:active {
+  transform: translateY(0) scale(0.98);
 }
 
-.pub-tool:hover .pub-tool__logo {
-  animation: logo-tilt 2s ease-in-out;
-}
-
-.pub-tool__logo {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
+.stack-chip__logo {
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   flex-shrink: 0;
-  padding: 6px;
-  background: var(--neutral-0);
 }
 
-.pub-tool__details {
-  display: flex;
-  flex-direction: column;
-  gap: 7.5px;
-  padding-top: 1px;
-}
-
-.pub-tool__title {
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 25.6px;
-  letter-spacing: -1px;
-  color: var(--text-body);
-}
-
-.pub-tool__dot {
-  color: var(--neutral-200);
-}
-
-.pub-tool__caption {
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 21.8px;
-  letter-spacing: -1px;
-  color: var(--neutral-600);
+@media (max-width: 600px) {
+  .stack-chip {
+    font-size: 14px;
+    padding: 8px 14px 8px 10px;
+  }
+  .stack-chip__logo {
+    width: 20px;
+    height: 20px;
+  }
 }
 
 /* ---------- About ---------- */
@@ -1794,8 +1813,10 @@
     width: 100%;
     gap: 20px;
   }
-  .experience__desc {
+  .experience__body {
     width: 100%;
+  }
+  .experience__desc {
     font-size: 17px;
   }
   .experience__rows {
@@ -1825,9 +1846,6 @@
   .publications__tools {
     padding-left: 0;
     padding-top: 0;
-  }
-  .pub-tool {
-    gap: 20px;
   }
   .publications-section {
     padding-top: 77px;
@@ -2130,20 +2148,6 @@
   }
 }
 
-@media (max-width: 507px) {
-  .pub-tool__title-full,
-  .pub-tool__caption-full {
-    display: none;
-  }
-}
-
-@media (min-width: 508px) {
-  .pub-tool__title-short,
-  .pub-tool__caption-short {
-    display: none;
-  }
-}
-
 @media (max-width: 500px) {
   .about__cta-br {
     display: block;
@@ -2302,4 +2306,190 @@
   to {
     opacity: 1;
   }
+}
+
+/* Testimonial name links out to that person's LinkedIn when one is set. */
+.sp-testimonial__name-link {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1.5px solid transparent;
+  transition: border-color 0.2s var(--ease-out-quart), color 0.2s ease;
+}
+
+.sp-testimonial__name-link:hover {
+  color: var(--action-ink);
+  border-bottom-color: currentColor;
+}
+
+/* ---------- Role detail ---------- */
+.role-detail__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  padding: 7px 14px 7px 10px;
+  border: none;
+  border-radius: 100px;
+  background: var(--neutral-25);
+  color: var(--neutral-600);
+  font-family: var(--font);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  cursor: pointer;
+  transition: background 0.25s var(--ease-out-quart), color 0.25s ease;
+}
+
+.role-detail__toggle:hover {
+  background: var(--neutral-50);
+  color: var(--text);
+}
+
+.role-detail__toggle svg {
+  transition: transform 0.35s var(--ease-out-back-soft);
+}
+
+.role-detail--open .role-detail__toggle svg {
+  transform: rotate(90deg);
+}
+
+.role-detail__body {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 20px 0 4px;
+  animation: role-detail-in 0.45s var(--ease-out-quart) both;
+}
+
+@keyframes role-detail-in {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.role-detail__block h4 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--neutral-350);
+  margin-bottom: 7px;
+}
+
+.role-detail__block p {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.55;
+  letter-spacing: -0.3px;
+  color: var(--neutral-700);
+}
+
+.role-detail__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  list-style: none;
+}
+
+.role-detail__tags li {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  color: var(--neutral-700);
+  background: var(--neutral-25);
+  border-radius: 100px;
+  padding: 5px 12px;
+}
+
+.role-detail__metrics {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  list-style: none;
+}
+
+.role-detail__metrics li {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 2px solid var(--accent-100);
+  padding-left: 12px;
+}
+
+.role-detail__claim {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.3px;
+  color: var(--text-body);
+}
+
+/* A number is never shown without what it is measured against. */
+.role-detail__context {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--neutral-450);
+}
+
+@media (max-width: 999px) {
+  .role-detail__block p,
+  .role-detail__claim {
+    font-size: 16px;
+  }
+}
+
+/* Feature list: what the product does in plain words, then what built it. */
+.role-detail__features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+  gap: 18px 36px;
+  list-style: none;
+}
+
+.role-detail__features li {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.role-detail__feature-name {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  color: var(--text-body);
+}
+
+.role-detail__feature-what {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+  color: var(--neutral-600);
+}
+
+.role-detail__feature-tech {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.1px;
+  color: var(--neutral-400);
+  padding-top: 2px;
+}
+
+/* Avatar links to LinkedIn when a URL is set on that testimonial. */
+.sp-testimonial__avatar--link {
+  cursor: pointer;
+  transition: transform 0.4s var(--ease-out-back-soft),
+    box-shadow 0.3s var(--ease-out-quart);
+}
+
+.sp-testimonial__avatar--link:hover {
+  transform: translateY(-2px);
+  box-shadow: inset 0 2px 0 0 rgba(193, 197, 240, 0.56),
+    0 2px 0 0 rgba(255, 255, 255, 0.56),
+    0 8px 18px -8px rgba(0, 46, 113, 0.3);
 }
