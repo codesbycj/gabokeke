@@ -50,7 +50,7 @@ const RoleDetail = ({ detail, company }) => {
 
           {features.length > 0 && (
             <div className="role-detail__block">
-              <h4>What it does</h4>
+              <h4>What I shipped</h4>
               <ul className="role-detail__features">
                 {features.map((f) => (
                   <li key={f.name}>

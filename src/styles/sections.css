@@ -2473,11 +2473,14 @@
 }
 
 .role-detail__feature-tech {
+  /* Pin the stack line to the bottom of its grid cell so the lines stay
+     aligned across a row now that the descriptions differ in length. */
+  margin-top: auto;
+  padding-top: 8px;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: -0.1px;
   color: var(--neutral-400);
-  padding-top: 2px;
 }
 
 /* Avatar links to LinkedIn when a URL is set on that testimonial. */

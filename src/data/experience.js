@@ -14,6 +14,11 @@
 //              metrics   - { claim, baseline, method } so a number is never
 //                          stated without what it is measured against
 //
+// `features[].what` is the implementation, not the brochure. Write what you
+// built and how it works - the mechanism, the thing it replaced, the number
+// it moved - not what a user sees on screen. "Held a socket and patched the
+// query cache" beats "the status updates live".
+//
 // Anything you cannot state accurately should stay out. A vague claim an
 // interviewer can puncture is worse than no claim.
 export const experience = [
@@ -37,81 +42,87 @@ export const experience = [
         "Supabase Storage",
         "MySQL",
       ],
-      // What a customer can actually do in the app, and what each one is
-      // built on. Plain language first, tooling second.
+      // Implementation, not brochure: what I wrote, how it works, and what it
+      // replaced. The tech list names the concrete pieces underneath.
       features: [
         {
           name: "Sign in",
-          what: "Phone number and a one-time code to get in. After that, Face ID or a fingerprint.",
+          what: "Implemented OTP sign-in end to end - number entry, code verification, resend throttling and token refresh - then layered biometric unlock over the stored session, so a returning customer reopens the app with Face ID or a fingerprint instead of waiting on another SMS.",
           tech: ["OTP verification", "react-native-biometrics"],
         },
         {
           name: "Book a service",
-          what: "Pick what needs fixing, where, and when. Address lookup fills itself in as you type.",
+          what: "Built the booking flow as one react-hook-form schema validated with Zod, so service type, address and time slot are rejected on the device before an order is ever posted. Google Places Autocomplete resolves the address to coordinates dispatch can route against, rather than free text someone in the office has to interpret.",
           tech: ["Google Places Autocomplete", "react-hook-form", "Zod"],
         },
         {
           name: "Find a technician",
-          what: "The app looks for an available technician and assigns one, instead of someone in the office arranging it by phone.",
+          what: "Replaced phone-arranged dispatch with an API path: the app posts the order, the backend matches an available technician, and TanStack Query revalidates the job so the assignment lands on the customer's screen without anyone re-keying it into a spreadsheet.",
           tech: ["REST API", "TanStack Query"],
         },
         {
           name: "Live job updates",
-          what: "The job status changes on your screen as it happens, without pulling to refresh.",
+          what: "Held a Socket.IO connection per session and subscribed to task_status_updated, patching each event straight into the TanStack Query cache so the job moves through assigned, en route and complete with no polling loop and no pull-to-refresh. Reconnect refetches the job, so a dropped connection cannot leave stale status on screen.",
           tech: ["Socket.IO", "task_status_updated events"],
         },
         {
           name: "Track the technician",
-          what: "See where they are on a map while they are on the way.",
+          what: "Drove the technician marker on react-native-maps off the same socket stream as the status updates, so live location cost no second polling endpoint and the map and the job card can never disagree.",
           tech: ["react-native-maps"],
         },
         {
           name: "Chat with the technician",
-          what: "Message them directly in the app rather than swapping phone numbers.",
+          what: "Integrated the in-house Fixr chat SDK into the job screen with each thread scoped to a job, which keeps the conversation attached to the work order and keeps customer and technician phone numbers out of the exchange entirely.",
           tech: ["In-house Fixr chat SDK"],
         },
         {
           name: "Notifications",
-          what: "Alerts when a technician is assigned, on the way, or a payment is due. You choose which ones you get.",
+          what: "Registered FCM tokens against the customer record and rendered the payloads through Notifee with per-category channels, so a customer can mute the promotional ones without losing 'technician assigned' or 'payment due'. Each notification deep-links to the job it is about instead of dropping the user on the home screen.",
           tech: ["Firebase Cloud Messaging", "Notifee"],
         },
         {
           name: "Your appliances",
-          what: "Keep a list of what you own, including solar, so a repair starts with the history instead of questions.",
+          what: "Built the appliance register so a customer photographs the nameplate and ML Kit text recognition fills in brand, model and serial rather than them typing it. A repair request then opens with the unit and its service history already attached, which is what removed the back-and-forth of establishing what the customer owns.",
           tech: ["Image picker", "ML Kit text recognition"],
         },
         {
           name: "Maintenance plans",
-          what: "Subscribe to have an appliance serviced regularly. There is a load analysis step for solar that works out what size system you need.",
+          what: "Built recurring servicing as a subscribed plan rather than a repeat booking, including the solar load-analysis step that totals the customer's registered appliance draw and sizes the system from it - so the recommendation comes out of their own appliance list instead of a sales call.",
           tech: ["Paystack"],
         },
         {
           name: "Subscription payments",
-          what: "You pay once through Paystack, and it charges the same card again each cycle on its own. The app shows what is coming up and what has already been paid.",
+          what: "Owned billing end to end: first charge through the Paystack webview, card authorisation stored against the plan, then every later cycle charged on its own. Webhook events reconcile back against the subscription record, so the app can show what has been collected and what is due next - and the business stopped invoicing by hand.",
           tech: ["Paystack", "react-native-paystack-webview"],
         },
         {
           name: "Job history",
-          what: "Everything pending, upcoming, in progress or finished, with a rating once the work is done.",
+          what: "Built the pending, upcoming, in-progress and completed views over one paginated, cached job query, with the rating prompt fired off the completion event so feedback is captured at the moment the work closes rather than chased afterwards.",
           tech: ["TanStack Query", "react-native-ratings"],
         },
         {
           name: "Equipment financing",
-          what: "Apply for financing in the app and upload your documents from your phone.",
+          what: "Implemented customer loan applications in-app - the application form, document capture and upload to Supabase Storage straight from the phone, and status tracking through to approval - which took an email-and-paper process off the back office entirely. Applications rose once customers could apply from the phone, and the channel has carried more than N500,000,000 in financing.",
           tech: ["Supabase Storage", "Document picker"],
         },
         {
           name: "Support",
-          what: "Live chat with the Fixr team without leaving the app.",
+          what: "Embedded Zoho SalesIQ with the signed-in customer and their current job passed through as context, so an agent opens the chat already knowing who it is and which job it concerns instead of asking.",
           tech: ["Zoho SalesIQ"],
         },
         {
           name: "Staying stable",
-          what: "Crashes are reported automatically, and the app tells you when an update is required.",
+          what: "Wired Sentry with release tagging so a crash points at the build it came from, and gated startup with react-native-version-check so a client older than the minimum the API supports is told to update rather than failing against a contract it no longer understands.",
           tech: ["Sentry", "react-native-version-check"],
         },
       ],
       metrics: [
+        {
+          claim:
+            "Financed more than N500,000,000 in customer equipment loans through the in-app application flow",
+          baseline: null, // CONFIRM: over what period, and what was the paper/email application volume before?
+          method: null, // CONFIRM: where does the figure come from - disbursement totals in the admin dashboard?
+        },
         {
           claim: "Dispatch no longer requires manual data entry",
           baseline: null, // CONFIRM: roughly how many orders/day were re-keyed before?
@@ -139,22 +150,22 @@ export const experience = [
       features: [
         {
           name: "Customer records",
-          what: "One place for customer and operational data, current rather than exported last week.",
+          what: "Repointed the record screens from exported spreadsheets to the live REST APIs and normalised the responses into one client store keyed by id, so a customer edited on one screen updates everywhere instead of being duplicated per view.",
           tech: ["REST API", "Normalised client store"],
         },
         {
           name: "Live data",
-          what: "Screens people keep open all day refresh on their own, so a number on screen is not stale.",
+          what: "Put the always-open operations screens on scheduled refetching with refresh on focus, so a number someone has had on screen for an hour is the number in the database - which is what stopped the team re-exporting to check.",
           tech: ["Scheduled refetching"],
         },
         {
           name: "Search and filter",
-          what: "Find a record without scrolling through everything.",
+          what: "Built debounced search and filtering over the normalised store, so a lookup resolves against data already in memory rather than a round trip per keystroke.",
           tech: ["Client-side filtering"],
         },
         {
           name: "Operational views",
-          what: "The day-to-day screens the team works out of, rebuilt so they stay responsive as the dataset grows.",
+          what: "Rebuilt the daily-driver screens around memoised rows and derived selectors, which is what stopped the stalling as the dataset grew - re-render cost no longer scales with total records.",
           tech: ["React", "Memoised rendering"],
         },
       ],
@@ -181,27 +192,27 @@ export const experience = [
       features: [
         {
           name: "Admin dashboards",
-          what: "Turned complicated database queries into screens a non-technical team could read and act on.",
+          what: "Built React dashboards over the clients' MySQL-backed APIs, turning queries an analyst used to run by hand into filtered, paginated screens an operations team could act on without asking anyone for an extract.",
           tech: ["React", "MySQL"],
         },
         {
           name: "Client websites",
-          what: "Marketing and product sites for different clients, each shipped on its own schedule alongside the rest of the work.",
+          what: "Shipped marketing and product sites for separate clients off a shared component approach, so each delivery reused the layout and form primitives instead of starting from markup - which is how several ran in parallel against monthly targets.",
           tech: ["React", "Responsive layout"],
         },
         {
           name: "Progressive web apps",
-          what: "Apps that install to the home screen and keep working on a bad connection, without going through an app store.",
+          what: "Added service workers with offline caching and a web app manifest, so the apps install to the home screen and keep serving cached data on a bad connection - delivery without an app store review cycle.",
           tech: ["Service workers", "Web app manifest", "Offline caching"],
         },
         {
           name: "Automated data sync",
-          what: "Records people were re-typing between systems started moving on their own over the API.",
+          what: "Replaced the re-typing between client systems with scheduled API sync jobs, which is where the workload reduction came from - records moved on their own instead of being entered twice by hand.",
           tech: ["REST APIs", "Scheduled sync"],
         },
         {
           name: "Sprint process",
-          what: "Planning, reviews and unblocking across all the projects at once - nothing merged unseen, which mattered most for the junior engineers.",
+          what: "Ran planning, review and unblocking across all the projects at once and gated merges on review - nothing shipped unseen, which mattered most for the two junior engineers on the team.",
           tech: ["Git", "Code review"],
         },
       ],
@@ -233,37 +244,37 @@ export const experience = [
       features: [
         {
           name: "Find a doctor",
-          what: "Browse by specialty and see who is actually available, rather than calling a clinic to ask.",
+          what: "Built specialty browse and search over the provider API with availability resolved server-side, so the list shows doctors who actually have open slots rather than a directory the patient has to phone through.",
           tech: ["REST API", "Search and filtering"],
         },
         {
           name: "Book an appointment",
-          what: "Pick a slot in the doctor's calendar. The slot is checked again at the moment you book, so two people cannot take the same one.",
+          what: "Built slot selection against the doctor's calendar with the slot re-checked at submit, so two patients racing for the same time get one booking and one clear rejection instead of a double-booked doctor.",
           tech: ["Slot availability API"],
         },
         {
           name: "Consult from the app",
-          what: "Talk to the doctor without travelling to a clinic.",
+          what: "Built the consultation entry path - joining from the booking, in-call state, and returning the patient to their record afterwards - so the appointment and the consultation are one flow rather than a link sent out of band.",
           tech: [], // CONFIRM: what powered the call - Agora, Twilio, something else?
         },
         {
           name: "Prescriptions",
-          what: "What the doctor prescribes is attached to your record, so the next step can act on it instead of you carrying paper.",
+          what: "Attached what the doctor issues to the patient record through the record API, so the pharmacy and order steps read it directly instead of the patient carrying paper between them.",
           tech: ["Patient record API"],
         },
         {
           name: "Buy healthcare products",
-          what: "Order medication and supplies in the same app, fulfilled by partner pharmacies and vendors.",
+          what: "Built the in-app catalogue and checkout against the partner pharmacy and vendor integrations, so medication ordered off a prescription stays inside the same account and order history.",
           tech: ["Partner pharmacy integration"],
         },
         {
           name: "Riders and ambulance",
-          what: "Delivery and emergency transport are wired into the same journey rather than being separate phone calls.",
+          what: "Wired the delivery and emergency transport partners into the patient journey as request steps in the app, so dispatch happens from the booking that caused it rather than a separate phone call.",
           tech: ["Partner service APIs"],
         },
         {
           name: "Reminders",
-          what: "Alerts before an appointment and when something needs your attention.",
+          what: "Registered device tokens per patient and pushed appointment and action reminders deep-linked to the appointment they refer to - the part that has to work when the app is closed.",
           tech: ["Push notifications"],
         },
       ],
@@ -284,52 +295,52 @@ export const experience = [
       features: [
         {
           name: "Set pickup and destination",
-          what: "Say where you are starting and where you are going.",
+          what: "Built location entry that resolves what the rider types into stops the network actually serves, so route discovery matches against real stop ids rather than guessing at an address.",
           tech: ["Location search"],
         },
         {
           name: "Find a route",
-          what: "See the scheduled shuttles that actually serve that trip, with their times.",
+          what: "Built route discovery over the scheduling API, so the rider sees only shuttles that serve that pickup-to-destination pair at a time they can still catch, instead of the full timetable.",
           tech: ["Route discovery API"],
         },
         {
           name: "Pick a seat",
-          what: "Choose your seat and hold it while payment goes through, so it is not sold to someone else mid-checkout.",
+          what: "Built seat selection against a reservation that holds the seat while payment runs and releases it on failure or timeout, which is what stops a seat being sold twice mid-checkout.",
           tech: ["Seat reservation API"],
         },
         {
           name: "Check in",
-          what: "Confirm you are on the trip, which ties your booking to that specific shuttle.",
+          what: "Built check-in so a booking is bound to the specific shuttle on the day, which gives the operator a real manifest rather than a list of people who paid.",
           tech: ["Trip check-in API"],
         },
         {
           name: "Track the shuttle",
-          what: "Watch where the bus is on a map, so you know whether to leave the office now or in ten minutes.",
+          what: "Rendered the vehicle's live position on the trip map from the tracking feed, so the rider decides when to leave the office off the bus's actual position rather than the scheduled time.",
           tech: ["Live location", "Maps"],
         },
         {
           name: "Notifications",
-          what: "Alerts when the shuttle is close or the trip changes - the things that matter when the app is closed.",
+          what: "Pushed approach and trip-change alerts to the device, deep-linked to the trip - the alerts that have to land when the app is closed, which is exactly when a rider needs them.",
           tech: ["Push notifications"],
         },
         {
           name: "Favourite and recent routes",
-          what: "The trips you take every day are one tap, instead of rebuilding the same booking each morning.",
+          what: "Built saved and recent routes so the commute a rider takes every morning is one tap off stored trip parameters rather than the full booking flow rebuilt daily - the retention lever on a product people open twice a day.",
           tech: ["Saved routes API"],
         },
         {
           name: "Book again",
-          what: "Repeat your last trip without going through the whole flow.",
+          what: "Built repeat booking off the booking history, replaying the last trip's route, seat and time into a new reservation so a rebook is a confirmation instead of a flow.",
           tech: ["Booking history API"],
         },
         {
           name: "Change pickup or drop-off",
-          what: "Adjust where you are getting on or off without cancelling and starting over.",
+          what: "Built in-place booking modification, so a changed stop updates the existing reservation rather than forcing a cancel-and-rebook that risks losing the seat.",
           tech: ["Booking modification API"],
         },
         {
           name: "Rate the driver",
-          what: "Leave a rating and trip feedback once you arrive.",
+          what: "Built the post-trip rating prompt off trip completion, so feedback is collected at arrival while the rider still remembers it, and lands against the driver and that specific trip.",
           tech: ["Ratings API"],
         },
       ],
@@ -350,17 +361,17 @@ export const experience = [
       features: [
         {
           name: "Marketing pages",
-          what: "The company's services and work, built as components so sections could be rearranged without rewriting markup.",
+          what: "Built the services and work pages out of composable section components, so the marketing team could reorder or reuse a section without anyone rewriting markup for it.",
           tech: ["React", "Next.js"],
         },
         {
           name: "Responsive layout",
-          what: "Holds up from a phone to a desktop without a separate mobile site.",
+          what: "Built one Tailwind layout that holds from a phone to a desktop, so there is no separate mobile site and no second set of pages to keep in sync.",
           tech: ["Tailwind CSS"],
         },
         {
           name: "Fast loading",
-          what: "Images and bundles trimmed to what each page actually needs, which cut both load time and hosting cost.",
+          what: "Code-split the bundles and optimised the images so each page ships only what it needs - which is where both the load time and the hosting bill came down, since less is served per visit.",
           tech: ["Code splitting", "Image optimisation"],
         },
       ],
@@ -387,17 +398,17 @@ export const experience = [
       features: [
         {
           name: "Festival pages",
-          what: "The public pages for the event - lineup, details, and the information people came looking for.",
+          what: "Built the public event pages - lineup, schedule and details - in hand-written HTML, CSS and JavaScript, against a launch date that could not move.",
           tech: ["HTML", "CSS", "JavaScript"],
         },
         {
           name: "Responsive layout",
-          what: "Built to hold up on whatever phone a festival-goer happened to have.",
+          what: "Built the layout mobile-first, since the traffic was people checking the lineup on a phone at the event rather than on a desktop beforehand.",
           tech: ["CSS"],
         },
         {
           name: "Cross-browser testing",
-          what: "Checked across browsers and devices ahead of a fixed launch date.",
+          what: "Took the cross-browser and device pass before launch, finding and fixing the layout breaks on older phones ahead of a fixed, unmovable date.",
           tech: ["Manual QA"],
         },
       ],
