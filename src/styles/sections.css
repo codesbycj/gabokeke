@@ -141,6 +141,43 @@
   font-weight: 600;
 }
 
+/* ---------- Hero stats ---------- */
+/* One row, no divider. The hero already carries a 72px headline and the cards
+   below carry the colour, so this reads as a credential strip between them -
+   figures small enough not to compete, labels short enough to stay on one or
+   two lines across six equal columns. */
+.hero-stats {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 44px 0 0;
+  padding: 0;
+}
+
+.hero-stat {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.hero-stat__value {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -1.4px;
+  color: var(--text);
+}
+
+.hero-stat__label {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+  color: var(--neutral-400);
+}
+
 /* ---------- Social Proof ---------- */
 .social-proof {
   display: flex;
@@ -2160,6 +2197,14 @@
     font-size: 20px;
     line-height: 140%;
   }
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .hero-stat__value {
+    font-size: 24px;
+    letter-spacing: -1px;
+  }
 }
 
 /* Reel drops below the bio once there's no room beside it. */
@@ -2167,6 +2212,12 @@
   .hero-lower {
     flex-direction: column;
     gap: 34px;
+  }
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px 20px;
+    margin-top: 36px;
   }
   /* Vertical row height stays 56px - it's set in JS as SLOT and drives the
      track's travel, so CSS must not disagree with it. */

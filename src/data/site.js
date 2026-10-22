@@ -19,6 +19,20 @@ export const profile = {
   ],
 };
 
+
+// Ordered as a sentence, left to right. The first two are about me - how long,
+// and at what level. The next three are the work, escalating in scale: what I
+// built, who used it, what moved through it. The last is the close: it held
+// up. Leadership belongs beside the years, not between the product numbers.
+export const stats = [
+  { value: "5+", label: "Years in production" },
+  { value: "4", label: "Teams led" },
+  { value: "20+", label: "Apps & Software" },
+  { value: "1M+", label: "Users reached" },
+  { value: "$3M+", label: "Payments processed" },
+  { value: "99.9%", label: "Crash-free sessions" },
+];
+
 // TODO: swap for a Cal.com or Google Calendar booking link when you have one.
 export const bookCallUrl = `https://wa.me/${profile.phone.replace("+", "")}`;
 

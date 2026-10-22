@@ -12,6 +12,7 @@ export { Sidebar } from "./Sidebar";
 export { SiteFooter } from "./SiteFooter";
 export { SocialProof } from "./SocialProof";
 export { StackReel } from "./StackReel";
+export { Stats } from "./Stats";
 export { Testimonials } from "./Testimonials";
 export { ToastProvider } from "./Toast";
 export { Wordmark } from "./Wordmark";

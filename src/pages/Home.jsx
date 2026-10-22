@@ -11,6 +11,7 @@ import {
   Sidebar,
   SiteFooter,
   SocialProof,
+  Stats,
 } from "../components";
 import { navLinks, profile } from "../data/site";
 import { useScrollSpy } from "../hooks";
@@ -33,6 +34,7 @@ export const Home = () => {
         <section id="services" className="section section--hero">
           <div className="centered">
             <Hero />
+            <Stats />
             <SocialProof />
             <LogosStrip />
             <CaseStudies />
