@@ -20,10 +20,6 @@ export const profile = {
 };
 
 
-// Ordered as a sentence, left to right. The first two are about me - how long,
-// and at what level. The next three are the work, escalating in scale: what I
-// built, who used it, what moved through it. The last is the close: it held
-// up. Leadership belongs beside the years, not between the product numbers.
 export const stats = [
   { value: "5+", label: "Years in production" },
   { value: "4", label: "Teams led" },
@@ -53,8 +49,6 @@ export const socials = {
   tiktok: "https://www.tiktok.com/@codesbycj",
 };
 
-// One ordered list, used by the sidebar, the mobile menu and the footer.
-// `icon` keys into the icon map in SiteFooter.
 export const socialLinks = [
   { label: "LinkedIn", href: socials.linkedin, icon: "linkedin" },
   { label: "GitHub", href: socials.github, icon: "github" },
@@ -74,8 +68,6 @@ export const socialLinks = [
   { label: "TikTok", href: socials.tiktok, icon: "tiktok", handle: "@codesbycj" },
 ];
 
-// Companies whose products he has shipped on - shown as the trust strip.
-// Values are keys into `brands` in ./logos.js.
 export const trustedBy = ["fixr", "hospyta", "shuttlers", "yelocode", "gemcode"];
 
 const askPrompt = `I'm evaluating ${profile.fullName} (${profile.url}) for a software engineering role on our team. Review his portfolio and tell me: what's his technical range, what kind of team and stage he fits best, and what I'd actually get if I hired him. Be specific - reference his projects and experience.`;
