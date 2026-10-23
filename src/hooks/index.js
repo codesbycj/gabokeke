@@ -289,6 +289,12 @@ export function useStackFade(selector = ".case-study") {
     const cards = Array.from(root.querySelectorAll(selector));
     if (cards.length < 2) return;
 
+    // Fade each card's contents, never the card itself. Opacity on the card
+    // makes its own background translucent too, and a see-through card reveals
+    // whatever is stacked behind it - so a mid-stack card being faded by the
+    // card above it showed the card below it straight through.
+    const contents = cards.map((c) => Array.from(c.children));
+
     // Only the rays animation needs pausing when motion is reduced; the fade
     // itself is static in that case.
     const reduced = prefersReducedMotion();
@@ -322,7 +328,14 @@ export function useStackFade(selector = ".case-study") {
         const p = Math.min(Math.max((tops[i] + span - tops[i + 1]) / span, 0), 1);
         // Opacity only. A scroll-driven blur repaints the whole card every
         // frame, which is what made this section stutter.
-        cards[i].style.opacity = String(1 - p * 0.62);
+        //
+        // Fades to 0, not to a resting 0.38: each card is sticky at the same
+        // top, so a card that stays partly visible keeps showing in the strip
+        // above the next card's edge.
+        const o = String(1 - p);
+        contents[i].forEach((el) => {
+          el.style.opacity = o;
+        });
       }
     };
 
@@ -341,10 +354,13 @@ export function useStackFade(selector = ".case-study") {
       io.disconnect();
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
-      cards.forEach((c) => {
+      cards.forEach((c, i) => {
         c.style.opacity = "";
         c.style.filter = "";
         c.classList.remove("case-study--near");
+        contents[i].forEach((el) => {
+          el.style.opacity = "";
+        });
       });
     };
   }, [selector]);

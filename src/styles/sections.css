@@ -744,6 +744,10 @@
   top: 56px;
   z-index: 1;
   will-change: opacity;
+  /* Every card occludes whatever is under it, the first one included - the
+     rule below adds the rounded sheet and offsets, but only from the second
+     card on, so the first was left transparent. */
+  background: var(--bg);
 }
 
 .case-study + .case-study {
@@ -1021,6 +1025,45 @@
 }
 
 /* ---------- Phone frames (mobile case studies) ---------- */
+/* Store graphics: same stagger as the phone row, but flat - these images
+   already contain their own device frame and background. */
+.case-study__graphics {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 8px 0 4px;
+  will-change: transform;
+}
+
+.case-study__graphic {
+  width: 222px;
+  flex-shrink: 0;
+  border-radius: 28px;
+  display: block;
+  box-shadow: 0 40px 60px -28px rgba(18, 10, 36, 0.45);
+}
+
+.case-study__graphic--1,
+.case-study__graphic--3 {
+  width: 196px;
+  transform: translateY(26px) scale(0.96);
+  opacity: 0.94;
+}
+
+.case-study__graphic--2 {
+  z-index: 2;
+}
+
+/* Not a link yet - there is no store listing to point at. */
+.case-study__store-btn--soon {
+  opacity: 0.42;
+  cursor: default;
+  pointer-events: none;
+}
+
 .case-study__phones {
   position: relative;
   z-index: 2;
@@ -1086,6 +1129,18 @@
 }
 
 @media (max-width: 767px) {
+  .case-study__graphics {
+    gap: 10px;
+  }
+  .case-study__graphic {
+    width: 36vw;
+    border-radius: 18px;
+  }
+  .case-study__graphic--1,
+  .case-study__graphic--3 {
+    width: 32vw;
+    transform: translateY(14px) scale(0.96);
+  }
   .case-study__phones {
     gap: 12px;
   }
@@ -1111,6 +1166,15 @@
 
 /* Two frames is plenty on the narrowest screens. */
 @media (max-width: 480px) {
+  .case-study__graphic--3 {
+    display: none;
+  }
+  .case-study__graphic {
+    width: 44vw;
+  }
+  .case-study__graphic--1 {
+    width: 40vw;
+  }
   .phone--3 {
     display: none;
   }

@@ -6,6 +6,7 @@
 //                falls back to its square mark.
 // `bleed`      - true for full-bleed app icons that own their own background,
 //                so the tile skips the white padding and crops edge to edge.
+import velofiMark from "../assets/velofi.png";
 import fixrWordmark from "../assets/logos/fixr-wordmark.svg";
 import fixrMark from "../assets/logos/fixr-mark.png";
 import hospytaWordmark from "../assets/logos/hospyta-wordmark.png";
@@ -19,6 +20,12 @@ import zeusMark from "../assets/logos/zeus-mark.png";
 import boleMark from "../assets/logos/bole-mark.jpg";
 
 export const brands = {
+  velofi: {
+    name: "Velofi",
+    wordmark: null,
+    mark: velofiMark,
+    markHeight: 26,
+  },
   fixr: {
     name: "Fixr",
     wordmark: fixrWordmark,

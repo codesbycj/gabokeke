@@ -23,6 +23,75 @@
 // interviewer can puncture is worse than no claim.
 export const experience = [
   {
+    // CONFIRM: role title and period - drafted to match the Fixr row. The
+    // Velofi customer app is a port of fixr-customer-app's architecture and
+    // sits in the same repo tree, so if Velofi is a Fixr product rather than a
+    // separate employer, this belongs inside that row instead of beside it.
+    role: "Mobile Engineer",
+    company: "Velofi",
+    period: "2026 - Present",
+    brand: "velofi",
+    desc: "Built the Velofi customer app in React Native - payments, transfers and VeloYield, the fixed-term investment product - and shipped it to Google Play with iOS to follow. Owned the card-funded subscription path end to end, from Paystack checkout through settlement to the numbered certificate a customer downloads.",
+    detail: {
+      verified: false,
+      owned:
+        "I built the customer app: the architecture, the screens and the money flows. The VeloYield path - choosing a term, funding it by card, waiting for the debit to settle, and issuing the certificate - was mine end to end.",
+      stack: [
+        "React Native",
+        "TypeScript",
+        "TanStack Query v5",
+        "React Navigation",
+        "NativeWind",
+        "Reanimated",
+        "Axios",
+        "Paystack",
+        "Jest + React Native Testing Library",
+      ],
+      build:
+        "Screens are pure functions of their props. A withQuery HOC calls the screen's hook and renders the spinner or the error itself, so no screen in the app sees a loading flag or an error state; withMutation does the same for writes and handles cache invalidation, the error toast and session expiry once, for every mutation, rather than in each one.",
+      features: [
+        {
+          name: "Send and receive money",
+          what: "Built the transfer path - recipient, amount, review, result - and the receive side that exposes the account details to share, against the wallet service.",
+          tech: ["REST API", "TanStack Query"],
+        },
+        {
+          name: "Balance and activity",
+          what: "Built the activity list and transaction detail over cached queries keyed from one central file, so a completed transfer invalidates the balance and the list together.",
+          tech: ["TanStack Query", "Centralised query keys"],
+        },
+        {
+          name: "Open a VeloYield position",
+          what: "Built the subscription flow as principal, then term, then review, with the expected return computed against each tenor so a customer sees what their own figure pays before committing.",
+          tech: ["Multi-step form", "Tenor and rate terms"],
+        },
+        {
+          name: "Funding it by card",
+          what: "Built card checkout as a Paystack sheet in a WebView that posts its result back over the message bridge, keeping subscribe, confirm and cancel testable without it.",
+          tech: ["Paystack", "react-native-webview"],
+        },
+        {
+          name: "Waiting for the debit to settle",
+          what: "A card charge returns before the money moves, so after a pending charge the app refetches positions every 1.5s for up to 20s and matches on tenor and principal before showing the position as real.",
+          tech: ["Polling with deadline", "Query cache refetch"],
+        },
+        {
+          name: "Tracking a position",
+          what: "Built the position view around progress through the term and the maturity date, with payout mode and terms rendered from whatever the server sends.",
+          tech: ["Position timeline", "Maturity card"],
+        },
+        {
+          name: "Testing",
+          what: "Jest and React Native Testing Library with a fresh query client per test, so cache cannot leak between cases and make a failure depend on file order.",
+          tech: ["Jest", "@testing-library/react-native", "Maestro"],
+        },
+      ],
+      rigor:
+        "TypeScript throughout with a typecheck step, unit tests over the money logic - settlement matching, payout labels, amount-in-words - and the architecture written down in the repo, including the React Query v5 migration bugs inherited from the app it was ported from and fixed here rather than carried forward.",
+      metrics: [],
+    },
+  },
+  {
     role: "Software Engineer",
     company: "Fixr Technologies",
     period: "2026 - Present",

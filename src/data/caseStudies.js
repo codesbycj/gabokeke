@@ -1,3 +1,6 @@
+import velofiPay from "../assets/velofi5.png";
+import velofiHome from "../assets/velofi4.png";
+import velofiCertificate from "../assets/velofi1.png";
 import fixr from "../assets/usefixr.png";
 import hospyta from "../assets/Hospyta.png";
 import shuttlers from "../assets/shuttlers.png";
@@ -9,10 +12,30 @@ import zeus from "../assets/Zeus.png";
 // `image`    - wide product shot, used when there are no phone screens
 // `shots`    - 2-3 portrait app screenshots; when present the card renders
 //              them in phone frames instead of the wide `image`
-// `appLinks` - adds App Store / Play Store buttons to the card header
+// `graphics` - 3 store listing graphics, shown flat; use these instead of
+//              `shots` when the images already contain their own device frame
+// `live`     - the public product URL. Omit it and the card drops the globe
+//              and the CTA, and the shot stops being a link
+// `appLinks` - adds App Store / Play Store buttons to the card header.
+//              `iosSoon: true` renders a dimmed Apple mark for an app that is
+//              not on the App Store yet, rather than a link to nothing
 //
 // The technical detail for each role lives in ./experience.js.
 export const caseStudies = [
+  {
+    id: "velofi",
+    title: "Velofi",
+    desc: "Payments, transfers and fixed-term investments in one app",
+    year: "'26 - Present",
+    // Pay, then the home screen, then the certificate - the product in the
+    // order a customer meets it. Centre slot carries the home screen.
+    graphics: [velofiPay, velofiHome, velofiCertificate],
+    frame: "rgba(226, 219, 255, 0.86)",
+    appLinks: {
+      iosSoon: true,
+      android: "https://play.google.com/store/apps/details?id=com.velofi",
+    },
+  },
   {
     id: "fixr",
     title: "Fixr",

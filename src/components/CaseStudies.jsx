@@ -16,7 +16,19 @@ const Phone = ({ src, alt, className = "" }) => (
 const CaseStudy = ({ study }) => {
   const tiltRef = useTilt({ max: 5, scale: 1.01, glareSelector: ".tilt-glare" });
   const shots = study.shots ?? [];
+  // Store graphics already carry their own device mockup and background, so
+  // they render flat - putting one inside a `.phone` frame double-frames it.
+  const graphics = study.graphics ?? [];
   const isMobile = shots.length > 0;
+  const Media = study.live ? "a" : "div";
+  const mediaLink = study.live
+    ? {
+        href: study.live,
+        target: "_blank",
+        rel: "noopener noreferrer",
+        "aria-label": `${study.title} - open the live product`,
+      }
+    : {};
 
   return (
     <div className="case-study">
@@ -42,6 +54,15 @@ const CaseStudy = ({ study }) => {
               <AppleIcon />
             </a>
           )}
+          {study.appLinks?.iosSoon && !study.appLinks?.ios && (
+            <span
+              className="case-study__website-btn case-study__store-btn case-study__store-btn--soon"
+              title={`${study.title} on iOS - coming soon`}
+              aria-label={`${study.title} on the App Store - coming soon`}
+            >
+              <AppleIcon />
+            </span>
+          )}
           {study.appLinks?.android && (
             <a
               href={study.appLinks.android}
@@ -53,36 +74,51 @@ const CaseStudy = ({ study }) => {
               <PlayStoreIcon />
             </a>
           )}
-          <a
-            href={study.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="case-study__website-btn"
-            aria-label={`Visit the ${study.title} site`}
-          >
-            <Globe />
-          </a>
-          <a
-            href={study.live}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="case-study__btn"
-          >
-            <span>{study.ctaLabel}</span>
-            <ArrowUpRight />
-          </a>
+          {study.live && (
+            <>
+              <a
+                href={study.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="case-study__website-btn"
+                aria-label={`Visit the ${study.title} site`}
+              >
+                <Globe />
+              </a>
+              <a
+                href={study.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="case-study__btn"
+              >
+                <span>{study.ctaLabel}</span>
+                <ArrowUpRight />
+              </a>
+            </>
+          )}
         </div>
       </div>
 
-      <a
-        href={study.live}
-        target="_blank"
-        rel="noopener noreferrer"
+      <Media
         className="case-study__image-wrap"
         style={{ background: study.frame }}
-        aria-label={`${study.title} - open the live product`}
+        {...mediaLink}
       >
-        {isMobile ? (
+        {graphics.length > 0 ? (
+          // Flat store graphics, centre one raised to match the phone layout.
+          <div className="case-study__graphics" ref={tiltRef}>
+            <div className="tilt-glare" />
+            {graphics.slice(0, 3).map((graphic, i) => (
+              <img
+                key={graphic}
+                src={graphic}
+                alt={`${study.title} app screen ${i + 1}`}
+                className={`case-study__graphic case-study__graphic--${i + 1}`}
+                loading="lazy"
+              />
+            ))}
+          </div>
+        ) : isMobile ? (
           // Phone screens: centre one raised, flanked by two stepped back.
           <div className="case-study__phones" ref={tiltRef}>
             <div className="tilt-glare" />
@@ -106,7 +142,7 @@ const CaseStudy = ({ study }) => {
             />
           </div>
         )}
-      </a>
+      </Media>
     </div>
   );
 };
