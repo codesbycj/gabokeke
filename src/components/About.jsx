@@ -7,7 +7,7 @@ import {
   XIcon,
 } from "./icons";
 import { useToast } from "../context/toast";
-import portrait from "../assets/Profile.JPG";
+import portrait from "../assets/Profile.webp";
 import { askAiLinks, bookCallUrl, profile } from "../data/site";
 import { useCopyToClipboard, useRevealChildren, useTilt } from "../hooks";
 

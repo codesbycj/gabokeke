@@ -1,10 +1,10 @@
-import velofiPay from "../assets/velofi5.png";
-import velofiHome from "../assets/velofi4.png";
-import velofiCertificate from "../assets/velofi1.png";
-import fixr from "../assets/usefixr.png";
-import hospyta from "../assets/Hospyta.png";
-import shuttlers from "../assets/shuttlers.png";
-import zeus from "../assets/Zeus.png";
+import velofiPay from "../assets/velofi5.webp";
+import velofiHome from "../assets/velofi4.webp";
+import velofiCertificate from "../assets/velofi1.webp";
+import fixr from "../assets/usefixr.webp";
+import hospyta from "../assets/Hospyta.webp";
+import shuttlers from "../assets/shuttlers.webp";
+import zeus from "../assets/Zeus.webp";
 
 // The sticky-stacking work section.
 //

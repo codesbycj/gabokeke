@@ -1130,16 +1130,16 @@
 
 @media (max-width: 767px) {
   .case-study__graphics {
-    gap: 10px;
+    gap: 8px;
   }
   .case-study__graphic {
-    width: 36vw;
-    border-radius: 18px;
+    width: 27vw;
+    border-radius: 12px;
   }
   .case-study__graphic--1,
   .case-study__graphic--3 {
-    width: 32vw;
-    transform: translateY(14px) scale(0.96);
+    width: 25vw;
+    transform: translateY(10px) scale(0.96);
   }
   .case-study__phones {
     gap: 12px;
@@ -1166,14 +1166,13 @@
 
 /* Two frames is plenty on the narrowest screens. */
 @media (max-width: 480px) {
-  .case-study__graphic--3 {
-    display: none;
-  }
   .case-study__graphic {
-    width: 44vw;
+    width: 28vw;
+    border-radius: 10px;
   }
-  .case-study__graphic--1 {
-    width: 40vw;
+  .case-study__graphic--1,
+  .case-study__graphic--3 {
+    width: 26vw;
   }
   .phone--3 {
     display: none;
