@@ -238,7 +238,7 @@ strong {
 }
 
 /* Inline nav replaces the hamburger on wide-but-sidebarless viewports */
-@media (min-width: 800px) and (max-width: 1295px) {
+@media (min-width: 800px) and (max-width: 1151px) {
   .mobile-header__nav {
     display: flex;
     gap: 28px;
@@ -560,8 +560,8 @@ strong {
   transition-delay: 280ms;
 }
 
-/* ---------- Desktop Breakpoint (1296px+) ---------- */
-@media (min-width: 1296px) {
+/* ---------- Desktop Breakpoint (1152px+) ---------- */
+@media (min-width: 1152px) {
   .mobile-header {
     display: none;
   }
@@ -687,19 +687,19 @@ strong {
   }
 }
 
-@media (min-width: 1296px) and (max-width: 1327px) {
+@media (min-width: 1152px) and (max-width: 1327px) {
   .content {
     padding: 0 24px 48px;
   }
 }
 
-@media (min-width: 1296px) and (max-width: 1399px) {
+@media (min-width: 1152px) and (max-width: 1399px) {
   :root {
     --sidebar-width: 160px;
   }
 }
 
-@media (min-width: 1296px) and (max-width: 1339px) {
+@media (min-width: 1152px) and (max-width: 1339px) {
   :root {
     --sidebar-width: 148px;
   }
@@ -708,13 +708,22 @@ strong {
   }
 }
 
-@media (min-width: 1000px) and (max-width: 1295px) {
+/* Below 1400px the sidebar sits close and there is no centring slack left, so
+   the column carries its own left gutter - otherwise the headline crowds the
+   nav. */
+@media (min-width: 1152px) and (max-width: 1399px) {
+  .content {
+    padding-left: 64px;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1151px) {
   .content {
     padding: 0 24px 48px;
   }
 }
 
-@media (max-width: 1295px) {
+@media (max-width: 1151px) {
   .content {
     margin-left: 0;
     padding: 0 24px 48px;

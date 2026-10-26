@@ -225,6 +225,34 @@
   overflow: hidden;
   cursor: grab;
   touch-action: pan-y;
+  /* The arc does not fit the card on either axis. Vertically a 195px label at
+     60deg reaches ~100px past the top and bottom. Horizontally the 60deg items
+     anchor at x=0 and rotating a 25.6px line about its left-centre throws
+     ~11px of ink into negative x. Fade both so the far labels dissolve rather
+     than meet a hard slice - they are blurred texture at that distance anyway,
+     and the fade also softens the pop as items cross the visibility cutoff. */
+  -webkit-mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 18%,
+      #000 82%,
+      transparent 100%
+    ),
+    linear-gradient(to right, transparent 0%, #000 11%);
+  mask-image: linear-gradient(
+      to bottom,
+      transparent 0%,
+      #000 18%,
+      #000 82%,
+      transparent 100%
+    ),
+    linear-gradient(to right, transparent 0%, #000 11%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
 }
 
 .sp-services__wheel--grabbing {
@@ -594,6 +622,13 @@
 @media (min-width: 1000px) {
   .social-proof {
     container-type: inline-size;
+  }
+  /* The wheel plus its pill stack need a fixed 262px + 272px. An even 50/50
+     split only clears that when the content column is a full 1080px, so below
+     that the stack was being sliced by the card's overflow. Give the services
+     card its intrinsic width and let the testimonial absorb the difference. */
+  .social-proof__left {
+    min-width: 534px;
   }
 }
 
