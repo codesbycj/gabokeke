@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Gabokeke</title>
+<meta name="description" content="Production dashboard templates in React. Mylora for commerce, Corvane for finance, with more on the way, and every state already built." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="icon" href="img/gabokeke-mark.webp" type="image/png" />
+<link rel="apple-touch-icon" href="img/gabokeke-mark.webp" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ─────────────────────────── chrome ─────────────────────────── -->
+<div class="progress"><i data-progress></i></div>
+<div class="cursor" data-cursor aria-hidden="true"><span class="cursor__ring"></span><span class="cursor__dot"></span></div>
+
+<header class="nav" data-nav>
+  <a class="nav__logo" href="#top" data-scrollto>
+    <img class="nav__mark" src="img/gabokeke-mark.webp" width="256" height="256" alt="" decoding="async" />
+    <span class="nav__name">Gabokeke</span>
+  </a>
+
+  <nav class="nav__links" aria-label="Primary">
+    <a href="#top" data-scrollto class="is-active">Home</a>
+    <a href="#catalog" data-scrollto>All Dashboards</a>
+    <a href="#pricing" data-scrollto>Pricing</a>
+    <a href="#support" data-scrollto>Contact</a>
+    <i class="nav__pill" data-nav-pill aria-hidden="true"></i>
+  </nav>
+
+  <div class="nav__right">
+    <button class="nav__icon" data-search aria-label="Search dashboards">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg>
+    </button>
+    <a class="btn btn--dark btn--sm" href="#pricing" data-scrollto data-magnetic>
+      <span>Get All Access</span>
+    </a>
+    <button class="nav__burger" data-burger aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="menu" data-menu aria-hidden="true">
+  <div class="menu__links">
+    <a href="#top" data-scrollto><span>Home</span></a>
+    <a href="#catalog" data-scrollto><span>All Dashboards</span></a>
+    <a href="#pricing" data-scrollto><span>Pricing</span></a>
+    <a href="#support" data-scrollto><span>Hire an Expert</span></a>
+    <a href="#faq" data-scrollto><span>FAQ</span></a>
+  </div>
+
+  <a class="btn btn--accent menu__cta" href="#pricing" data-scrollto><span>Get All Access</span></a>
+
+  <div class="menu__foot">
+    <a class="menu__mail" href="mailto:emmanuel@gabokeke.com">emmanuel@gabokeke.com</a>
+    <div class="menu__social">
+      <a href="https://instagram.com/codesbycjay" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href="https://x.com/codesbycj" target="_blank" rel="noopener noreferrer">X</a>
+      <a href="https://github.com/codesbycj" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- ─────────────────────────── hero ─────────────────────────── -->
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <span class="blob blob--1"></span>
+    <span class="blob blob--2"></span>
+    <span class="blob blob--3"></span>
+    <span class="hero__grain"></span>
+  </div>
+
+  <div class="wrap hero__inner">
+    <div class="hero__lead">
+      <h1 class="hero__title" data-split="lines">Dashboards built <span class="chip" data-float><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h3v-7H4zM10 19h3V5h-3zM16 19h3v-11h-3z" fill="#fff"/></svg></span> for real data, mess and all</h1>
+    </div>
+
+    <aside class="hero__aside">
+      <div class="trusted">
+        <div class="avatars" data-avatars>
+          <img src="img/people/trusted-1.jpg" width="34" height="34" alt="" loading="lazy" decoding="async" />
+          <img src="img/people/trusted-2.jpg" width="34" height="34" alt="" loading="lazy" decoding="async" />
+          <img src="img/people/trusted-3.jpg" width="34" height="34" alt="" loading="lazy" decoding="async" />
+          <img src="img/people/trusted-4.jpg" width="34" height="34" alt="" loading="lazy" decoding="async" />
+        </div>
+        <p>Shipped by <b>60+</b> companies and product teams</p>
+      </div>
+      <p class="hero__copy">Dashboard templates built for real products. <b>Mylora</b> for commerce, <b>Corvane</b> for finance, and more landing soon. React code, desktop and mobile, with every empty, loading and error state already built.</p>
+      <div class="hero__cta">
+        <a class="btn btn--accent" href="#catalog" data-scrollto data-magnetic><span>Browse Dashboards</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        <span class="hero__note">Live demos, no signup</span>
+      </div>
+    </aside>
+  </div>
+
+  <div class="rail" data-rail>
+    <article class="tcard" data-rail-card data-open="mylora" data-tilt tabindex="0" role="button" aria-label="See every Mylora screen">
+      <span class="tcard__glow" aria-hidden="true"></span>
+      <div class="tcard__frame">
+        <div class="tcard__bar" aria-hidden="true">
+          <span class="tcard__dots"><i></i><i></i><i></i></span>
+          <span class="tcard__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> app.mylora.com/dashboard</span>
+        </div>
+        <div class="tcard__shot">
+          <img src="img/mylora-dashboard.webp" fetchpriority="high" width="1920" height="970" alt="Mylora dashboard showing total sales, orders, average order value and a monthly sales analytics chart" decoding="async" />
+          <span class="tcard__cue"><i>See every screen</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="tcard__meta"><h3>Mylora</h3><span class="price price--mylora">$89.99</span></div>
+      <p class="tcard__sub">E&#8209;commerce: sales, orders &amp; customer insights</p>
+    </article>
+
+    <article class="tcard" data-rail-card data-open="corvane" data-tilt tabindex="0" role="button" aria-label="See every Corvane screen">
+      <span class="tcard__glow" aria-hidden="true"></span>
+      <div class="tcard__frame">
+        <div class="tcard__bar" aria-hidden="true">
+          <span class="tcard__dots"><i></i><i></i><i></i></span>
+          <span class="tcard__url"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg> app.corvane.com/dashboard</span>
+        </div>
+        <div class="tcard__shot">
+          <img src="img/corvane-dashboard.webp" width="1920" height="970" alt="Corvane dashboard showing account balance, cashflow chart and an expense breakdown donut" decoding="async" />
+          <span class="tcard__cue"><i>See every screen</i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+        </div>
+      </div>
+      <div class="tcard__meta"><h3>Corvane</h3><span class="price price--corvane">$89.99</span></div>
+      <p class="tcard__sub">Finance: balance, cashflow &amp; savings</p>
+    </article>
+  </div>
+</section>
+
+<!-- ─────────────────────────── marquee ─────────────────────────── -->
+<div class="marquee" data-marquee>
+  <div class="marquee__track" data-marquee-track>
+    <span>Desktop &amp; mobile</span><i>&#9679;</i><span>Dark mode drawn twice</span><i>&#9679;</i><span>Every empty state</span><i>&#9679;</i><span>Responsive tables</span><i>&#9679;</i><span>Keyboard navigable</span><i>&#9679;</i><span>WCAG AA contrast</span><i>&#9679;</i><span>Role-based views</span><i>&#9679;</i><span>Typed end to end</span><i>&#9679;</i>
+  </div>
+</div>
+
+<!-- ─────────────────────────── clients ─────────────────────────── -->
+<section class="clients" id="clients">
+  <div class="wrap clients__inner">
+    <p class="clients__label" data-reveal="up">Dashboards shipped for</p>
+
+    <ul class="clients__list">
+      <li data-reveal="up">
+        <a class="clients__link" href="https://themeforest.net/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 2 7l10 5 10-5-10-5Z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          <span>ThemeForest</span>
+        </a>
+      </li>
+      <li data-reveal="up" data-delay="0.06">
+        <a class="clients__link" href="https://getplug24.com/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6"/><path d="M6 8h12v3a6 6 0 0 1-12 0V8Z"/><path d="M12 17v5"/></svg>
+          <span>Plug24</span>
+        </a>
+      </li>
+      <li data-reveal="up" data-delay="0.12">
+        <a class="clients__link" href="https://usego24express.com/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 7l5 5-5 5"/><path d="M4 12h12"/><path d="M4 7h5M4 17h5"/></svg>
+          <span>Go24 Express</span>
+        </a>
+      </li>
+      <li data-reveal="up" data-delay="0.18">
+        <a class="clients__link" href="https://usefixr.com/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94L14.7 6.3Z"/></svg>
+          <span>Fixr</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ─────────────────────────── features (bento grid) ─────────────────────────── -->
+<section class="features" data-features>
+  <div class="wrap">
+    <div class="features__grid" data-features-grid>
+
+      <article class="fcard fcard--phones" data-tilt>
+        <div class="fcard__art fcard__art--phones">
+          <span class="phone"><img src="img/mylora-m-dashboard.webp" width="393" height="853" alt="Mylora dashboard on a phone screen" loading="lazy" decoding="async" /></span>
+          <span class="phone"><img src="img/corvane-m-dashboard.webp" width="393" height="853" alt="Corvane dashboard on a phone screen" loading="lazy" decoding="async" /></span>
+          <span class="phone"><img src="img/mylora-m-reviews.webp" width="393" height="853" alt="Mylora reviews screen on a phone" loading="lazy" decoding="async" /></span>
+        </div>
+        <h3>Designed for the phone too</h3>
+        <p>Every screen drawn twice. The mobile layout is its own design, not a squeezed desktop.</p>
+      </article>
+
+      <article class="fcard fcard--states" data-tilt>
+        <div class="fcard__text">
+          <h3>Every state, already designed</h3>
+          <p>These are the screens that quietly eat a sprint. They are drawn, built and themed before you open the file.</p>
+        </div>
+        <div class="fcard__pills">
+          <span class="pill pill--pink">Empty</span>
+          <span class="pill pill--blue">Loading</span>
+          <span class="pill pill--lime">Error</span>
+          <span class="pill pill--grey">No results</span>
+          <span class="pill pill--pink">Permission denied</span>
+          <span class="pill pill--blue">Overflow</span>
+          <span class="pill pill--grey">Offline</span>
+        </div>
+      </article>
+
+      <article class="fcard fcard--dark fcard--quote" data-tilt>
+        <svg class="fcard__quote" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6c-3 1.4-5 4-5 7.4V18h6v-6H7.2c.2-1.8 1-3 2.6-3.8L9 6Zm10 0c-3 1.4-5 4-5 7.4V18h6v-6h-2.8c.2-1.8 1-3 2.6-3.8L19 6Z" fill="currentColor"/></svg>
+        <div class="fcard__said">
+          <blockquote data-split="words">We had a dashboard before. It broke on half our screens, it was laggy, it was clunky. This one saved me a whole lot of headache.</blockquote>
+          <figcaption class="fcard__cite">
+            <img class="av" src="img/people/priya-raman.jpg" width="34" height="34" alt="" loading="lazy" decoding="async" />
+            <div><strong>Priya Raman</strong><small>Engineering Lead, Tessellate</small></div>
+          </figcaption>
+        </div>
+      </article>
+
+      <article class="fcard fcard--accent fcard--stat" data-tilt>
+        <div class="fcard__count"><b data-count="240" data-suffix="+">0</b></div>
+        <h3>React components</h3>
+        <p>Typed, themed and documented.</p>
+      </article>
+
+      <article class="fcard fcard--chart" data-tilt>
+        <div class="fcard__text">
+          <h3>Charts that hold up</h3>
+          <p>Drawn to scale, readable at real data volume.</p>
+        </div>
+        <div class="fcard__art fcard__art--shot">
+          <img src="img/mylora-analytics.webp" width="1920" height="970" alt="Mylora analytics screen showing charts at full data volume" loading="lazy" decoding="async" />
+        </div>
+      </article>
+
+      <article class="fcard fcard--motion" data-tilt>
+        <span class="fcard__orb" aria-hidden="true"></span>
+        <h3 class="fcard__motion-title">Dark<br/>Mode</h3>
+        <p>Designed twice, never inverted.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── catalog ─────────────────────────── -->
+<section class="catalog" id="catalog">
+  <div class="wrap">
+    <header class="catalog__head">
+      <h2 data-split="lines">Production dashboards, <span class="tag">each $89.99</span> every screen included</h2>
+      <p class="catalog__hint">Open any of them. Every screen is on the page before you pay for anything.</p>
+    </header>
+
+    <div class="grid" data-grid>
+      <article class="gcard" data-item data-kind="mylora" data-open="mylora" data-tilt tabindex="0" role="button" aria-label="See every Mylora screen">
+        <div class="gcard__shot"><span class="badge">E-commerce</span>
+          <img src="img/mylora-dashboard.webp" width="1920" height="970" alt="Mylora dashboard with sales KPIs, customer insights panel and active promotions" loading="lazy" decoding="async" />
+          <span class="gcard__cue"><i>See every screen</i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <div class="gcard__meta">
+          <div class="gcard__id">
+            <h3>Mylora <em>E-commerce</em></h3>
+            <p>10 sections &middot; orders, analytics, discounts &middot; desktop and mobile</p>
+          </div>
+          <span class="gcard__price price--mylora">$89.99</span>
+        </div>
+      </article>
+
+      <article class="gcard" data-item data-kind="corvane" data-open="corvane" data-tilt tabindex="0" role="button" aria-label="See every Corvane screen">
+        <div class="gcard__shot"><span class="badge">Finance</span>
+          <img src="img/corvane-dashboard.webp" width="1920" height="970" alt="Corvane dashboard with balance card, cashflow chart and savings plans" loading="lazy" decoding="async" />
+          <span class="gcard__cue"><i>See every screen</i>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+          </span>
+        </div>
+        <div class="gcard__meta">
+          <div class="gcard__id">
+            <h3>Corvane <em>Finance</em></h3>
+            <p>10 sections &middot; cashflow, invoices, insights &middot; desktop and mobile</p>
+          </div>
+          <span class="gcard__price price--corvane">$89.99</span>
+        </div>
+      </article>
+    </div>
+
+    <div class="catalog__foot" data-reveal="up">
+      <a class="btn btn--accent" href="#pricing" data-scrollto data-magnetic><span>Get All Access</span></a>
+      <a class="btn btn--ghost" href="#support" data-scrollto data-magnetic><span>Hire an Expert</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── steps ─────────────────────────── -->
+<section class="steps">
+  <div class="wrap steps__inner" data-steps>
+    <span class="steps__line" aria-hidden="true"><i data-steps-line></i></span>
+    <article class="step" data-step>
+      <span class="step__dot" aria-hidden="true"></span>
+      <span class="step__no">01</span>
+      <h3>Pick your dashboard</h3>
+      <p>Open Mylora or Corvane live, click through every state, and read the source before you spend anything.</p>
+    </article>
+    <article class="step" data-step>
+      <span class="step__dot" aria-hidden="true"></span>
+      <span class="step__no">02</span>
+      <h3>Wire your data</h3>
+      <p>Swap the mock adapter for your API. One typed file per view, so the components never need touching.</p>
+    </article>
+    <article class="step" data-step>
+      <span class="step__dot" aria-hidden="true"></span>
+      <span class="step__no">03</span>
+      <h3>Ship to production</h3>
+      <p>Drop in your own auth and roles and deploy. The month of edge cases is already behind you.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ─────────────────────────── customer stories ─────────────────────────── -->
+<section class="story" id="stories">
+  <div class="wrap">
+    <header class="story__head">
+      <span class="eyebrow" data-reveal="up">Customer stories</span>
+      <h2 class="section-title" data-split="lines">Three teams. Three deadlines.<br/>The same starting point.</h2>
+    </header>
+
+    <div class="tcar" data-carousel data-reveal="up">
+      <div class="tcar__viewport" data-carousel-viewport>
+        <ul class="tcar__track" data-carousel-track>
+
+          <li class="tslide" data-slide>
+            <figure class="tslide__card">
+              <svg class="tslide__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6c-3 1.4-5 4-5 7.4V18h6v-6H7.2c.2-1.8 1-3 2.6-3.8L9 6Zm10 0c-3 1.4-5 4-5 7.4V18h6v-6h-2.8c.2-1.8 1-3 2.6-3.8L19 6Z" fill="currentColor"/></svg>
+              <blockquote>We had quoted six weeks for the admin panel. We shipped it in nine days, and the dashboard is now the thing customers bring up on sales calls.</blockquote>
+              <figcaption class="tslide__by">
+                <img class="av" src="img/people/eleanor-warren.jpg" width="52" height="52" alt="" loading="lazy" decoding="async" />
+                <div class="tslide__who"><strong>Eleanor Warren</strong><small>Head of Product, Northlane</small></div>
+                <div class="tslide__stats"><span class="tstat tstat--good">9 days to ship</span><span class="tstat">6 weeks quoted</span></div>
+              </figcaption>
+            </figure>
+          </li>
+
+          <li class="tslide" data-slide>
+            <figure class="tslide__card">
+              <svg class="tslide__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6c-3 1.4-5 4-5 7.4V18h6v-6H7.2c.2-1.8 1-3 2.6-3.8L9 6Zm10 0c-3 1.4-5 4-5 7.4V18h6v-6h-2.8c.2-1.8 1-3 2.6-3.8L19 6Z" fill="currentColor"/></svg>
+              <blockquote>I sell themes for a living, so I&rsquo;m picky about other people&rsquo;s code. I&rsquo;ve put these through three client builds now and I haven&rsquo;t had to rewrite the grid once.</blockquote>
+              <figcaption class="tslide__by">
+                <img class="av" src="img/people/ali-khan.jpg" width="52" height="52" alt="" loading="lazy" decoding="async" />
+                <div class="tslide__who"><strong>Ali Khan</strong><small>Elite Author, ThemeForest</small></div>
+                <div class="tslide__stats"><span class="tstat tstat--good">3 client builds</span><span class="tstat">1 licence</span></div>
+              </figcaption>
+            </figure>
+          </li>
+
+          <li class="tslide" data-slide>
+            <figure class="tslide__card">
+              <svg class="tslide__mark" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6c-3 1.4-5 4-5 7.4V18h6v-6H7.2c.2-1.8 1-3 2.6-3.8L9 6Zm10 0c-3 1.4-5 4-5 7.4V18h6v-6h-2.8c.2-1.8 1-3 2.6-3.8L19 6Z" fill="currentColor"/></svg>
+              <blockquote>Our front desk was three spreadsheets and a shared inbox. We had this up in under two weeks, and nobody spends Monday morning chasing invoices any more.</blockquote>
+              <figcaption class="tslide__by">
+                <img class="av" src="img/people/colan-rashid.jpg" width="52" height="52" alt="" loading="lazy" decoding="async" />
+                <div class="tslide__who"><strong>Colan Rashid</strong><small>Operations Lead, Relton Suites</small></div>
+                <div class="tslide__stats"><span class="tstat tstat--good">Live in 11 days</span><span class="tstat">3 spreadsheets before</span></div>
+              </figcaption>
+            </figure>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="tcar__ui">
+        <button class="tcar__arrow" type="button" data-carousel-prev aria-label="Previous story">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H6M11 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="tcar__dots" data-carousel-dots></div>
+        <button class="tcar__arrow" type="button" data-carousel-next aria-label="Next story">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── custom builds ─────────────────────────── -->
+<section class="bundle">
+  <div class="wrap">
+    <div class="bundle__card" data-bundle>
+      <div class="bundle__copy">
+        <h2>Nothing fits your product?<br/>We&rsquo;ll <span class="bundle__accent">build it for you</span></h2>
+        <p>When nothing in the library matches your schema, your roles or your edge cases, we design and build the dashboard around them, using the same components and the same standard, shaped to how your product actually works.</p>
+        <p class="bundle__meta">Fixed scope &middot; Fixed price &middot; Usually 2&ndash;4 weeks</p>
+        <a class="btn btn--accent" href="#support" data-scrollto data-magnetic><span>Start A Custom Build</span></a>
+      </div>
+      <div class="bundle__phones" data-collage aria-hidden="true">
+        <span class="phone"><img src="img/corvane-m-invoices.webp" width="393" height="853" alt="" loading="lazy" decoding="async" /></span>
+        <span class="phone"><img src="img/mylora-m-dashboard.webp" width="393" height="853" alt="" loading="lazy" decoding="async" /></span>
+        <span class="phone"><img src="img/corvane-m-dashboard.webp" width="393" height="853" alt="" loading="lazy" decoding="async" /></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── pricing ─────────────────────────── -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <h2 class="section-title" data-split="lines">One payment. Every screen.<br/>No seats, no subscription.</h2>
+
+    <div class="plans">
+      <article class="plan" data-plan data-reveal="up">
+        <header><h3>Single dashboard</h3><p>Pick either Mylora or Corvane. Everything that ships for it, forever.</p></header>
+        <div class="plan__price"><s class="plan__was">$129.99</s>$<b data-count="89.99">0</b></div>
+        <p class="plan__launch">Launch price: $129.99 from 1 December 2026</p>
+        <a class="btn btn--dark btn--block" href="#catalog" data-scrollto data-magnetic><span>Choose A Dashboard</span></a>
+        <h4>What&rsquo;s included</h4>
+        <ul class="plan__list">
+          <li>One complete dashboard</li>
+          <li>Every screen, desktop and mobile</li>
+          <li>Typed React source with theme tokens</li>
+          <li>Light and dark themes, drawn separately</li>
+          <li>Every empty, loading and error state</li>
+          <li>Unlimited client projects</li>
+          <li>Lifetime free updates</li>
+        </ul>
+        <small class="plan__note">Last update 27 October 2026</small>
+      </article>
+
+      <article class="plan plan--featured" data-plan data-reveal="up" data-delay="0.1">
+        <span class="plan__flag">Made to order</span>
+        <header><h3>Custom build</h3><p>Nothing in the library fits? We design and build the dashboard around your product.</p></header>
+        <div class="plan__price plan__price--quote">Fixed quote</div>
+        <p class="plan__launch">Fixed scope &middot; usually 2&ndash;4 weeks</p>
+        <a class="btn btn--accent btn--block" href="https://instagram.com/codesbycjay" target="_blank" rel="noopener noreferrer" data-magnetic><span>Start A Custom Build</span></a>
+        <h4>What&rsquo;s included</h4>
+        <ul class="plan__list">
+          <li>Built around your schema and your roles</li>
+          <li>Every screen, desktop and mobile</li>
+          <li>Typed React source with theme tokens</li>
+          <li>Light and dark themes, drawn separately</li>
+          <li>Every empty, loading and error state</li>
+          <li>Your edge cases designed, not skipped</li>
+          <li>Full source at handover, yours to keep</li>
+        </ul>
+        <small class="plan__note">Scope and price agreed before anything starts</small>
+      </article>
+    </div>
+
+    <p class="pricing__fine" data-reveal="up">Tax included. A dashboard is a single payment, with no recurring charge, no per-seat pricing, and no upsell once you are inside. A custom build is quoted and fixed before work starts.</p>
+  </div>
+</section>
+
+<!-- ─────────────────────────── support ─────────────────────────── -->
+<section class="support" id="support">
+  <div class="wrap support__inner">
+    <div class="support__copy">
+      <h2 data-split="lines">Stuck on a chart at 11pm? You get a real answer</h2>
+      <p>Data wiring, theming, chart edge cases, that one table that will not behave on mobile. You email a person who has built these screens, not a ticket queue.</p>
+      <div class="rating" data-reveal="up">
+        <div class="stars" data-stars><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="rating__row">
+          <div class="avatars avatars--sm">
+            <img src="img/people/rated-1.jpg" width="34" height="34" alt="" loading="lazy" decoding="async" />
+            <img src="img/people/rated-2.jpg" width="34" height="34" alt="" loading="lazy" decoding="async" />
+            <img src="img/people/rated-3.jpg" width="34" height="34" alt="" loading="lazy" decoding="async" />
+          </div>
+          <p>Rated 4.9 by 60+ product teams</p>
+        </div>
+      </div>
+    </div>
+
+    <form class="form" data-form novalidate>
+      <label class="field" data-field><input type="text" id="f-name" name="name" required placeholder=" " /><span>Full name *</span><i></i></label>
+      <label class="field" data-field><input type="email" id="f-email" name="email" required placeholder=" " /><span>Work email *</span><i></i></label>
+      <label class="field" data-field><input type="text" id="f-stack" name="stack" placeholder=" " /><span>What are you building?</span><i></i></label>
+      <label class="field field--area" data-field><textarea id="f-msg" name="message" rows="3" placeholder=" "></textarea><span>Anything we should know?</span><i></i></label>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" class="form__trap" />
+      <button class="btn btn--dark" type="submit" data-magnetic data-submit><span>Submit Now</span></button>
+      <p class="form__done" data-form-done>Thanks. You&rsquo;ll hear back within a few hours.</p>
+      <p class="form__done form__done--err" data-form-error>That did not send. Email <a href="mailto:emmanuel@gabokeke.com">emmanuel@gabokeke.com</a> directly and it will get picked up.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ─────────────────────────── faq ─────────────────────────── -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2 class="section-title" data-split="lines">The questions buyers<br/>actually ask us</h2>
+
+    <div class="acc" data-acc>
+      <details class="acc__item" data-reveal="up" open>
+        <summary>What do I actually get for the money?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>A React codebase covering every screen, with theme tokens you edit in one place. Every page of the dashboard you bought, in desktop and mobile layouts, light and dark themes, and every state wired: empty, loading, error, permission-denied and long-content overflow. Clone it, point it at your API, ship it.</p></div>
+      </details>
+      <details class="acc__item" data-reveal="up">
+        <summary>Will these work with my backend?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Yes. Every screen reads through a typed adapter that returns mock data out of the box. You replace the adapter with your own fetch calls, which is one file per view. Nothing is hardcoded inside the components, so swapping the data layer never means editing fifty of them.</p></div>
+      </details>
+      <details class="acc__item" data-reveal="up">
+        <summary>Which chart library do you use?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Recharts, wrapped in our own chart components so axes, grid, tooltip and legend all take their styling from your theme tokens. If you would rather use something else, that wrapper is the only thing you rewrite.</p></div>
+      </details>
+      <details class="acc__item" data-reveal="up">
+        <summary>Is dark mode a real design or an inversion?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>A real design. Both themes were drawn separately, with their own surface values, chart palettes, severity colours and focus rings. Inverting a dashboard is what turns a healthy green KPI into something nobody can read.</p></div>
+      </details>
+      <details class="acc__item" data-reveal="up">
+        <summary>Can I use this on client work?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>One licence covers unlimited personal and client projects, with no per-seat charge for your team. The only restriction is that you cannot resell the templates themselves as a template.</p></div>
+      </details>
+      <details class="acc__item" data-reveal="up">
+        <summary>What about accessibility?<i aria-hidden="true"></i></summary>
+        <div class="acc__body"><p>Every screen is keyboard navigable with a visible focus state, tables use real headers and scopes, and colour contrast meets WCAG AA in both themes. Charts carry text alternatives, so the numbers are not locked inside the picture.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────────────────── referrals ─────────────────────────── -->
+<section class="refer" id="refer">
+  <div class="wrap">
+    <div class="refer__card" data-reveal="scale">
+      <div class="refer__copy">
+        <span class="refer__tag">Refer and earn</span>
+        <h2>Send someone our way,<br/>keep <span class="refer__pct">30%</span> of the sale</h2>
+        <p>Share your link. Every time someone buys a dashboard or all access through it, thirty percent of that sale is yours. No cap on how many you refer, and no minimum before you get paid.</p>
+      </div>
+      <div class="refer__act">
+        <a class="btn btn--accent" href="https://instagram.com/codesbycjay" target="_blank" rel="noopener noreferrer" data-magnetic>
+          <span>Get Your Link</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+        </a>
+        <span class="refer__note">DMs are open on Instagram</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ─────────────────────────── footer ─────────────────────────── -->
+<footer class="foot">
+  <div class="foot__panel">
+    <div class="foot__main">
+      <p class="foot__pitch">Building something with a dashboard in it? Let&rsquo;s talk before you start.</p>
+      <a class="foot__mail" href="mailto:emmanuel@gabokeke.com" data-swap data-text="emmanuel@gabokeke.com">emmanuel@gabokeke.com</a>
+    </div>
+
+    <div class="foot__bar">
+      <div class="foot__social">
+        <a href="https://instagram.com/codesbycjay" target="_blank" rel="noopener noreferrer" data-underline>Instagram</a>
+        <a href="https://x.com/codesbycj" target="_blank" rel="noopener noreferrer" data-underline>X</a>
+        <a href="https://github.com/codesbycj" target="_blank" rel="noopener noreferrer" data-underline>GitHub</a>
+      </div>
+      <small>&copy; 2026 Gabokeke. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+<button class="totop" data-totop aria-label="Back to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- ─────────────────────────── dashboard detail ─────────────────────────── -->
+<div class="sheet" data-sheet hidden>
+  <div class="sheet__scrim" data-sheet-close aria-hidden="true"></div>
+
+  <div class="sheet__panel" role="dialog" aria-modal="true" aria-label="Dashboard details" data-sheet-panel>
+    <button class="sheet__x" data-sheet-close aria-label="Close details">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+
+    <!-- data-lenis-prevent: Lenis is stopped while the sheet is open, and a stopped
+           Lenis preventDefaults every wheel event unless this attribute is on the path.
+           tabindex makes the region focusable so the keyboard can scroll it too. -->
+      <div class="sheet__scroll" data-sheet-scroll data-lenis-prevent tabindex="-1">
+
+      <!-- ── Mylora ── -->
+      <article class="detail detail--mylora" data-detail="mylora" hidden>
+        <header class="detail__top">
+          <div class="detail__id" data-sheet-in>
+            <span class="detail__kind">E&#8209;commerce admin</span>
+            <h2>Mylora</h2>
+            <p class="detail__strap">Every screen your team needs to run an online shop: orders, analytics, discounts and reviews, all built and ready for your data.</p>
+            <!-- decorative: the same shot carries its caption in the gallery below -->
+            <figure class="shot detail__hero" aria-hidden="true">
+              <img src="img/mylora-dashboard.webp" width="1920" height="970" alt="" loading="lazy" decoding="async" />
+            </figure>
+          </div>
+
+          <aside class="detail__buy" data-sheet-in>
+            <div class="detail__price"><s class="plan__was">$129.99</s><b>$89.99</b><span>Launch price: $129.99 from 1 December 2026. One payment, no subscription, no seats.</span></div>
+            <a class="btn btn--accent btn--block" href="#" data-buy="mylora" data-magnetic><span>Buy Mylora</span></a>
+            <!-- live demo: replace href with the Mylora demo URL -->
+            <a class="btn btn--ghost btn--block btn--demo" href="#" target="_blank" rel="noopener noreferrer"><span>Open live demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <h4>Included</h4>
+            <ul class="plan__list">
+              <li>Every screen, desktop and mobile</li>
+              <li>Typed React components, theme tokens included</li>
+              <li>Unlimited client projects</li>
+              <li>Lifetime free updates</li>
+            </ul>
+          </aside>
+        </header>
+
+        <div class="detail__facts" data-sheet-in>
+          <div><b>10</b><span>sections, dashboard to settings</span></div>
+          <div><b>220</b><span>orders the table was drawn at</span></div>
+          <div><b>2</b><span>themes, drawn and never inverted</span></div>
+        </div>
+
+
+        <h3 class="detail__label" data-sheet-in>
+          <span>Every screen, in full</span>
+          <!-- live demo: replace href with the Mylora demo URL -->
+          <a class="detail__demo" href="#" target="_blank" rel="noopener noreferrer">Or click through it live<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </h3>
+
+        <div class="detail__gallery">
+          <figure class="shot" data-sheet-in>
+            <img src="img/mylora-dashboard.webp" width="1920" height="970" alt="Mylora dashboard with total sales, orders, average order value, customer insights and active promotions" loading="lazy" decoding="async" />
+            <figcaption><b>Dashboard</b> Sales, orders and average order value up top, customer insights and live promotions down the right, twelve months of sales underneath.</figcaption>
+          </figure>
+
+          <figure class="shot" data-sheet-in>
+            <img src="img/mylora-orders.webp" width="1920" height="970" alt="Mylora orders table showing 220 orders with status badges and inline fulfilment actions" loading="lazy" decoding="async" />
+            <figcaption><b>Orders</b> 220 rows, four statuses, inline fulfilment, and a filter bar that still behaves once the table has to scroll on a phone.</figcaption>
+          </figure>
+
+          <figure class="shot" data-sheet-in>
+            <img src="img/mylora-orders-alt.webp" width="1920" height="970" alt="Mylora new order dialog with customer, channel and product selects over a dimmed orders table" loading="lazy" decoding="async" />
+            <figcaption><b>New order</b> The dialog, the empty selects, the running order total. Forms are drawn, not left behind as a to&#8209;do.</figcaption>
+          </figure>
+
+          <figure class="shot" data-sheet-in>
+            <img src="img/mylora-analytics.webp" width="1920" height="970" alt="Mylora analytics with all-time revenue, sales over time, sales by channel and new versus returning customers" loading="lazy" decoding="async" />
+            <figcaption><b>Analytics</b> $56,328 all time, sales over twelve months, revenue by channel, and first orders set against repeat.</figcaption>
+          </figure>
+
+          <figure class="shot" data-sheet-in>
+            <img src="img/mylora-discounts.webp" width="1920" height="970" alt="Mylora discounts list with scheduled and active codes behind a new discount code dialog" loading="lazy" decoding="async" />
+            <figcaption><b>Discounts</b> Codes carrying scheduled and active states, with the create form sitting over them.</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="detail__label" data-sheet-in>Drawn again for the phone</h3>
+
+        <div class="shot-row" data-sheet-in>
+          <figure class="shot shot--phone">
+            <img src="img/mylora-m-dashboard.webp" width="393" height="853" alt="Mylora dashboard on a phone screen" loading="lazy" decoding="async" />
+            <figcaption>Dashboard</figcaption>
+          </figure>
+          <figure class="shot shot--phone">
+            <img src="img/mylora-m-dashboard-alt.webp" width="393" height="853" alt="Mylora navigation drawer open over the phone dashboard" loading="lazy" decoding="async" />
+            <figcaption>Navigation drawer</figcaption>
+          </figure>
+          <figure class="shot shot--phone">
+            <img src="img/mylora-m-reviews.webp" width="393" height="853" alt="Mylora reviews screen on a phone" loading="lazy" decoding="async" />
+            <figcaption>Reviews</figcaption>
+          </figure>
+        </div>
+
+        <div class="detail__foot" data-sheet-in>
+          <h3>What you are really buying is the week you don&rsquo;t spend on the orders table.</h3>
+          <p>$89.99, once. The full React source, yours across unlimited client projects, updated free for as long as it ships.</p>
+          <div class="detail__foot-cta">
+            <a class="btn btn--accent" href="#" data-buy="mylora" data-magnetic><span>Buy Mylora for $89.99</span></a>
+            <!-- live demo: replace href with the Mylora demo URL -->
+            <a class="btn btn--ghost btn--invert btn--demo" href="#" target="_blank" rel="noopener noreferrer"><span>Open live demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="btn btn--ghost btn--invert" href="#pricing" data-sheet-goto="#pricing"><span>Get all access for $149.99</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- ── Corvane ── -->
+      <article class="detail detail--corvane" data-detail="corvane" hidden>
+        <header class="detail__top">
+          <div class="detail__id" data-sheet-in>
+            <span class="detail__kind">Finance dashboard</span>
+            <h2>Corvane</h2>
+            <p class="detail__strap">Money screens are judged on trust, and trust is mostly typography and restraint. Both are already in the file.</p>
+            <!-- decorative: the same shot carries its caption in the gallery below -->
+            <figure class="shot detail__hero" aria-hidden="true">
+              <img src="img/corvane-dashboard.webp" width="1920" height="970" alt="" loading="lazy" decoding="async" />
+            </figure>
+          </div>
+
+          <aside class="detail__buy" data-sheet-in>
+            <div class="detail__price"><s class="plan__was">$129.99</s><b>$89.99</b><span>Launch price: $129.99 from 1 December 2026. One payment, no subscription, no seats.</span></div>
+            <a class="btn btn--accent btn--block" href="#" data-buy="corvane" data-magnetic><span>Buy Corvane</span></a>
+            <!-- live demo: replace href with the Corvane demo URL -->
+            <a class="btn btn--ghost btn--block btn--demo" href="#" target="_blank" rel="noopener noreferrer"><span>Open live demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <h4>Included</h4>
+            <ul class="plan__list">
+              <li>Every screen, desktop and mobile</li>
+              <li>Typed React components, theme tokens included</li>
+              <li>Unlimited client projects</li>
+              <li>Lifetime free updates</li>
+            </ul>
+          </aside>
+        </header>
+
+        <div class="detail__facts" data-sheet-in>
+          <div><b>10</b><span>sections, payments to insights</span></div>
+          <div><b>12</b><span>months of real movement in every chart</span></div>
+          <div><b>2</b><span>themes, drawn and never inverted</span></div>
+        </div>
+
+
+        <h3 class="detail__label" data-sheet-in>
+          <span>Every screen, in full</span>
+          <!-- live demo: replace href with the Corvane demo URL -->
+          <a class="detail__demo" href="#" target="_blank" rel="noopener noreferrer">Or click through it live<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        </h3>
+
+        <div class="detail__gallery">
+          <figure class="shot" data-sheet-in>
+            <img src="img/corvane-dashboard.webp" width="1920" height="970" alt="Corvane dashboard with balance card, cashflow chart, daily limit, saving plans and expense breakdown" loading="lazy" decoding="async" />
+            <figcaption><b>Dashboard</b> Balance, income and expense, a twelve&#8209;month cashflow chart, daily limit, saving plans and the expense donut, all in one pass.</figcaption>
+          </figure>
+
+          <figure class="shot" data-sheet-in>
+            <img src="img/corvane-insights.webp" width="1920" height="970" alt="Corvane insights with income, expense, net, savings rate and a running balance line chart" loading="lazy" decoding="async" />
+            <figcaption><b>Insights</b> Income, expense, net and savings rate over a running balance that moves by a few thousand against half a million, which is the hardest kind of line chart to keep legible.</figcaption>
+          </figure>
+
+          <figure class="shot" data-sheet-in>
+            <img src="img/corvane-inbox.webp" width="1920" height="970" alt="Corvane inbox listing statements, security, offers and support messages with unread markers" loading="lazy" decoding="async" />
+            <figcaption><b>Inbox</b> Statements, security, offers and support, with unread markers, per&#8209;message actions and the quieter state once a message has been read.</figcaption>
+          </figure>
+        </div>
+
+        <h3 class="detail__label" data-sheet-in>Drawn again for the phone</h3>
+
+        <div class="shot-row" data-sheet-in>
+          <figure class="shot shot--phone">
+            <img src="img/corvane-m-dashboard.webp" width="393" height="853" alt="Corvane dashboard on a phone screen" loading="lazy" decoding="async" />
+            <figcaption>Dashboard</figcaption>
+          </figure>
+          <figure class="shot shot--phone">
+            <img src="img/corvane-m-dashboard-alt.webp" width="393" height="853" alt="Corvane navigation drawer open over the phone dashboard" loading="lazy" decoding="async" />
+            <figcaption>Navigation drawer</figcaption>
+          </figure>
+          <figure class="shot shot--phone">
+            <img src="img/corvane-m-invoices.webp" width="393" height="853" alt="Corvane invoices screen on a phone" loading="lazy" decoding="async" />
+            <figcaption>Invoices</figcaption>
+          </figure>
+        </div>
+
+        <div class="detail__foot" data-sheet-in>
+          <h3>Getting a finance UI wrong is expensive. Getting it right costs $89.99.</h3>
+          <p>One payment. The full React source, yours across unlimited client projects, updated free for as long as it ships.</p>
+          <div class="detail__foot-cta">
+            <a class="btn btn--accent" href="#" data-buy="corvane" data-magnetic><span>Buy Corvane for $89.99</span></a>
+            <!-- live demo: replace href with the Corvane demo URL -->
+            <a class="btn btn--ghost btn--invert btn--demo" href="#" target="_blank" rel="noopener noreferrer"><span>Open live demo</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            <a class="btn btn--ghost btn--invert" href="#pricing" data-sheet-goto="#pricing"><span>Get all access for $149.99</span></a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
