@@ -1,0 +1,14 @@
+{
+  // Deploys this folder to dashboards.gabokeke.com as a static site.
+  // No Worker script: with only "assets" set, Cloudflare serves the files directly.
+  //
+  // This config lives inside kitmark/ on purpose. The portfolio at
+  // www.gabokeke.com is a separate Worker building from the root of this same
+  // repo, and a wrangler config at the root would be picked up by its build too.
+  // Set this project's Root directory to "kitmark" in the Cloudflare dashboard.
+  "name": "gabokeke-dashboards",
+  "compatibility_date": "2026-10-28",
+  "assets": {
+    "directory": "."
+  }
+}
