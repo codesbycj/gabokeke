@@ -3,14 +3,253 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>Gabokeke</title>
-<meta name="description" content="Production dashboard templates in React. Mylora for commerce, Corvane for finance, with more on the way, and every state already built." />
+
+<title>React Dashboard Templates &mdash; Every Screen &amp; State | Gabokeke</title>
+<meta name="description" content="React dashboard templates with every screen, state and theme already built. Mylora for e-commerce, Corvane for finance. From $89.99, one payment." />
+<link rel="canonical" href="https://dashboards.gabokeke.com/" />
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+<meta name="author" content="Emmanuel Gabokeke" />
+<meta name="theme-color" content="#ffe4dc" media="(prefers-color-scheme: light)" />
+<meta name="theme-color" content="#121214" media="(prefers-color-scheme: dark)" />
+
+<!-- Open Graph: Facebook, LinkedIn, Slack, Discord, WhatsApp, iMessage -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Gabokeke Dashboards" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:url" content="https://dashboards.gabokeke.com/" />
+<meta property="og:title" content="React Dashboard Templates &mdash; Every Screen &amp; State Built" />
+<meta property="og:description" content="Mylora for e-commerce, Corvane for finance. Typed React source, desktop and mobile, light and dark, with every empty, loading and error state already designed. From $89.99." />
+<meta property="og:image" content="https://dashboards.gabokeke.com/img/og-dashboards.jpg" />
+<meta property="og:image:secure_url" content="https://dashboards.gabokeke.com/img/og-dashboards.jpg" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="The Mylora and Corvane dashboard templates beside the line: dashboards built for real data, mess and all." />
+
+<!-- X / Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:site" content="@codesbycj" />
+<meta name="twitter:creator" content="@codesbycj" />
+<meta name="twitter:title" content="React Dashboard Templates &mdash; Every Screen &amp; State Built" />
+<meta name="twitter:description" content="Mylora for e-commerce, Corvane for finance. Typed React source with every empty, loading and error state already designed. From $89.99." />
+<meta name="twitter:image" content="https://dashboards.gabokeke.com/img/og-dashboards.jpg" />
+<meta name="twitter:image:alt" content="The Mylora and Corvane dashboard templates beside the line: dashboards built for real data, mess and all." />
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-<link rel="icon" href="img/gabokeke-mark.webp" type="image/png" />
+<link rel="icon" href="img/gabokeke-mark.webp" type="image/webp" />
 <link rel="apple-touch-icon" href="img/gabokeke-mark.webp" />
 <link rel="stylesheet" href="css/style.css" />
+<!-- largest contentful paint is the first dashboard shot in the hero rail -->
+<link rel="preload" as="image" href="img/mylora-dashboard.webp" fetchpriority="high" />
+<!-- structured data: organization, catalog, both products with offers, and the FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dashboards.gabokeke.com/#org",
+      "name": "Gabokeke",
+      "url": "https://dashboards.gabokeke.com/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://dashboards.gabokeke.com/img/gabokeke-mark.webp"
+      },
+      "email": "emmanuel@gabokeke.com",
+      "founder": {
+        "@type": "Person",
+        "name": "Emmanuel Gabokeke",
+        "url": "https://www.gabokeke.com/"
+      },
+      "sameAs": [
+        "https://github.com/codesbycj",
+        "https://x.com/codesbycj",
+        "https://instagram.com/codesbycjay",
+        "https://www.gabokeke.com/"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://dashboards.gabokeke.com/#website",
+      "url": "https://dashboards.gabokeke.com/",
+      "name": "Gabokeke Dashboards",
+      "publisher": {
+        "@id": "https://dashboards.gabokeke.com/#org"
+      },
+      "inLanguage": "en",
+      "description": "Production React dashboard templates with every screen, state and theme already built."
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://dashboards.gabokeke.com/#webpage",
+      "url": "https://dashboards.gabokeke.com/",
+      "name": "React Dashboard Templates — Every Screen & State",
+      "isPartOf": {
+        "@id": "https://dashboards.gabokeke.com/#website"
+      },
+      "about": {
+        "@id": "https://dashboards.gabokeke.com/#org"
+      },
+      "inLanguage": "en",
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://dashboards.gabokeke.com/img/og-dashboards.jpg"
+      },
+      "description": "Mylora for e-commerce and Corvane for finance: typed React dashboard templates with desktop and mobile layouts, light and dark themes, and every empty, loading and error state designed."
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://dashboards.gabokeke.com/#catalog-list",
+      "name": "Dashboard templates",
+      "numberOfItems": 2,
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "item": {
+            "@id": "https://dashboards.gabokeke.com/#mylora"
+          }
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "item": {
+            "@id": "https://dashboards.gabokeke.com/#corvane"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://dashboards.gabokeke.com/#mylora",
+      "name": "Mylora",
+      "category": "E-commerce dashboard template",
+      "description": "An e-commerce admin dashboard template in typed React: dashboard, orders, products, categories, customers, reviews, discounts, analytics, marketing and settings. Desktop and mobile layouts, light and dark themes, and every empty, loading, error and permission-denied state already designed.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Gabokeke"
+      },
+      "url": "https://dashboards.gabokeke.com/#catalog",
+      "image": [
+        "https://dashboards.gabokeke.com/img/mylora-dashboard.webp",
+        "https://dashboards.gabokeke.com/img/mylora-orders.webp",
+        "https://dashboards.gabokeke.com/img/mylora-analytics.webp"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://dashboards.gabokeke.com/#pricing",
+        "price": "89.99",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-11-30",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@id": "https://dashboards.gabokeke.com/#org"
+        }
+      },
+      "isRelatedTo": {
+        "@type": "WebSite",
+        "name": "Mylora live demo",
+        "url": "https://myloraecomm.vercel.app"
+      }
+    },
+    {
+      "@type": "Product",
+      "@id": "https://dashboards.gabokeke.com/#corvane",
+      "name": "Corvane",
+      "category": "Finance dashboard template",
+      "description": "A finance and banking dashboard template in typed React: dashboard, payments, transactions, invoices, cards, saving plans, investments, inbox, promos and insights. Cashflow, running balance and category breakdown charts, desktop and mobile layouts, light and dark themes, and every state already designed.",
+      "brand": {
+        "@type": "Brand",
+        "name": "Gabokeke"
+      },
+      "url": "https://dashboards.gabokeke.com/#catalog",
+      "image": [
+        "https://dashboards.gabokeke.com/img/corvane-dashboard.webp",
+        "https://dashboards.gabokeke.com/img/corvane-insights.webp",
+        "https://dashboards.gabokeke.com/img/corvane-inbox.webp"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "url": "https://dashboards.gabokeke.com/#pricing",
+        "price": "89.99",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2026-11-30",
+        "availability": "https://schema.org/InStock",
+        "itemCondition": "https://schema.org/NewCondition",
+        "seller": {
+          "@id": "https://dashboards.gabokeke.com/#org"
+        }
+      },
+      "isRelatedTo": {
+        "@type": "WebSite",
+        "name": "Corvane live demo",
+        "url": "https://corvanefinance.vercel.app"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dashboards.gabokeke.com/#faq",
+      "isPartOf": {
+        "@id": "https://dashboards.gabokeke.com/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What do I actually get for the money?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A React codebase covering every screen, with theme tokens you edit in one place. Every page of the dashboard you bought, in desktop and mobile layouts, light and dark themes, and every state wired: empty, loading, error, permission-denied and long-content overflow. Clone it, point it at your API, ship it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will these work with my backend?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Every screen reads through a typed adapter that returns mock data out of the box. You replace the adapter with your own fetch calls, which is one file per view. Nothing is hardcoded inside the components, so swapping the data layer never means editing fifty of them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which chart library do you use?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Recharts, wrapped in our own chart components so axes, grid, tooltip and legend all take their styling from your theme tokens. If you would rather use something else, that wrapper is the only thing you rewrite."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is dark mode a real design or an inversion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A real design. Both themes were drawn separately, with their own surface values, chart palettes, severity colours and focus rings. Inverting a dashboard is what turns a healthy green KPI into something nobody can read."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use this on client work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "One licence covers unlimited personal and client projects, with no per-seat charge for your team. The only restriction is that you cannot resell the templates themselves as a template."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What about accessibility?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every screen is keyboard navigable with a visible focus state, tables use real headers and scopes, and colour contrast meets WCAG AA in both themes. Charts carry text alternatives, so the numbers are not locked inside the picture."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -98,6 +337,7 @@
     </aside>
   </div>
 
+  <h2 class="sr-only">The dashboard templates</h2>
   <div class="rail" data-rail>
     <article class="tcard" data-rail-card data-open="mylora" data-tilt tabindex="0" role="button" aria-label="See every Mylora screen">
       <span class="tcard__glow" aria-hidden="true"></span>
@@ -143,6 +383,7 @@
 <!-- ─────────────────────────── clients ─────────────────────────── -->
 <section class="clients" id="clients">
   <div class="wrap clients__inner">
+    <h2 class="sr-only">Products these dashboards were built alongside</h2>
     <p class="clients__label" data-reveal="up">Dashboards shipped for</p>
 
     <ul class="clients__list">
@@ -177,6 +418,7 @@
 <!-- ─────────────────────────── features (bento grid) ─────────────────────────── -->
 <section class="features" data-features>
   <div class="wrap">
+    <h2 class="sr-only">What every dashboard template includes</h2>
     <div class="features__grid" data-features-grid>
 
       <article class="fcard fcard--phones" data-tilt>
@@ -294,6 +536,7 @@
 <!-- ─────────────────────────── steps ─────────────────────────── -->
 <section class="steps">
   <div class="wrap steps__inner" data-steps>
+    <h2 class="sr-only">How it works, in three steps</h2>
     <span class="steps__line" aria-hidden="true"><i data-steps-line></i></span>
     <article class="step" data-step>
       <span class="step__dot" aria-hidden="true"></span>

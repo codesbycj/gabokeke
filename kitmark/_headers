@@ -1,0 +1,23 @@
+# Cloudflare Workers static assets reads this file and never serves it.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+# Screenshots are the bulk of the page weight. A week of caching with
+# background revalidation, rather than a year — these filenames are stable, so
+# "immutable" would strand returning visitors on a stale export.
+/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# Hand-maintained, not content-hashed, so keep the window short enough that
+# a fix reaches people the same day.
+/css/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/js/*
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/*.webp
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400

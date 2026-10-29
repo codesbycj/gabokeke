@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://dashboards.gabokeke.com/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+      <image:image>
+        <image:loc>https://dashboards.gabokeke.com/img/mylora-dashboard.webp</image:loc>
+        <image:title>Mylora dashboard template</image:title>
+        <image:caption>Mylora e-commerce dashboard template showing sales, orders and average order value</image:caption>
+      </image:image>
+      <image:image>
+        <image:loc>https://dashboards.gabokeke.com/img/mylora-orders.webp</image:loc>
+        <image:title>Mylora dashboard template</image:title>
+        <image:caption>Mylora orders screen with a 220-row order table, status badges and inline fulfilment</image:caption>
+      </image:image>
+      <image:image>
+        <image:loc>https://dashboards.gabokeke.com/img/mylora-analytics.webp</image:loc>
+        <image:title>Mylora dashboard template</image:title>
+        <image:caption>Mylora analytics screen with revenue over time, sales by channel and repeat-customer split</image:caption>
+      </image:image>
+      <image:image>
+        <image:loc>https://dashboards.gabokeke.com/img/mylora-discounts.webp</image:loc>
+        <image:title>Mylora dashboard template</image:title>
+        <image:caption>Mylora discounts screen with scheduled and active codes and a create-code dialog</image:caption>
+      </image:image>
+      <image:image>
+        <image:loc>https://dashboards.gabokeke.com/img/corvane-dashboard.webp</image:loc>
+        <image:title>Corvane dashboard template</image:title>
+        <image:caption>Corvane finance dashboard template with balance, cashflow chart, daily limit and saving plans</image:caption>
+      </image:image>
+      <image:image>
+        <image:loc>https://dashboards.gabokeke.com/img/corvane-insights.webp</image:loc>
+        <image:title>Corvane dashboard template</image:title>
+        <image:caption>Corvane insights screen with income, expense, net, savings rate and a running balance chart</image:caption>
+      </image:image>
+      <image:image>
+        <image:loc>https://dashboards.gabokeke.com/img/corvane-inbox.webp</image:loc>
+        <image:title>Corvane dashboard template</image:title>
+        <image:caption>Corvane inbox screen with statements, security, offers and support messages</image:caption>
+      </image:image>
+  </url>
+</urlset>

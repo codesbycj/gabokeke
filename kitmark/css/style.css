@@ -68,6 +68,12 @@ ul{margin:0;padding:0;list-style:none}
 
 .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad)}
 
+/* read by crawlers and screen readers, never painted */
+.sr-only{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
+}
+
 .section-title{
   font-size:clamp(30px,4.4vw,56px);
   text-align:center;
